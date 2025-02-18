@@ -1,0 +1,77 @@
+.pexelsGoldcircuits24252321Icon {
+  width: 541px;
+  height: 1922px;
+  position: absolute;
+  margin: 0 !important;
+  top: -398px;
+  left: calc(50% - 270.5px);
+  object-fit: cover;
+}
+.goodMorning {
+  margin: 0;
+}
+.abhishek {
+  margin: 0;
+  color: var(--components-background-orange);
+}
+.goodMorningAbhishekContainer {
+  margin: 0 !important;
+  width: 325px;
+  position: absolute;
+  top: 104px;
+  left: calc(50% - 162.5px);
+  font-size: inherit;
+  line-height: 42px;
+  font-weight: 500;
+  font-family: inherit;
+  display: inline-block;
+  z-index: 1;
+}
+.realTimeUpdatesAnd {
+  align-self: stretch;
+  position: relative;
+  line-height: 18px;
+  z-index: 1;
+}
+.home,
+.provaDescription,
+.provaDescriptionWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.provaDescription {
+  flex: 1;
+  flex-direction: column;
+  gap: 60px;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--body-body-3-medium-size);
+  color: var(--text-primary-gray-2-subtitle);
+  font-family: var(--body-body-3-medium);
+}
+.home,
+.provaDescriptionWrapper {
+  box-sizing: border-box;
+}
+.provaDescriptionWrapper {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-6xl);
+  max-width: 100%;
+}
+.home {
+  width: 100%;
+  position: relative;
+  background-color: var(--background-black);
+  overflow: hidden;
+  flex-direction: column;
+  padding: 0 0 var(--padding-21xl);
+  gap: 108px;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: var(--h1-medium-size);
+  color: var(--text-primary-gray-1-disabled);
+  font-family: var(--body-body-3-medium);
+}

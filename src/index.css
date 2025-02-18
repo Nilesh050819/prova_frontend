@@ -1,0 +1,155 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --body-body-2-regular: Outfit;
+
+  /* font sizes */
+  --body-body-2-regular-size: 14px;
+  --h1-medium-size: 28px;
+
+  /* Colors */
+  --text-primary-black: #1c1c1e;
+  --text-primary-white: #fff;
+  --components-background-orange: #ffcc80;
+  --text-primary-gray-2-subtitle: #b7b7b9;
+
+  /* Gaps */
+  --gap-5xs: 8px;
+  --gap-9xs: 4px;
+
+  /* Paddings */
+  --padding-3xs: 10px;
+  --padding-base: 16px;
+
+  /* Border radiuses */
+  --br-5xs: 8px;
+  --button-large-font-family: "Outfit", Helvetica;
+  --button-large-font-size: 14px;
+  --button-large-font-style: normal;
+  --button-large-font-weight: 500;
+  --button-large-letter-spacing: 0px;
+  --button-large-line-height: 18px;
+  --button-small-font-family: "Outfit", Helvetica;
+  --button-small-font-size: 12px;
+  --button-small-font-style: normal;
+  --button-small-font-weight: 500;
+  --button-small-letter-spacing: 0px;
+  --button-small-line-height: 18px;
+  --componentsbackgroundblack: rgba(60, 60, 63, 1);
+  --componentsbackgroundorange: rgba(255, 194, 102, 1);
+  --textprimaryblack: rgba(28, 28, 30, 1);
+  --textprimarygray-1-disabled: rgba(111, 111, 113, 1);
+  --textprimarywhite: rgba(255, 255, 255, 1);
+  --textprimaryorange: #ffc166;
+  --body-body-2-medium-font-family: "Outfit", Helvetica;
+  --body-body-2-medium-font-size: 14px;
+  --body-body-2-medium-font-style: normal;
+  --body-body-2-medium-font-weight: 500;
+  --body-body-2-medium-letter-spacing: 0px;
+  --body-body-2-medium-line-height: 22px;
+  --body-body-2-regular-font-family: "Outfit", Helvetica;
+  --body-body-2-regular-font-size: 14px;
+  --body-body-2-regular-font-style: normal;
+  --body-body-2-regular-font-weight: 400;
+  --body-body-2-regular-letter-spacing: 0px;
+  --body-body-2-regular-line-height: 22px;
+  --body-body-3-medium-font-family: "Outfit", Helvetica;
+  --body-body-3-medium-font-size: 12px;
+  --body-body-3-medium-font-style: normal;
+  --body-body-3-medium-font-weight: 500;
+  --body-body-3-medium-letter-spacing: 0px;
+  --body-body-3-medium-line-height: 18px;
+  --componentsbackgroundblack: rgba(60, 60, 63, 1);
+  --componentsbackgroundgray3-disabled: rgba(249, 249, 251, 1);
+  --componentsbackgroundwhite: rgba(255, 255, 255, 1);
+  --componentsstrokegray-1: rgba(91, 91, 93, 1);
+  --componentsstrokegray-2: rgba(242, 242, 245, 1);
+  --texteventred: rgba(236, 79, 70, 1);
+  --textprimaryblack: rgba(28, 28, 30, 1);
+  --textprimarygray-1-disabled: rgba(111, 111, 113, 1);
+  --textprimarygray-2-subtitle: rgba(183, 183, 185, 1);
+  --textprimarywhite: rgba(255, 255, 255, 1);
+
+
+  --backgroundeventblue: rgba(144, 202, 249, 1);
+  --backgroundeventgreen: rgb(38, 169, 81);
+  --body-body-3-regular-font-family: "Outfit", Helvetica;
+  --body-body-3-regular-font-size: 12px;
+  --body-body-3-regular-font-style: normal;
+  --body-body-3-regular-font-weight: 400;
+  --body-body-3-regular-letter-spacing: 0px;
+  --body-body-3-regular-line-height: 18px;
+  --button-small-font-family: "Outfit", Helvetica;
+  --button-small-font-size: 12px;
+  --button-small-font-style: normal;
+  --button-small-font-weight: 500;
+  --button-small-letter-spacing: 0px;
+  --button-small-line-height: 18px;
+  --caption-regular-font-family: "Outfit", Helvetica;
+  --caption-regular-font-size: 10px;
+  --caption-regular-font-style: normal;
+  --caption-regular-font-weight: 400;
+  --caption-regular-letter-spacing: 0px;
+  --caption-regular-line-height: 15px;
+  --componentsbackgroundorange: rgba(255, 204, 128, 1);
+  --h3-medium-font-family: "Outfit", Helvetica;
+  --h3-medium-font-size: 20px;
+  --h3-medium-font-style: normal;
+  --h3-medium-font-weight: 500;
+  --h3-medium-letter-spacing: 0.15000000596046448px;
+  --h3-medium-line-height: 30px;
+  --textprimaryblack: rgba(28, 28, 30, 1);
+  --textprimarygray-1-disabled: rgba(111, 111, 113, 1);
+  --textprimarygray-2-subtitle: rgba(183, 183, 185, 1);
+  --textprimarywhite: rgba(255, 255, 255, 1);
+  --title-medium-font-family: "Outfit", Helvetica;
+  --title-medium-font-size: 14px;
+  --title-medium-font-style: normal;
+  --title-medium-font-weight: 500;
+  --title-medium-letter-spacing: 0px;
+  --title-medium-line-height: 22px;
+
+
+  --body-body-2-medium-font-family: "Outfit", Helvetica;
+  --body-body-2-medium-font-size: 14px;
+  --body-body-2-medium-font-style: normal;
+  --body-body-2-medium-font-weight: 500;
+  --body-body-2-medium-letter-spacing: 0px;
+  --body-body-2-medium-line-height: 22px;
+  --body-body-2-regular-font-family: "Outfit", Helvetica;
+  --body-body-2-regular-font-size: 14px;
+  --body-body-2-regular-font-style: normal;
+  --body-body-2-regular-font-weight: 400;
+  --body-body-2-regular-letter-spacing: 0px;
+  --body-body-2-regular-line-height: 22px;
+  --body-body-3-medium-font-family: "Outfit", Helvetica;
+  --body-body-3-medium-font-size: 12px;
+  --body-body-3-medium-font-style: normal;
+  --body-body-3-medium-font-weight: 500;
+  --body-body-3-medium-letter-spacing: 0px;
+  --body-body-3-medium-line-height: 18px;
+  --componentsbackgroundblack: rgba(60, 60, 63, 1);
+  --componentsbackgroundgray3-disabled: rgba(249, 249, 251, 1);
+  --componentsbackgroundwhite: rgba(255, 255, 255, 1);
+  --componentsstrokegray-1: rgba(91, 91, 93, 1);
+  --componentsstrokegray-2: rgba(242, 242, 245, 1);
+  --texteventred: rgba(236, 79, 70, 1);
+  --textprimaryblack: rgba(28, 28, 30, 1);
+  --textprimarygray-1-disabled: rgba(111, 111, 113, 1);
+  --textprimarygray-2-subtitle: rgba(183, 183, 185, 1);
+  --textprimarywhite: rgba(255, 255, 255, 1);
+  
+}
+body {
+  min-width: 400px;
+}

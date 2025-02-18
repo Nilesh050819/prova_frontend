@@ -1,0 +1,393 @@
+.furniture-drawings .pexels-goldcircuits-24252321 {
+  opacity: 0.2;
+  background: url('../../../assets/images/PexelsGoldcircuits24252321.jpeg') 50% / cover no-repeat;
+  position: absolute;
+  top: 0px;
+  right: -83px;
+  width: 541px;
+  height: 812px;
+}
+.furniture-drawings .line-1 {
+  margin-bottom: 6px;
+  width: 28px;
+  height: 0px;
+}
+.furniture-drawings .line-2 {
+  width: 28px;
+  height: 0px;
+}
+.furniture-drawings .icon-large-outline-hamburger {
+  margin: 8.7px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28px;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.furniture-drawings .icon-large-outline-new-notification {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.furniture-drawings .frame-15 {
+  position: relative;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.furniture-drawings .site-updates {
+  margin-bottom: 4px;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.furniture-drawings .explore-site-updates-based-on-categories {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-3-regular-font-weight, 400);
+  font-size: var(--body-body-3-regular-font-size, 12px);
+  line-height: var(--body-body-3-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.furniture-drawings .frame-26 {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+  color: #fff;
+}
+.furniture-drawings-title {
+  margin-bottom: 4px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.furniture-drawings .access-all-furniture-schematics {
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-3-regular-font-weight, 400);
+  font-size: var(--body-body-3-regular-font-size, 12px);
+  line-height: var(--body-body-3-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.furniture-drawings .frame-26 {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.furniture-drawings .vscode-iconsfile-type-pdf-2 {
+  margin-right: 16px;
+  width: 32px;
+  height: 32px;
+}
+.furniture-drawings .hall-room {
+  margin-right: 11px;
+  width: 194px;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-2-medium-font-weight, 500);
+  font-size: var(--body-body-2-medium-font-size, 14px);
+  line-height: var(--body-body-2-medium-line-height, 1.571);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.furniture-drawings .st-june-2024 {
+  margin: 3.5px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.furniture-drawings .frame-17 {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+  flex-grow: 1;
+  flex-basis: 260.3px;
+  box-sizing: border-box;
+}
+.furniture-drawings .frame-4 {
+  border-radius: 8px;
+  background: var(--background-gray, #19191A);
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 8.7px 8px 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.furniture-drawings .vscode-iconsfile-type-pdf-21 {
+  margin-right: 16px;
+  width: 32px;
+  height: 32px;
+}
+.furniture-drawings .kitchen {
+  margin-right: 11px;
+  width: 194px;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-2-medium-font-weight, 500);
+  font-size: var(--body-body-2-medium-font-size, 14px);
+  line-height: var(--body-body-2-medium-line-height, 1.571);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.furniture-drawings .st-june-20241 {
+  margin: 3.5px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.furniture-drawings .frame-171 {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+  flex-grow: 1;
+  flex-basis: 260.3px;
+  box-sizing: border-box;
+}
+.furniture-drawings .frame-5 {
+  border-radius: 8px;
+  background: var(--background-gray, #19191A);
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 8.7px 8px 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.furniture-drawings .vscode-iconsfile-type-pdf-22 {
+  margin-right: 16px;
+  width: 32px;
+  height: 32px;
+}
+.furniture-drawings .master-bedroom {
+  margin-right: 11px;
+  width: 194px;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-2-medium-font-weight, 500);
+  font-size: var(--body-body-2-medium-font-size, 14px);
+  line-height: var(--body-body-2-medium-line-height, 1.571);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.furniture-drawings .st-june-20242 {
+  margin: 3.5px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.furniture-drawings .frame-172 {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+  flex-grow: 1;
+  flex-basis: 260.3px;
+  box-sizing: border-box;
+}
+.furniture-drawings .frame-6 {
+  border-radius: 8px;
+  background: var(--background-gray, #19191A);
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 8.7px 8px 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.furniture-drawings .vscode-iconsfile-type-pdf-23 {
+  margin-right: 16px;
+  width: 32px;
+  height: 32px;
+}
+.furniture-drawings .outdoor-patio {
+  margin-right: 11px;
+  width: 194px;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-2-medium-font-weight, 500);
+  font-size: var(--body-body-2-medium-font-size, 14px);
+  line-height: var(--body-body-2-medium-line-height, 1.571);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.furniture-drawings .st-june-20243 {
+  margin: 3.5px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.furniture-drawings .frame-173 {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+  flex-grow: 1;
+  flex-basis: 260.3px;
+  box-sizing: border-box;
+}
+.furniture-drawings .frame-7 {
+  border-radius: 8px;
+  background: var(--background-gray, #19191A);
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 8.7px 8px 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.furniture-drawings .vscode-iconsfile-type-pdf-24 {
+  margin-right: 16px;
+  width: 32px;
+  height: 32px;
+}
+.furniture-drawings .hall-room-colour {
+  margin-right: 11px;
+  width: 194px;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-2-medium-font-weight, 500);
+  font-size: var(--body-body-2-medium-font-size, 14px);
+  line-height: var(--body-body-2-medium-line-height, 1.571);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.furniture-drawings .st-june-20244 {
+  margin: 3.5px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.furniture-drawings .frame-174 {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+  flex-grow: 1;
+  flex-basis: 260.3px;
+  box-sizing: border-box;
+}
+.furniture-drawings .frame-8 {
+  border-radius: 8px;
+  background: var(--background-gray, #19191A);
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 8.7px 8px 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.furniture-drawings .vscode-iconsfile-type-pdf-25 {
+  margin-right: 16px;
+  width: 32px;
+  height: 32px;
+}
+.furniture-drawings .guest-room {
+  margin-right: 11px;
+  width: 194px;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-2-medium-font-weight, 500);
+  font-size: var(--body-body-2-medium-font-size, 14px);
+  line-height: var(--body-body-2-medium-line-height, 1.571);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.furniture-drawings .st-june-20245 {
+  margin: 3.5px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.furniture-drawings .frame-175 {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
+  flex-grow: 1;
+  flex-basis: 260.3px;
+  box-sizing: border-box;
+}
+.furniture-drawings .frame-9 {
+  border-radius: 8px;
+  background: var(--background-gray, #19191A);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 8.7px 8px 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.furniture-drawings .frame-21 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.furniture-drawings .frame-31 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+.furniture-drawings {
+  background: var(--background-black, #0F0F10);
+  display: flex;
+  flex-direction: column;
+  padding: 15.4px 25px 246px 25px;
+  box-sizing: border-box;
+}

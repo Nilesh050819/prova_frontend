@@ -1,0 +1,142 @@
+.enter-otp .unsplashr-ejxp-bskj-3-q {
+  background: url('../../../assets/images/UnsplashrEjxpBskj3Q.jpeg') 50% / cover no-repeat;
+  position: absolute;
+  top: -0.1px;
+  right: -166.5px;
+  width: 541.3px;
+  height: 812px;
+}
+.enter-otp .rectangle-1 {
+  background: linear-gradient(180.03deg, rgba(28, 28, 30, 0.2) 40.4%, rgba(28, 28, 30, 0.6) 52.06%, #1C1C1E 100%);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+}
+.enter-otp .enter-otp-1 {
+  margin-bottom: 8px;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--h-1-medium-font-family, 'Outfit');
+  font-weight: var(--h-1-medium-font-weight, 500);
+  font-size: var(--h-1-medium-font-size, 28px);
+  line-height: var(--h-1-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.enter-otp .enter-the-verification-code-send-to-7680 {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-2-regular-font-weight, 400);
+  font-size: var(--body-body-2-regular-font-size, 14px);
+  line-height: var(--body-body-2-regular-line-height, 1.571);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.enter-otp .frame-3 {
+  position: relative;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.enter-otp .input {
+  border-radius: 8px;
+  border: 1px solid var(--components-stroke-gray-1, #5B5B5D);
+  background: var(--components-background-black, #3C3C3F);
+  width: 69.3px;
+  height: 52px;
+}
+.enter-otp .input-field {
+  margin-right: 16px;
+  display: flex;
+  height: 52px;
+  flex-grow: 1;
+  flex-basis: 69.3px;
+  box-sizing: border-box;
+}
+.enter-otp .input-1 {
+  border-radius: 8px;
+  border: 1px solid var(--components-stroke-gray-1, #5B5B5D);
+  background: var(--components-background-black, #3C3C3F);
+  width: 69.3px;
+  height: 52px;
+}
+.enter-otp .input-field-1 {
+  margin-right: 16px;
+  display: flex;
+  height: 52px;
+  flex-grow: 1;
+  flex-basis: 69.3px;
+  box-sizing: border-box;
+}
+.enter-otp .input-2 {
+  border-radius: 8px;
+  border: 1px solid var(--components-stroke-gray-1, #5B5B5D);
+  background: var(--components-background-black, #3C3C3F);
+  width: 69.3px;
+  height: 52px;
+}
+.enter-otp .input-field-2 {
+  margin-right: 16px;
+  display: flex;
+  height: 52px;
+  flex-grow: 1;
+  flex-basis: 69.3px;
+  box-sizing: border-box;
+}
+.enter-otp .input-3 {
+  border-radius: 8px;
+  border: 1px solid var(--components-stroke-gray-1, #5B5B5D);
+  background: var(--components-background-black, #3C3C3F);
+  width: 69.3px;
+  height: 52px;
+}
+.enter-otp .input-field-3 {
+  display: flex;
+  height: 52px;
+  flex-grow: 1;
+  flex-basis: 69.3px;
+  box-sizing: border-box;
+}
+.enter-otp .frame-427319475 {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.enter-otp .login {
+  overflow-wrap: break-word;
+  font-family: var(--button-large-font-family, 'Outfit');
+  font-weight: var(--button-large-font-weight, 500);
+  font-size: var(--button-large-font-size, 14px);
+  line-height: var(--button-large-line-height, 1.286);
+  color: var(--text-primary-black, #1C1C1E);
+}
+.enter-otp .button {
+  border-radius: 8px;
+  background: var(--components-background-orange, #FFCC80);
+  display: flex;
+  padding: 15px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.enter-otp .frame-427319477 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+.enter-otp {
+  background: #1C1C1E;
+  display: flex;
+  flex-direction: column;
+  padding: 552px 25px 40px 25px;
+  box-sizing: border-box;
+}

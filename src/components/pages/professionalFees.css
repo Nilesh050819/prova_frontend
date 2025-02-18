@@ -1,0 +1,536 @@
+.professional-fees .pexels-enginakyurt-14878091 {
+  opacity: 0.2;
+  background: url('../../../assets/images/PexelsEnginakyurt14878091.jpeg') 50% / cover no-repeat;
+  position: relative;
+  width: 589px;
+  height: 393px;
+}
+.professional-fees .line-1 {
+  margin-bottom: 6px;
+  width: 28px;
+  height: 0px;
+}
+.professional-fees .line-2 {
+  width: 28px;
+  height: 0px;
+}
+.professional-fees .icon-large-outline-hamburger {
+  margin: 6.3px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28px;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.professional-fees .vector-54 {
+  width: 14.4px;
+  height: 19.2px;
+}
+.professional-fees .icon-large-outline-notification {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+.professional-fees .frame-15 {
+  position: absolute;
+  left: 25px;
+  top: 42.4px;
+  right: 29.8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.professional-fees .prova-interior-design {
+  margin-bottom: 8px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--title-bold-font-family, 'Outfit');
+  font-weight: var(--title-bold-font-weight, 700);
+  font-size: var(--title-bold-font-size, 14px);
+  line-height: var(--title-bold-line-height, 1.571);
+  text-transform: var(--title-bold-text-transform, uppercase);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.professional-fees .container-6 {
+  overflow-wrap: break-word;
+  font-family: var(--h-1-medium-font-family, 'Outfit');
+  font-weight: var(--h-1-medium-font-weight, 500);
+  font-size: var(--h-1-medium-font-size, 28px);
+  line-height: var(--h-1-medium-line-height, 1.5);
+  color: var(--text-primary-orange, #FFCC80);
+}
+.professional-fees .has-been-paid-so-far {
+  margin: 0 4.7px;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-2-regular-font-weight, 400);
+  font-size: var(--body-body-2-regular-font-size, 14px);
+  line-height: var(--body-body-2-regular-line-height, 1.571);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.professional-fees .frame-41 {
+  margin: 0 17.9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 35.8px);
+  box-sizing: border-box;
+}
+.professional-fees .frame-26 {
+  margin: 0 14.9px 24px 14.9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 29.8px);
+  box-sizing: border-box;
+}
+.professional-fees .login {
+  overflow-wrap: break-word;
+  font-family: var(--button-large-font-family, 'Outfit');
+  font-weight: var(--button-large-font-weight, 500);
+  font-size: var(--button-large-font-size, 14px);
+  line-height: var(--button-large-line-height, 1.286);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .button {
+  border-radius: 8px;
+  border: 1px solid var(--components-background-orange, #FFCC80);
+  display: flex;
+  padding: 10px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.professional-fees .frame-31 {
+  position: absolute;
+  left: 50%;
+  top: 104px;
+  translate: -50% 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.professional-fees .rectangle-6 {
+  border-radius: 4px;
+  background: var(--components-background-black, #3C3C3F);
+  margin: 0 0 24px 3px;
+  align-self: center;
+  width: 40px;
+  height: 4px;
+}
+.professional-fees .vector-55 {
+  width: 13.7px;
+  height: 13.7px;
+}
+.professional-fees .icon-small-outline-search {
+  margin: 4px 0 4.3px 0;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+}
+.professional-fees .prova-id {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-2-regular-font-weight, 400);
+  font-size: var(--body-body-2-regular-font-size, 14px);
+  line-height: var(--body-body-2-regular-line-height, 1.571);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.professional-fees .input {
+  border-radius: 40px;
+  border: 1px solid var(--components-stroke-gray-1, #5B5B5D);
+  background: var(--components-background-black, #3C3C3F);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 9px 0 9px 18px;
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.professional-fees .input-field {
+  margin-bottom: 26px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.professional-fees .all-payments {
+  margin: 0 3px;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-2-medium-font-weight, 500);
+  font-size: var(--body-body-2-medium-font-size, 14px);
+  line-height: var(--body-body-2-medium-line-height, 1.571);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.professional-fees .container {
+  border-radius: 40px 40px 0 0;
+  background: linear-gradient(180deg, #232324, #19191A);
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 26px 0 24px;
+  height: 508px;
+  box-sizing: border-box;
+}
+.professional-fees .vscode-iconsfile-type-pdf-2 {
+  margin: 2.5px 8px 2.5px 0;
+  width: 32px;
+  height: 32px;
+}
+.professional-fees .instalment-number {
+  margin: 0 11.5px 4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .st-june-2024-at-900-am {
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.professional-fees .frame-27 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.professional-fees .frame-28 {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.professional-fees .container {
+  margin-bottom: 13px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-1-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-1-medium-font-weight, 500);
+  font-size: var(--body-body-1-medium-font-size, 16px);
+  line-height: var(--body-body-1-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .frame-29 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.professional-fees .line-3 {
+  background: #3C3C3F;
+  margin-bottom: 15px;
+  width: 325px;
+  height: 0px;
+}
+.professional-fees .vscode-iconsfile-type-pdf-21 {
+  margin: 2.5px 8px 2.5px 0;
+  width: 32px;
+  height: 32px;
+}
+.professional-fees .instalment-number-1 {
+  margin: 0 11.5px 4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .st-june-2024-at-900-am-1 {
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.professional-fees .frame-271 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.professional-fees .frame-281 {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.professional-fees .container-1 {
+  margin-bottom: 13px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-1-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-1-medium-font-weight, 500);
+  font-size: var(--body-body-1-medium-font-size, 16px);
+  line-height: var(--body-body-1-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .frame-35 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.professional-fees .line-4 {
+  background: #3C3C3F;
+  margin-bottom: 15px;
+  width: 325px;
+  height: 0px;
+}
+.professional-fees .vscode-iconsfile-type-pdf-22 {
+  margin: 2.5px 8px 2.5px 0;
+  width: 32px;
+  height: 32px;
+}
+.professional-fees .instalment-number-2 {
+  margin: 0 11.5px 4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .st-june-2024-at-900-am-2 {
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.professional-fees .frame-272 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.professional-fees .frame-282 {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.professional-fees .container-2 {
+  margin-bottom: 13px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-1-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-1-medium-font-weight, 500);
+  font-size: var(--body-body-1-medium-font-size, 16px);
+  line-height: var(--body-body-1-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .frame-36 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.professional-fees .line-5 {
+  background: #3C3C3F;
+  margin-bottom: 15px;
+  width: 325px;
+  height: 0px;
+}
+.professional-fees .vscode-iconsfile-type-pdf-23 {
+  margin: 2.5px 8px 2.5px 0;
+  width: 32px;
+  height: 32px;
+}
+.professional-fees .instalment-number-3 {
+  margin: 0 11.5px 4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .st-june-2024-at-900-am-3 {
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.professional-fees .frame-273 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.professional-fees .frame-283 {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.professional-fees .container-3 {
+  margin-bottom: 13px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-1-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-1-medium-font-weight, 500);
+  font-size: var(--body-body-1-medium-font-size, 16px);
+  line-height: var(--body-body-1-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .frame-37 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.professional-fees .line-6 {
+  background: #3C3C3F;
+  margin-bottom: 15px;
+  width: 325px;
+  height: 0px;
+}
+.professional-fees .vscode-iconsfile-type-pdf-24 {
+  margin: 2.5px 8px 2.5px 0;
+  width: 32px;
+  height: 32px;
+}
+.professional-fees .instalment-number-4 {
+  margin: 0 11.5px 4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .st-june-2024-at-900-am-4 {
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.professional-fees .frame-274 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.professional-fees .frame-284 {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.professional-fees .container-4 {
+  margin-bottom: 13px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-1-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-1-medium-font-weight, 500);
+  font-size: var(--body-body-1-medium-font-size, 16px);
+  line-height: var(--body-body-1-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .frame-38 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.professional-fees .line-7 {
+  background: #3C3C3F;
+  margin-bottom: 15px;
+  width: 325px;
+  height: 0px;
+}
+.professional-fees .vscode-iconsfile-type-pdf-25 {
+  margin: 2.5px 8px 2.5px 0;
+  width: 32px;
+  height: 32px;
+}
+.professional-fees .instalment-number-5 {
+  margin: 0 11.5px 4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .st-june-2024-at-900-am-5 {
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.professional-fees .frame-275 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.professional-fees .frame-285 {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.professional-fees .container-5 {
+  margin-bottom: 13px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-1-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-1-medium-font-weight, 500);
+  font-size: var(--body-body-1-medium-font-size, 16px);
+  line-height: var(--body-body-1-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.professional-fees .frame-39 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.professional-fees .frame-30 {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  bottom: -22px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.professional-fees {
+  background: var(--background-black, #0F0F10);
+  display: flex;
+  box-sizing: border-box;
+}

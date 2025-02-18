@@ -1,0 +1,176 @@
+
+
+
+.WVplatformOneRowContainer::-webkit-scrollbar-thumb {
+    /* border-radius: 100px; */
+    background: #1C1C1C66;
+}
+
+/* width */
+.WVplatformOneRowContainer::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+.WVplatformOneRowContainer::-webkit-scrollbar-track {
+    background: #1C1C1C33;
+    /* border-radius: 100px; */
+}
+
+
+
+.platformOneHeader>div {
+    display: flex;
+    align-items: center;
+}
+
+.platformOneHeader {
+    height: 28px;
+    margin-bottom: 4px;
+}
+
+.platformOneRow>div,
+.platformOneHeader>div {
+    margin: 0px 8px 0px 8px
+}
+
+.platformOneRow>div {
+    display: flex;
+    align-items: center;
+
+}
+
+.platformOneRow {
+    height: 28px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.platformOneTable {
+    display: flex;
+}
+
+.platformOneTableC1 {
+    flex: 2;
+}
+
+
+
+.platformOneTableC2 {
+    flex: 6;
+}
+
+.platformOneTableC3 {
+    flex: 3;
+}
+
+.platformOneTableC4 {
+    flex: 1;
+}
+
+
+
+
+@media (max-width: 1920px) {
+    .WVplatformOneTableC1 {
+        width: 80px;
+    }
+
+    .WVplatformOneTableC2 {
+        min-width: 680px;
+    }
+    .WVplatformOneTableC2Inner{
+        width: 680px;
+    }
+
+
+    .WVplatformOneTableC3 {
+       width: 120px;
+    }
+
+    .WVplatformOneTableC4 {
+        width: 60px;
+    }
+
+    .WVplatformOneTableC5 {
+        width: 100px;
+    }
+}
+
+@media (max-width: 1700px) {
+    .WVplatformOneTableC1 {
+        width: 60px;
+    }
+
+    .WVplatformOneTableC2 {
+        min-width: 500px;
+    }
+    .WVplatformOneTableC2Inner{
+        width: 500px;
+    }
+
+
+    .WVplatformOneTableC3 {
+       width: 120px;
+    }
+
+    .WVplatformOneTableC4 {
+        width: 60px;
+    }
+
+    .WVplatformOneTableC5 {
+        width: 100px;
+    }
+}
+
+@media (max-width: 1500px) {
+    .WVplatformOneTableC1 {
+        width: 60px;
+    }
+
+    .WVplatformOneTableC2 {
+        min-width: 380px;
+    }
+    .WVplatformOneTableC2Inner{
+        width: 380px;
+    }
+
+
+    .WVplatformOneTableC3 {
+       width: 120px;
+    }
+
+    .WVplatformOneTableC4 {
+        width: 50px;
+    }
+
+    .WVplatformOneTableC5 {
+        width: 100px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .WVplatformOneTableC1 {
+        width: 40px;
+    }
+
+    .WVplatformOneTableC2 {
+        min-width: 340px;
+    }
+    .WVplatformOneTableC2Inner{
+        width: 340px;
+    }
+
+
+    .WVplatformOneTableC3 {
+       width: 120px;
+    }
+
+    .WVplatformOneTableC4 {
+        width: 40px;
+    }
+
+    .WVplatformOneTableC5 {
+        width: 100px;
+    }
+}

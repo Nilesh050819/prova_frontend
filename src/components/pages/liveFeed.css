@@ -1,0 +1,120 @@
+.live-feed .pexels-goldcircuits-24252321 {
+  opacity: 0.2;
+  background: url('../../../assets/images/PexelsGoldcircuits24252321.jpeg') 50% / cover no-repeat;
+  position: absolute;
+  left: -99px;
+  top: 0px;
+  width: 557px;
+  height: 820px;
+}
+.live-feed .line-1 {
+  margin-bottom: 6px;
+  width: 28px;
+  height: 0px;
+}
+.live-feed .line-2 {
+  width: 28px;
+  height: 0px;
+}
+.live-feed .icon-large-outline-hamburger {
+  margin: 8.7px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28px;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.live-feed .icon-large-outline-new-notification {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.live-feed .frame-15 {
+  position: relative;
+  /*margin-bottom: 40px;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.live-feed .live-feed-1 {
+  margin-bottom: 4px;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.live-feed .monitor-activities-with-live-video-feed-from-the-site {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-3-regular-font-weight, 400);
+  font-size: var(--body-body-3-regular-font-size, 12px);
+  line-height: var(--body-body-3-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.live-feed .frame-2 {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.live-feed .vector-1 {
+  width: 19px;
+  height: 19px;
+}
+.live-feed .icon-large-filled-play {
+  margin: 2.5px 0 4.5px 0;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+.live-feed .live {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-bold-font-family, 'Outfit');
+  font-weight: var(--body-body-3-bold-font-weight, 700);
+  font-size: var(--body-body-3-bold-font-size, 12px);
+  line-height: var(--body-body-3-bold-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.live-feed .frame-38 {
+  border-radius: 4px;
+  background: var(--components-stroke-red, #EC4F46);
+  display: flex;
+  padding: 4px 18.8px 4px 18.5px;
+  box-sizing: border-box;
+}
+.live-feed .group-1 {
+  border-radius: 16px;
+  background: url('../../../assets/images/Uhd2160384024Fps1.png') 50% / cover no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 8px 0 10.5px;
+  width: 100%;
+  height: 578px;
+  box-sizing: border-box;
+}
+.live-feed .frame-39 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+.live-feed {
+  background: var(--background-black, #0F0F10);
+  display: flex;
+  flex-direction: column;
+  padding: 40px 25px;
+  box-sizing: border-box;
+}

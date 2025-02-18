@@ -1,0 +1,283 @@
+
+  .new_page {
+    .new_page_main {
+      padding: 20px 25px;
+      .new_page_content {
+        box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+        display: grid;
+        grid-template-columns: 37% 60%;
+        justify-content: center;
+        gap: 10;
+        padding: 20px;
+        border-radius: 4px;
+
+        .image {
+          flex: 4;
+
+          .add_new_user {
+            color: rgba(128, 128, 128, 0.603);
+            font-size: 25px;
+            margin-right: auto;
+          }
+
+          img {
+            height: 150px;
+            width: 150px;
+            background-color: rgba(128, 128, 128, 0.288);
+            object-fit: cover;
+            margin-top: 20px;
+            border-radius: 50%;
+            margin-left: 30%;
+          }
+        }
+
+        .form {
+          flex: 8;
+          display: grid;
+          grid-template-columns: 45% 45%;
+          justify-content: space-around;
+          grid-gap: 15px;
+          position: relative;
+
+          .form_inp {
+            label {
+              display: flex;
+              align-items: center;
+            }
+            .file_icon {
+              cursor: pointer;
+              margin-left: 10px;
+              font-size: 30px;
+            }
+          }
+
+         
+        }
+      }
+    }
+  }
+  .submit_btn {
+    margin-top: 15px;
+    display: block;
+    width: 150px;
+    padding: 9px 15px;
+    border: none;
+    background: none;
+    background-color: #FFF;
+    border: 1px solid #FFCC80;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Outfit", Helvetica;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #FFCC80;
+      color: black;
+      border: 1px solid #7451f8;
+    }
+  }
+  .publish_btn {
+    margin-top: 15px;
+    display: block;
+    width: 150px;
+    padding: 9px 15px;
+    border: none;
+    background: none;
+    background-color: #FFCC80;
+    border: 1px solid #FFCC80;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Outfit", Helvetica;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #FFCC80;
+      color: #000;
+      border: 1px solid #FFCC80;
+    }
+  }
+  .publish_btn_disabled {
+    margin-top: 15px;
+    display: block;
+    width: 150px;
+    padding: 9px 15px;
+    border: none;
+    background: none;
+    background-color: #FBEDD8;
+    border: 1px solid #FFCC80;
+    color: #B7B7B9;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Outfit", Helvetica;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #FBEDD8;
+      color: #B7B7B9;
+      border: 1px solid #7451f8;
+    }
+  }
+  input, select {
+    min-height: 50px;
+  }
+  .mt-25{
+    margin-top: 25px;
+  }
+  .cancel_btn {
+    margin-top: 15px;
+    display: block;
+    width: 150px;
+    padding: 9px 15px;
+    border: none;
+    background: none;
+    background-color: #FFF;
+    border: 1px solid #FFCC80;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: "Outfit", Helvetica;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #FFF;
+      color: black;
+      border: 1px solid #FFCC80;
+    }
+  }
+@media screen and (max-width: 992px) {
+  .add_new {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+
+    .home_sidebar {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .add_new {
+    .new_page {
+      .new_page_main {
+        .new_page_content {
+          display: grid;
+          grid-template-columns: 95%;
+          justify-content: center;
+          gap: 40px;
+        }
+      }
+    }
+  }
+}
+
+.completed {
+  width: 100%;
+  position: relative;
+  font-size: 10px;
+  line-height: 15px;
+  font-weight: 600;
+  font-family: Outfit;
+  color: #48854b;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  }
+  .ongoing {
+    align-self: stretch;
+    position: relative;
+    line-height: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;
+    flex-shrink: 0;
+    }
+    .ongoing-chip {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    border-radius: 15px;
+    background-color: #e3f2fd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 10px;
+    color: #1765c0;
+    font-family: Outfit;
+    height:30px;
+    margin-top: 10px;
+    font-weight: 700;
+    }
+
+    .completed {
+      align-self: stretch;
+      position: relative;
+      line-height: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 18px;
+      flex-shrink: 0;
+      }
+      .completed-chip {
+      flex: 1;
+      width: 100%;
+      position: relative;
+      border-radius: 15px;
+      background-color: #e5f7de;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 8px;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 10px;
+      color: #48854b;
+      font-family: Outfit;
+      height:30px;
+      margin-top: 10px;
+      font-weight: 700;
+      }
+      .my-grid .MuiDataGrid-columnHeader {
+        font-weight: bold;  /* Make the header text bold */
+        background-color: #F1F4F8;
+        
+      }
+      .center-header {
+          text-align: center;
+      }
+
+      .custom-tabs .MuiTabs-indicator {
+        background-color: blue !important;
+      }
+      
+      .custom-tab {
+        font-size: 16px; /* Font size for the tab labels */
+        color: #555; /* Text color for inactive tabs */
+      }
+      
+      .custom-tab.Mui-selected {
+        color: #1976d2; /* Text color for the selected tab */
+        font-weight: bold; /* Make the selected tab bold */
+      }
+      

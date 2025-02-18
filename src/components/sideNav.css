@@ -1,0 +1,212 @@
+.side-nav .vector {
+  width: 13.2px;
+  height: 13.2px;
+}
+.side-nav .icon-large-outline-cross {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+.side-nav .prova-21 {
+  background: url('../../assets//images/Prova21.png');
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 75px;
+  height: 60px;
+}
+.side-nav .frame-15 {
+  position: relative;
+  margin: 0 5.4px 56px 0;
+  display: flex;
+  padding: 21.4px 0 25.4px 0;
+  width: calc(100% - 5.4px);
+  height: 88px;
+  box-sizing: border-box;
+}
+.side-nav .home {
+  margin-bottom: 16px;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-orange, #FFCC80);
+}
+.side-nav .drawings {
+  margin-right: 14.4px;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.side-nav .vector-1 {
+  width: 11.2px;
+  height: 6.6px;
+}
+.side-nav .icon-large-outline-chevron-down {
+  margin: 14.4px 0 15px 0;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+.side-nav .frame-19 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.side-nav .material-updates {
+  margin-bottom: 16px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.side-nav .payments {
+  margin-right: 14.7px;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.side-nav .vector-2 {
+  width: 11.2px;
+  height: 6.6px;
+}
+.side-nav .icon-large-outline-chevron-down-1 {
+  margin: 14.4px 0 15px 0;
+  display: flex;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+.side-nav .frame-21 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.side-nav .live-feed {
+  margin-bottom: 16px;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.side-nav .profile {
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.side-nav .frame-18 {
+  margin-bottom: 308px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.side-nav .vector-3 {
+  width: 20.4px;
+  height: 20.4px;
+}
+.side-nav .instagram {
+  margin: 0.3px 15.3px 0.2px 0;
+  display: flex;
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+}
+.side-nav .container {
+  width: 21px;
+  height: 20.9px;
+}
+.side-nav .facebook {
+  margin-right: 15.5px;
+  display: flex;
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+}
+.side-nav .vector-4 {
+  width: 20.4px;
+  height: 20.4px;
+}
+.side-nav .icon-large-outline-website {
+  margin: 0.5px 0 0px 0;
+  display: flex;
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+}
+.side-nav .frame-22 {
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.side-nav .follow-our-work {
+  margin: 1.5px 0 1.4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.side-nav .frame-23 {
+  border-top: 1px solid var(--components-stroke-gray-1, #5B5B5D);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 18.5px 0 27.6px 3.8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.side-nav {
+  background: var(--background-black, #0F0F10);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 25px 0 25px;
+  box-sizing: border-box;
+}
+
+
+.image {
+  /* height: 60px; */
+  width: 75px;
+}
+
+.image .prova {
+  height: 60px;
+  left: 20px;
+  position: fixed;
+  top: 20px;
+  width: 75px;
+}

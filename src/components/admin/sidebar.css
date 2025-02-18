@@ -1,0 +1,11 @@
+.side-nav {
+    align-items: flex-start;
+    background: linear-gradient(180deg, rgb(35, 35, 36) 0%, rgb(25, 25, 26) 100%);
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    width:100%;
+
+}
+.nav-item-label{
+    color: #ccc !important;
+}

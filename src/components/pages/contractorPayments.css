@@ -1,0 +1,416 @@
+.contractor-payments .pexels-goldcircuits-24252322 {
+  opacity: 0.2;
+  background: url('../../../assets/images/PexelsGoldcircuits24252321.jpeg');
+  position: absolute;
+  top: -5px;
+  right: -83px;
+  width: 541px;
+  height: 920px;
+}
+.contractor-payments .line-1 {
+  margin-bottom: 6px;
+  width: 28px;
+  height: 0px;
+}
+.contractor-payments .line-2 {
+  width: 28px;
+  height: 0px;
+}
+.contractor-payments .icon-large-outline-hamburger {
+  margin: 6.3px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28px;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.contractor-payments .vector-8 {
+  width: 14.4px;
+  height: 19.2px;
+}
+.contractor-payments .icon-large-outline-notification {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+.contractor-payments .frame-15 {
+  position: relative;
+  margin: 0 4.8px 38.4px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - 4.8px);
+  box-sizing: border-box;
+}
+.contractor-payments .contractor-payments-1 {
+  margin-bottom: 4px;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments .browse-payment-details-by-category-and-click-to-view {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-3-regular-font-weight, 400);
+  font-size: var(--body-body-3-regular-font-size, 12px);
+  line-height: var(--body-body-3-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.contractor-payments .frame-2 {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.contractor-payments .vector {
+  width: 30px;
+  height: 19.1px;
+}
+.contractor-payments .cbiceiling-fair-semiflush {
+  margin: 0 0 23px 1.1px;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.contractor-payments .false-ceiling {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments .frame-20 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.contractor-payments .vector-9 {
+  width: 29.4px;
+  height: 25.2px;
+}
+.contractor-payments .icon-small-outline-electrician {
+  margin-bottom: 20.4px;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.contractor-payments .electrician {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments .frame-191 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.contractor-payments .frame-21 {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments .vector-1 {
+  width: 35.1px;
+  height: 33.6px;
+}
+.contractor-payments .mapplumber {
+  margin: 0 0.3px 16.2px 0;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.contractor-payments .plumber {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments .frame-201 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.contractor-payments .vector-2 {
+  width: 29.4px;
+  height: 29.4px;
+}
+.contractor-payments .makipaint {
+  margin: 0 0 18.3px 0.4px;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.contractor-payments .painter {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments .frame-19 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.contractor-payments .frame-22 {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments .group {
+  width: 28px;
+  height: 28px;
+}
+.contractor-payments .icon-park-outlinefloor-tile {
+  margin: 0 0.5px 19px 0;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.contractor-payments .tile-worker {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments .frame-202 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.contractor-payments .vector-10 {
+  width: 29.3px;
+  height: 34.7px;
+}
+.contractor-payments .icon-small-outline-carpenter {
+  margin: 0 2px 16.2px 0;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.contractor-payments .carpenter {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments .frame-192 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.contractor-payments .frame-231 {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments .vector-5 {
+  width: 29.4px;
+  height: 29.4px;
+}
+.contractor-payments .fa-6-solidhammer {
+  margin: 0 0.4px 18.3px 0;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.contractor-payments .fabricator {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments .frame-203 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.contractor-payments .vaadinhome {
+  margin-bottom: 12px;
+  width: 42px;
+  height: 42px;
+}
+.contractor-payments .others {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments .frame-193 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.contractor-payments .frame-24 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments .frame-23 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments .frame-36 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments {
+  background: var(--background-black, #0F0F10);
+  display: flex;
+  flex-direction: column;
+  padding: 15.4px 25px 40px 25px;
+  box-sizing: border-box;
+}
+.frameParent {
+  flex: 1;
+  
+  position: relative;
+  border-radius: 16px;
+  background-color: rgba(255, 204, 128, 0.1);
+  border: 0.5px solid #ffcc80;
+  box-sizing: border-box;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  font-family: Outfit;
+  }
+
+  .iconsmallfillcheck {
+    width: 100%;
+    position: absolute;
+    /*margin: 0 !important;*/
+    top: 8px;
+    height: 25px;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-left: 113px;
+    
+    }
+
+@media(min-width:320px) and (max-width:767px){
+  .VfWAy{
+    height: 0;
+  }
+  .dZrCeg{
+    height: 0;
+  }
+  .contractor-payments .frame-15{
+    margin: 0;
+  }
+  .contractor-payments .pexels-goldcircuits-24252322{
+    width: 100%;
+    right: 0;
+  }
+  .contractor-payments .today_work_grid{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 20px;
+  }
+}
+

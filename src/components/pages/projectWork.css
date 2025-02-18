@@ -1,0 +1,363 @@
+.project-work .pexels-goldcircuits-24252322 {
+  opacity: 0.2;
+  background: url('../../../assets/images/PexelsGoldcircuits24252321.jpeg');
+  position: absolute;
+  top: -5px;
+  right: -83px;
+  width: 541px;
+  height: 920px;
+}
+.project-work .line-1 {
+  margin-bottom: 6px;
+  width: 28px;
+  height: 0px;
+}
+.project-work .line-2 {
+  width: 28px;
+  height: 0px;
+}
+.project-work .icon-large-outline-hamburger {
+  margin: 6.3px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28px;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.project-work .vector-8 {
+  width: 14.4px;
+  height: 19.2px;
+}
+.project-work .icon-large-outline-notification {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+.project-work .frame-15 {
+  position: relative;
+  margin: 0 4.8px 38.4px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - 4.8px);
+  box-sizing: border-box;
+}
+.project-work .project-work-1 {
+  margin-bottom: 4px;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.project-work .browse-payment-details-by-category-and-click-to-view {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-3-regular-font-weight, 400);
+  font-size: var(--body-body-3-regular-font-size, 12px);
+  line-height: var(--body-body-3-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.project-work .frame-2 {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.project-work .vector {
+  width: 30px;
+  height: 19.1px;
+}
+.project-work .cbiceiling-fair-semiflush {
+  margin: 0 0 23px 1.1px;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.project-work .false-ceiling {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.project-work .frame-20 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.project-work .vector-9 {
+  width: 29.4px;
+  height: 25.2px;
+}
+.project-work .icon-small-outline-electrician {
+  margin-bottom: 20.4px;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.project-work .electrician {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.project-work .frame-191 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.project-work .frame-21 {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.project-work .vector-1 {
+  width: 35.1px;
+  height: 33.6px;
+}
+.project-work .mapplumber {
+  margin: 0 0.3px 16.2px 0;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.project-work .plumber {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.project-work .frame-201 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.project-work .vector-2 {
+  width: 29.4px;
+  height: 29.4px;
+}
+.project-work .makipaint {
+  margin: 0 0 18.3px 0.4px;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.project-work .painter {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.project-work .frame-19 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.project-work .frame-22 {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.project-work .group {
+  width: 28px;
+  height: 28px;
+}
+.project-work .icon-park-outlinefloor-tile {
+  margin: 0 0.5px 19px 0;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.project-work .tile-worker {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.project-work .frame-202 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.project-work .vector-10 {
+  width: 29.3px;
+  height: 34.7px;
+}
+.project-work .icon-small-outline-carpenter {
+  margin: 0 2px 16.2px 0;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.project-work .carpenter {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.project-work .frame-192 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.project-work .frame-231 {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.project-work .vector-5 {
+  width: 29.4px;
+  height: 29.4px;
+}
+.project-work .fa-6-solidhammer {
+  margin: 0 0.4px 18.3px 0;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.project-work .fabricator {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.project-work .frame-203 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.project-work .vaadinhome {
+  margin-bottom: 12px;
+  width: 42px;
+  height: 42px;
+}
+.project-work .others {
+  overflow-wrap: break-word;
+  font-family: var(--title-medium-font-family, 'Outfit');
+  font-weight: var(--title-medium-font-weight, 500);
+  font-size: var(--title-medium-font-size, 14px);
+  line-height: var(--title-medium-line-height, 1.571);
+  text-transform: var(--title-medium-text-transform, uppercase);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.project-work .frame-193 {
+  border-radius: 16px;
+  background: var(--background-hgradient-small-card, linear-gradient(90deg, #232324, #19191A));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+}
+.project-work .frame-24 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.project-work .frame-23 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.project-work .frame-36 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+.project-work {
+  background: var(--background-black, #0F0F10);
+  display: flex;
+  flex-direction: column;
+  padding: 15.4px 25px 40px 25px;
+  box-sizing: border-box;
+}

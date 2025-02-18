@@ -1,0 +1,41 @@
+.wrapper {
+    margin: 0 auto;
+    position: relative;
+    width: 920px;
+    z-index: 1;
+}
+.startprojectmn .wrapper {
+    width: 1028px;
+}
+.padding-less {
+    padding: 25px 0;
+}
+.startprojectmn input.gform_button.button {
+    background: #0c2d83 !important;
+    border-radius: 5px !important;
+}
+.startprojectmn .text-left.dtext-right {
+    text-align: right !important;
+}
+.startprojectmn #content .gform_wrapper, .startprojectmn #content .entry-title {
+    max-width: 913px;
+}
+#content .gform_wrapper .gform_footer input[type="submit"] {
+    color: white;
+    background: #407BB8;
+    border: none;
+    padding: 13px;
+    width: 200px;
+}
+#content .gform_wrapper .gform_button {
+    cursor: pointer;
+}
+#content .gform_wrapper input {
+    border-radius: 5px;
+    height: 40px;
+    padding: 6px;
+}
+.startprojectmn input.gform_button.button {
+    background: #0c2d83 !important;
+    border-radius: 5px !important;
+}

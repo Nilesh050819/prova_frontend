@@ -1,0 +1,513 @@
+.contractor-payments-details .pexels-enginakyurt-14878091 {
+  opacity: 0.2;
+  background: url('../../../assets/images/PexelsEnginakyurt14878091.jpeg') 50% / cover no-repeat;
+  position: relative;
+  width: 589px;
+  height: 393px;
+}
+.contractor-payments-details .line-1 {
+  margin-bottom: 6px;
+  width: 28px;
+  height: 0px;
+}
+.contractor-payments-details .line-2 {
+  width: 28px;
+  height: 0px;
+}
+.contractor-payments-details .icon-large-outline-hamburger {
+  margin: 6.3px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28px;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.contractor-payments-details .vector-54 {
+  width: 14.4px;
+  height: 19.2px;
+}
+.contractor-payments-details .icon-large-outline-notification {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+.contractor-payments-details .frame-15 {
+  position: absolute;
+  left: 25px;
+  top: 42.4px;
+  right: 29.8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.contractor-payments-details .sukhdev-chaudhary {
+  margin-bottom: 8px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--title-bold-font-family, 'Outfit');
+  font-weight: var(--title-bold-font-weight, 700);
+  font-size: var(--title-bold-font-size, 14px);
+  line-height: var(--title-bold-line-height, 1.571);
+  text-transform: var(--title-bold-text-transform, uppercase);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.contractor-payments-details .container {
+  overflow-wrap: break-word;
+  font-family: var(--h-1-medium-font-family, 'Outfit');
+  font-weight: var(--h-1-medium-font-weight, 500);
+  font-size: var(--h-1-medium-font-size, 28px);
+  line-height: var(--h-1-medium-line-height, 1.5);
+  color: var(--text-primary-orange, #FFCC80);
+}
+.contractor-payments-details .has-been-paid-so-far {
+  margin: 0 5.9px;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-2-regular-font-weight, 400);
+  font-size: var(--body-body-2-regular-font-size, 14px);
+  line-height: var(--body-body-2-regular-line-height, 1.571);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.contractor-payments-details .frame-41 {
+  margin: 0 10.7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 21.5px);
+  box-sizing: border-box;
+}
+.contractor-payments-details .frame-26 {
+  position: absolute;
+  left: 50%;
+  top: 104px;
+  translate: -50% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.contractor-payments-details .rectangle-6 {
+  border-radius: 4px;
+  background: var(--components-background-black, #3C3C3F);
+  margin: 0 0 24px 3px;
+  align-self: center;
+  width: 40px;
+  height: 4px;
+}
+.contractor-payments-details .vector-55 {
+  width: 13.7px;
+  height: 13.7px;
+}
+.contractor-payments-details .icon-small-outline-search {
+  margin: 4px 0 4.3px 0;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+}
+.contractor-payments-details .prova-id {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-2-regular-font-weight, 400);
+  font-size: var(--body-body-2-regular-font-size, 14px);
+  line-height: var(--body-body-2-regular-line-height, 1.571);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.contractor-payments-details .input {
+  border-radius: 40px;
+  border: 1px solid var(--components-stroke-gray-1, #5B5B5D);
+  background: var(--components-background-black, #3C3C3F);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 9px 0 9px 18px;
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.contractor-payments-details .input-field {
+  margin-bottom: 26px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments-details .all-payments {
+  margin: 0 1px;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-2-medium-font-weight, 500);
+  font-size: var(--body-body-2-medium-font-size, 14px);
+  line-height: var(--body-body-2-medium-line-height, 1.571);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.contractor-payments-details .group-9 {
+  border-radius: 40px 40px 0 0;
+  background: linear-gradient(180deg, #232324, #19191A);
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 26px 0 24px;
+  height: 508px;
+  box-sizing: border-box;
+}
+.contractor-payments-details .vscode-iconsfile-type-pdf-2 {
+  margin: 2.5px 8px 2.5px 0;
+  width: 32px;
+  height: 32px;
+}
+.contractor-payments-details .instalment-number {
+  margin: 0 11.5px 4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments-details .st-june-2024-at-900-am {
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.contractor-payments-details .frame-27 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.contractor-payments-details .frame-28 {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.contractor-payments-details .container-1 {
+  margin-bottom: 13px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-1-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-1-medium-font-weight, 500);
+  font-size: var(--body-body-1-medium-font-size, 16px);
+  line-height: var(--body-body-1-medium-line-height, 1.5);
+  color: #FFFFFF;
+}
+.contractor-payments-details .frame-35 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments-details .line-3 {
+  background: #3C3C3F;
+  margin-bottom: 15px;
+  width: 325px;
+  height: 0px;
+}
+.contractor-payments-details .vscode-iconsfile-type-pdf-21 {
+  margin: 2.5px 8px 2.5px 0;
+  width: 32px;
+  height: 32px;
+}
+.contractor-payments-details .instalment-number-1 {
+  margin: 0 11.5px 4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments-details .st-june-2024-at-900-am-1 {
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.contractor-payments-details .frame-271 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.contractor-payments-details .frame-281 {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.contractor-payments-details .container-2 {
+  margin-bottom: 13px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-1-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-1-medium-font-weight, 500);
+  font-size: var(--body-body-1-medium-font-size, 16px);
+  line-height: var(--body-body-1-medium-line-height, 1.5);
+  color: #FFFFFF;
+}
+.contractor-payments-details .frame-36 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments-details .line-4 {
+  background: #3C3C3F;
+  margin-bottom: 15px;
+  width: 325px;
+  height: 0px;
+}
+.contractor-payments-details .vscode-iconsfile-type-pdf-22 {
+  margin: 2.5px 8px 2.5px 0;
+  width: 32px;
+  height: 32px;
+}
+.contractor-payments-details .instalment-number-2 {
+  margin: 0 11.5px 4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments-details .st-june-2024-at-900-am-2 {
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.contractor-payments-details .frame-272 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.contractor-payments-details .frame-282 {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.contractor-payments-details .container-3 {
+  margin-bottom: 13px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-1-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-1-medium-font-weight, 500);
+  font-size: var(--body-body-1-medium-font-size, 16px);
+  line-height: var(--body-body-1-medium-line-height, 1.5);
+  color: #FFFFFF;
+}
+.contractor-payments-details .frame-37 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments-details .line-5 {
+  background: #3C3C3F;
+  margin-bottom: 15px;
+  width: 325px;
+  height: 0px;
+}
+.contractor-payments-details .vscode-iconsfile-type-pdf-24 {
+  margin: 2.5px 8px 2.5px 0;
+  width: 32px;
+  height: 32px;
+}
+.contractor-payments-details .instalment-number-4 {
+  margin: 0 11.5px 4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments-details .st-june-2024-at-900-am-4 {
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.contractor-payments-details .frame-274 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.contractor-payments-details .frame-284 {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.contractor-payments-details .container-5 {
+  margin-bottom: 13px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-1-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-1-medium-font-weight, 500);
+  font-size: var(--body-body-1-medium-font-size, 16px);
+  line-height: var(--body-body-1-medium-line-height, 1.5);
+  color: #FFFFFF;
+}
+.contractor-payments-details .frame-39 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments-details .line-6 {
+  background: #3C3C3F;
+  margin-bottom: 15px;
+  width: 325px;
+  height: 0px;
+}
+.contractor-payments-details .vscode-iconsfile-type-pdf-25 {
+  margin: 2.5px 8px 2.5px 0;
+  width: 32px;
+  height: 32px;
+}
+.contractor-payments-details .instalment-number-5 {
+  margin: 0 11.5px 4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments-details .st-june-2024-at-900-am-5 {
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.contractor-payments-details .frame-275 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.contractor-payments-details .frame-285 {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.contractor-payments-details .container-6 {
+  margin-bottom: 13px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-1-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-1-medium-font-weight, 500);
+  font-size: var(--body-body-1-medium-font-size, 16px);
+  line-height: var(--body-body-1-medium-line-height, 1.5);
+  color: #FFFFFF;
+}
+.contractor-payments-details .frame-40 {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments-details .line-7 {
+  background: #3C3C3F;
+  margin-bottom: 15px;
+  width: 325px;
+  height: 0px;
+}
+.contractor-payments-details .vscode-iconsfile-type-pdf-23 {
+  margin: 2.5px 8px 2.5px 0;
+  width: 32px;
+  height: 32px;
+}
+.contractor-payments-details .instalment-number-3 {
+  margin: 0 11.5px 4px 0;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.contractor-payments-details .st-june-2024-at-900-am-3 {
+  overflow-wrap: break-word;
+  font-family: var(--caption-regular-font-family, 'Outfit');
+  font-weight: var(--caption-regular-font-weight, 400);
+  font-size: var(--caption-regular-font-size, 10px);
+  line-height: var(--caption-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.contractor-payments-details .frame-273 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+.contractor-payments-details .frame-283 {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.contractor-payments-details .container-4 {
+  margin-bottom: 13px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-1-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-1-medium-font-weight, 500);
+  font-size: var(--body-body-1-medium-font-size, 16px);
+  line-height: var(--body-body-1-medium-line-height, 1.5);
+  color: #FFFFFF;
+}
+.contractor-payments-details .frame-38 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contractor-payments-details .frame-30 {
+  position: absolute;
+  left: 25px;
+  right: 25px;
+  bottom: -22px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.contractor-payments-details {
+  background: var(--background-black, #0F0F10);
+  display: flex;
+  box-sizing: border-box;
+}

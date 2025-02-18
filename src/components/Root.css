@@ -1,0 +1,24 @@
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 8.6px;
+}
+.iconlargeoutlinenotificatio {
+  height: 24px;
+  width: 24px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.root {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 40px 25px 24px;
+  gap: 20px;
+  z-index: 1;
+}

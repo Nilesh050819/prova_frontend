@@ -1,0 +1,636 @@
+.site-updates-category-images .pexels-goldcircuits-24252321 {
+  opacity: 0.2;
+  background: url('../../../assets/images/PexelsGoldcircuits24252321.jpeg') 50% / cover no-repeat;
+  position: absolute;
+  top: 0px;
+  right: -83px;
+  width: 541px;
+  height: 812px;
+}
+.site-updates-category-images .line-1 {
+  margin-bottom: 6px;
+  width: 28px;
+  height: 0px;
+}
+.site-updates-category-images .line-2 {
+  width: 28px;
+  height: 0px;
+}
+.site-updates-category-images .icon-large-outline-hamburger {
+  margin: 6.3px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28px;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.site-updates-category-images .icon-large-outline-new-notification {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+.site-updates-category-images .frame-15 {
+  /*margin: 0 3.5px 38.4px 0; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - 3.5px);
+  box-sizing: border-box;
+}
+.site-updates-category-images .kitchen {
+  margin-bottom: 4px;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.site-updates-category-images .access-all-images-and-videos {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-3-regular-font-weight, 400);
+  font-size: var(--body-body-3-regular-font-size, 12px);
+  line-height: var(--body-body-3-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.site-updates-category-images .frame-40 {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.site-updates-category-images .login {
+  margin-right: 12.4px;
+  overflow-wrap: break-word;
+  font-family: var(--button-small-font-family, 'Outfit');
+  font-weight: var(--button-small-font-weight, 500);
+  font-size: var(--button-small-font-size, 12px);
+  line-height: var(--button-small-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.site-updates-category-images .vector-1 {
+  width: 9.3px;
+  height: 5.5px;
+}
+.site-updates-category-images .icon-large-outline-chevron-down {
+  margin: 6px 0 6.5px 0;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+}
+.site-updates-category-images .button {
+  border-radius: 8px;
+  border: 1px solid var(--components-background-orange, #FFCC80);
+  margin-top: 26px;
+  display: flex;
+  flex-direction: row;
+  padding: 6px 0 6px 18.1px;
+  width: 95px;
+  box-sizing: border-box;
+}
+.site-updates-category-images .frame-41 {
+  margin: 0 0.5px 40px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - 0.5px);
+  box-sizing: border-box;
+}
+.site-updates-category-images .rectangle-1 {
+  border-radius: 16px;
+  background: linear-gradient(180.11deg, rgba(15, 15, 16, 0) 56.6%, #0F0F10 100%);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+}
+.site-updates-category-images .vector-2 {
+  width: 19px;
+  height: 19px;
+}
+.site-updates-category-images .icon-large-filled-play {
+  position: relative;
+  margin-bottom: 155.5px;
+  display: flex;
+  align-self: flex-start;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+.site-updates-category-images .th-june-2024 {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.site-updates-category-images .pm {
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: 'Outfit';
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-category-images .frame-14 {
+  position: relative;
+  margin: 0 1.5px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.site-updates-category-images .group-8 {
+  border-radius: 16px;
+  background: url('../../../assets/images/UnsplashoCw5EvbWyI.jpeg') 50% / cover no-repeat;
+  position: relative;
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 10.5px 0 12px 10.5px;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+  box-sizing: border-box;
+}
+.site-updates-category-images .rectangle-11 {
+  border-radius: 16px;
+  background: linear-gradient(180.11deg, rgba(15, 15, 16, 0) 56.6%, #0F0F10 100%);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0.5px;
+  bottom: 0px;
+  height: 100%;
+}
+.site-updates-category-images .th-june-20241 {
+  position: relative;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.site-updates-category-images .pm-1 {
+  position: relative;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: 'Outfit';
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-category-images .container {
+  border-radius: 16px;
+  background: url('../../../assets/images/Unsplash3Heghi4B4Gg.jpeg') 50% / cover no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 12px 12px;
+  flex-grow: 1;
+  flex-basis: 151px;
+  box-sizing: border-box;
+  height: 234px;
+}
+.site-updates-category-images .frame-27 {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.site-updates-category-images .rectangle-12 {
+  border-radius: 16px;
+  background: linear-gradient(180.11deg, rgba(15, 15, 16, 0) 56.6%, #0F0F10 100%);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+}
+.site-updates-category-images .th-june-20242 {
+  position: relative;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.site-updates-category-images .pm-2 {
+  position: relative;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: 'Outfit';
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-category-images .group-11 {
+  border-radius: 16px;
+  background: url('../../../assets/images/Unsplashcc0Gg3BegjE.jpeg') 50% / cover no-repeat;
+  position: relative;
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 12px 12px;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+  box-sizing: border-box;
+}
+.site-updates-category-images .rectangle-13 {
+  border-radius: 16px;
+  background: linear-gradient(180.11deg, rgba(15, 15, 16, 0) 56.6%, #0F0F10 100%);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+}
+.site-updates-category-images .vector-3 {
+  width: 19px;
+  height: 19px;
+}
+.site-updates-category-images .icon-large-filled-play-1 {
+  position: relative;
+  margin-bottom: 155.5px;
+  display: flex;
+  align-self: flex-start;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+.site-updates-category-images .th-june-20243 {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.site-updates-category-images .pm-3 {
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: 'Outfit';
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-category-images .frame-141 {
+  position: relative;
+  margin: 0 1px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.site-updates-category-images .group-81 {
+  border-radius: 16px;
+  background: url('../../../assets/images/UnsplashIh7Wpsjwomc.jpeg') 50% / cover no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10.5px 0 12px 11px;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+  box-sizing: border-box;
+}
+.site-updates-category-images .frame-291 {
+  margin: 0 0.5px 24px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - 0.5px);
+  box-sizing: border-box;
+}
+.site-updates-category-images .rectangle-14 {
+  border-radius: 16px;
+  background: linear-gradient(180.11deg, rgba(15, 15, 16, 0) 56.6%, #0F0F10 100%);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+}
+.site-updates-category-images .vector-4 {
+  width: 19px;
+  height: 19px;
+}
+.site-updates-category-images .icon-large-filled-play-2 {
+  position: relative;
+  margin-bottom: 155.5px;
+  display: flex;
+  align-self: flex-start;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+.site-updates-category-images .th-june-20244 {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.site-updates-category-images .pm-4 {
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: 'Outfit';
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-category-images .frame-142 {
+  position: relative;
+  margin: 0 1.5px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.site-updates-category-images .group-111 {
+  border-radius: 16px;
+  background: url('../../../assets/images/UnsplashIh7Wpsjwomc.jpeg') 50% / cover no-repeat;
+  position: relative;
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 10.5px 0 12px 10.5px;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+  box-sizing: border-box;
+}
+.site-updates-category-images .rectangle-15 {
+  border-radius: 16px;
+  background: linear-gradient(180.11deg, rgba(15, 15, 16, 0) 56.6%, #0F0F10 100%);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: 100%;
+}
+.site-updates-category-images .vector-5 {
+  width: 19px;
+  height: 19px;
+}
+.site-updates-category-images .icon-large-filled-play-3 {
+  position: relative;
+  margin-bottom: 155.5px;
+  display: flex;
+  align-self: flex-start;
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+}
+.site-updates-category-images .th-june-20245 {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.site-updates-category-images .pm-5 {
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: 'Outfit';
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-category-images .frame-143 {
+  position: relative;
+  margin: 0 1px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.site-updates-category-images .group-82 {
+  border-radius: 16px;
+  background: url('../../../assets/images/UnsplashIh7Wpsjwomc.jpeg') 50% / cover no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10.5px 0 12px 11px;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+  box-sizing: border-box;
+}
+.site-updates-category-images .frame-311 {
+  margin-right: 0.5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: calc(100% - 0.5px);
+  box-sizing: border-box;
+}
+.site-updates-category-images .frame-29 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.site-updates-category-images .frame-31 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+.site-updates-category-images .container-1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.site-updates-category-images .fill {
+  width: 26.1px;
+  height: 26.1px;
+}
+.site-updates-category-images .icon-large-outline-whatsapp {
+  margin: 6.8px 0 7.1px 0;
+  display: flex;
+  width: 42px;
+  height: 42px;
+  box-sizing: border-box;
+}
+.site-updates-category-images .connect-with-prova-interior-design {
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--body-body-2-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-2-medium-font-weight, 500);
+  font-size: var(--body-body-2-medium-font-size, 14px);
+  line-height: var(--body-body-2-medium-line-height, 1.571);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.site-updates-category-images .any-doubts-feel-free-to-reach-out-to-us-directly {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-3-regular-font-weight, 400);
+  font-size: var(--body-body-3-regular-font-size, 12px);
+  line-height: var(--body-body-3-regular-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-category-images .frame-73 {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.site-updates-category-images .frame-72 {
+  box-shadow: 10px -4px 10px 4px rgba(0, 0, 0, 0.05);
+  background: var(--background-vgradient-bottom-sheet, linear-gradient(180deg, #232324, #19191A));
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 17px 0 17px 33.6px;
+  box-sizing: border-box;
+  position: fixed;
+}
+.site-updates-category-images {
+  background: #0F0F10;
+  display: flex;
+  padding: 15.4px 24.5px 0 25px;
+  box-sizing: border-box;
+}
+
+.frame {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+.frame .no-data-rafiki {
+  height: 200px;
+  position: relative;
+  width: 200px;
+}
+
+.frame .div {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  width: 100%;
+}
+
+.frame .text-wrapper {
+  align-self: stretch;
+  color: var(--textprimarywhite);
+  font-family: var(--body-body-1-medium-font-family);
+  font-size: var(--body-body-1-medium-font-size);
+  font-style: var(--body-body-1-medium-font-style);
+  font-weight: var(--body-body-1-medium-font-weight);
+  letter-spacing: var(--body-body-1-medium-letter-spacing);
+  line-height: var(--body-body-1-medium-line-height);
+  margin-top: -1.00px;
+  position: relative;
+  text-align: center;
+}
+
+.frame .p {
+  align-self: stretch;
+  color: var(--textprimarygray-1-disabled);
+  font-family: var(--body-body-3-regular-font-family);
+  font-size: var(--body-body-3-regular-font-size);
+  font-style: var(--body-body-3-regular-font-style);
+  font-weight: var(--body-body-3-regular-font-weight);
+  letter-spacing: var(--body-body-3-regular-letter-spacing);
+  line-height: var(--body-body-3-regular-line-height);
+  position: relative;
+  text-align: center;
+}
+.site-updates-category-images .grid_div{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 24px;
+  width: 100%;
+}
+.video_popup_div{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.close_vd_btn{
+  position: absolute;
+    right: 0;
+    top: -2px;
+    display: block;
+}
+
+/* Ensure proper z-index for the picker */
+
+.rdrDateRangePickerWrapper {
+  width: 320px !important;
+}
+.parent-container {
+  overflow: visible !important;
+}
+
+.parent-container {
+  overflow: visible !important;
+  z-index: 999;
+}
+
+
+.rdrCalendarWrapper {
+  width: 100% !important;
+}
+
+/* Custom CSS to ensure proper visibility */
+.date-range-picker__calendar {
+  display: block !important;
+  z-index: 9999 !important;
+}
+
+@media (max-width: 768px) {
+  .date-range-picker-container {
+    /* Adjust styles here */
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .date-range-picker-container {
+    display: block; /* Ensure it's not hidden */
+    width: 100%; /* Make sure it takes up the full width */
+  }
+}

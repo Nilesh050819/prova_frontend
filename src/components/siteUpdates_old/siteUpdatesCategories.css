@@ -1,0 +1,273 @@
+.site-updates-categries .pexels-goldcircuits-24252321 {
+  opacity: 0.2;
+  background: url('../../../assets/images/PexelsGoldcircuits24252321.jpeg') 50% / cover no-repeat;
+  position: absolute;
+  top: 0px;
+  right: -83px;
+  width: 541px;
+  height: 812px;
+}
+.site-updates-categries .line-1 {
+  margin-bottom: 6px;
+  width: 28px;
+  height: 0px;
+}
+.site-updates-categries .line-2 {
+  width: 28px;
+  height: 0px;
+}
+.site-updates-categries .icon-large-outline-hamburger {
+  margin: 8.7px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 28px;
+  height: fit-content;
+  box-sizing: border-box;
+}
+.site-updates-categries .icon-large-outline-new-notification {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.site-updates-categries .frame-15 {
+  position: relative;
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.site-updates-categries .site-updates {
+  margin-bottom: 4px;
+  display: inline-block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  font-family: var(--h-2-medium-font-family, 'Outfit');
+  font-weight: var(--h-2-medium-font-weight, 500);
+  font-size: var(--h-2-medium-font-size, 24px);
+  line-height: var(--h-2-medium-line-height, 1.5);
+  color: var(--text-primary-white, #FFFFFF);
+}
+.site-updates-categries .explore-site-updates-based-on-categories {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-regular-font-family, 'Outfit');
+  font-weight: var(--body-body-3-regular-font-weight, 400);
+  font-size: var(--body-body-3-regular-font-size, 12px);
+  line-height: var(--body-body-3-regular-line-height, 1.5);
+  color: var(--text-primary-gray-2-subtitle, #B7B7B9);
+}
+.site-updates-categries .frame-26 {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+.site-updates-categries .hall-room {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-categries .frame-13 {
+  border-radius: 0 16px 0 8px;
+  background: var(--components-background-white, #FFFFFF);
+  display: flex;
+  padding: 8px 12.9px 8px 12.4px;
+  box-sizing: border-box;
+  height:30px;
+  float:right !important;
+}
+.site-updates-categries .group-8 {
+  border-radius: 16px;
+  background: url('../../../assets/images/UnsplashIh7Wpsjwomc.jpeg') 50% / cover no-repeat;
+  position: relative;
+  margin-right: 24px;
+  
+  padding: 0 0px;
+  height: 230px;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+  box-sizing: border-box;
+}
+.site-updates-categries .kitchen {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-categries .frame-131 {
+  border-radius: 0 16px 0 8px;
+  background: var(--components-background-white, #FFFFFF);
+  display: flex;
+  padding: 8px 19.7px 8px 19.4px;
+  box-sizing: border-box;
+}
+.site-updates-categries .group-10 {
+  border-radius: 16px;
+  background: url('../../../assets/images/UnsplashhYb7Kbu4X7E.jpeg') 50% / cover no-repeat;
+  position: relative;
+  
+  padding: 0.3px 0.6px 0 0.6px;
+  height: 230px;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+  box-sizing: border-box;
+}
+.site-updates-categries .frame-27 {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.site-updates-categries .master-bedroom {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-categries .frame-132 {
+  border-radius: 0 16px 0 8px;
+  background: var(--components-background-white, #FFFFFF);
+  display: flex;
+  padding: 8px 8px 8px 8.1px;
+  box-sizing: border-box;
+}
+.site-updates-categries .group-81 {
+  border-radius: 16px;
+  background: url('../../../assets/images/UnsplashRuvW1Kgd9A4.jpeg') 50% / cover no-repeat;
+  position: relative;
+  margin: 0.2px 24px 0.2px 0;
+  
+  height: 230px;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+  box-sizing: border-box;
+}
+.site-updates-categries .outdoor-patio {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-categries .frame-133 {
+  border-radius: 0 16px 0 8px;
+  background: var(--components-background-white, #FFFFFF);
+  display: flex;
+  padding: 8px 8px 8px 8.9px;
+  box-sizing: border-box;
+}
+.site-updates-categries .group-101 {
+  border-radius: 16px;
+  background: url('../../../assets/images/Unsplashyqo3ByB6NxQ.jpeg') 50% / cover no-repeat;
+  position: relative;
+  
+  padding: 0 1.4px;
+  height: 230.4px;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+  box-sizing: border-box;
+}
+.site-updates-categries .frame-291 {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.site-updates-categries .washroom {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-categries .frame-134 {
+  border-radius: 0 16px 0 8px;
+  background: var(--components-background-white, #FFFFFF);
+  display: flex;
+  padding: 8px 8px 8px 8.8px;
+  box-sizing: border-box;
+}
+.site-updates-categries .group-82 {
+  border-radius: 16px;
+  background: url('../../../assets/images/Unsplash48MtwDzizqE.jpeg') 50% / cover no-repeat;
+  position: relative;
+  margin-right: 24px;
+ 
+  padding: 0.4px 0.1px 0 0.1px;
+  height: 230px;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+  box-sizing: border-box;
+}
+.site-updates-categries .study {
+  overflow-wrap: break-word;
+  font-family: var(--body-body-3-medium-font-family, 'Outfit');
+  font-weight: var(--body-body-3-medium-font-weight, 500);
+  font-size: var(--body-body-3-medium-font-size, 12px);
+  line-height: var(--body-body-3-medium-line-height, 1.5);
+  color: var(--text-primary-gray-1-disabled, #6F6F71);
+}
+.site-updates-categries .frame-135 {
+  border-radius: 0 16px 0 8px;
+  background: var(--components-background-white, #FFFFFF);
+  display: flex;
+  padding: 8px 8px 8px 8.4px;
+  box-sizing: border-box;
+}
+.site-updates-categries .group-102 {
+  border-radius: 16px;
+  background: url('../../../assets/images/UnsplashkGumNeyaSmy.jpeg') 50% / cover no-repeat;
+  position: relative;
+  display: flex;
+  padding: 0.4px 2px 0 2px;
+  height: 230px;
+  flex-grow: 1;
+  flex-basis: 150.5px;
+  box-sizing: border-box;
+}
+.site-updates-categries .frame-30 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+.site-updates-categries .frame-29 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.site-updates-categries .frame-31 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+.site-updates-categries {
+  background: #0F0F10;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 25px 0 25px;
+  box-sizing: border-box;
+}
