@@ -15,6 +15,7 @@ import Tab from 'react-bootstrap/Tab';
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useForm, useFormContext } from "react-hook-form";
 import Sidebar from '../sidebar';
+import toast from "react-hot-toast";
 
 //import "bootstrap-icons/font/bootstrap-icons.css";
 
@@ -26,19 +27,14 @@ import { format } from 'date-fns';
 
 //initMDB({ Input, Ripple });
 
-const Login = () => {
+const ResetPassword = () => {
   
   const { register, handleSubmit, formState: { errors } } = useForm({
     mode: "onChange",
     //tutorial,
   });
 
-
   const navigate = useNavigate();
-      const navigateHandler = (url) => {
-        navigate(url);
-        
-      }
   const [user, setUser] = useState({
       email:"",
       password:""
@@ -56,40 +52,51 @@ const Login = () => {
    const config = { headers: {'content-type': 'application/x-www-form-urlencoded'} }; 
 
 
-   const onSubmit =  async (data) => {
-       let api = `${BASE_URL}/api/logins/login/`;
-      await axios.post(api,data,config)
-        //axios.post("http://localhost:8080/api/tutorials/",[tutorial])
-        .then(res => {
-            if(res.data.user.id !=  '')
-            {
-              
-                //setLoginUser(res.data.user)
-                // history.push("/")
-                //alert("hi")
-               if(res.data.user.type === 'Admin')
-                  {
-                      localStorage.setItem("token",res.data.accessToken);
-                      localStorage.setItem("type",res.data.user.type);
-                      localStorage.setItem("user_name",res.data.user.username);
-                      localStorage.setItem("full_name",res.data.user.full_name);
-                      console.log(localStorage.getItem("token"))
-                      navigate("/admin/projectList");
-                  }else{
-                    navigate("/admin/Login");
-                  }
-                
-            }else{
-             // alert("invalid cred")
-             setErrMsg("Invalid credentials");
-            }
-            //navigate("/viewTutorial");
-        })
-      .catch(err => {
-           // alert("invalid cred")
-           setErrMsg("Invalid credentials");
-      });
-   }
+
+
+   const onSubmit =  async (formData) => {
+    //console.log(formData)
+                     if(formData.new_password == formData.confirm_password)
+                      {
+                        //formData.username = localStorage.getItem("user_name");
+                        console.log(formData);
+                             let api = `${BASE_URL}/api/user/adminResetPassword/`;
+                                         await axios.post(api,formData,config)
+                                           .then(res => {
+                                           
+                                               if(res)
+                                               {
+                                                if(res.data.code == '409')
+                                                {
+                                                  toast.error('Email ID not found');
+                                                }else{
+                                                  toast.success('Successfully Updated!');
+                                                }
+                                              //  navigate('/admin/login');
+                                               
+                                                   
+                                               }else{
+                                                // alert("invalid cred")
+                                                setErrMsg("Invalid ");
+                                               }
+                                               //navigate("/viewTutorial");
+                                           })
+                                         .catch(err => {
+                                               console.log(err)
+                                              setErrMsg("Error");
+                                         });
+    
+    
+    
+    
+                       
+                      
+                          
+                      }else{
+                       // alert("invalid cred")
+                       setErrMsg("Password not matched");
+                      }
+               }
 
 
   return (
@@ -115,10 +122,10 @@ const Login = () => {
 
         <div className="frame-2">
           <div className="frame-3">
-            <p className="p">Sign In to Your Account</p>
+            <p className="p">Reset Your Password</p>
 
             <p className="text-wrapper-3">
-              Enter your email and password to access your account
+              Enter and confirm your password here
             </p>
           </div>
 
@@ -147,32 +154,37 @@ const Login = () => {
                 <div className="admin-input-field">
                   <div className="input-wrapper">
                     <div className="input">
-                    <input className="icon-content" name="password" placeholder="Password" type="password"  {...register('password', { required: {
+                    <input className="icon-content" name="new_password" placeholder="Password" type="password"  {...register('new_password', { required: {
                               value: true,
                               message: 'Field is  required',
                             }, })} />
 
                      
                     </div>
-                    <span className="admin-err-msg text-danger"> {errors.password && errors.password.message} </span>
+                    <span className="admin-err-msg text-danger"> {errors.new_password && errors.new_password.message} </span>
                   </div>
                 </div>
+                <div className="admin-input-field">
+                  <div className="input-wrapper">
+                    <div className="input">
+                    <input className="icon-content" name="confirm_password" placeholder="Confirm Password" type="password"  {...register('confirm_password', { required: {
+                              value: true,
+                              message: 'Field is  required',
+                            }, })} />
+
+                     
+                    </div>
+                    <span className="admin-err-msg text-danger"> {errors.confirm_password && errors.confirm_password.message} </span>
+                  </div>
+                </div>            
+
               </div>
 
-              <div className="frame-6">
-                <div className="text-wrapper-4">
-                  Don’t remember the password?
-                </div>
-
-                <a href="javascript:void(0)" className="button" onClick={() => navigateHandler("/admin/resetPassword")}>
-                  
-                  <div className="text-wrapper-5">Reset Password</div>
-                </a>
-              </div>
+            
             </div>
 
             <button className="login-wrapper">
-              <div className="login">Sign In</div>
+              <div className="login">Submit</div>
             </button>
             <span className="admin-err-msg text-danger"> {errors.password && errors.password.message} {errMsg && errMsg}</span>
           </div>
@@ -188,4 +200,4 @@ const Login = () => {
   );
 
 }
-export default Login;
+export default ResetPassword;

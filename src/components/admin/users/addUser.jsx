@@ -20,7 +20,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import MuiTextField from "@mui/material/TextField";
 
 //import "./company.css"
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 import { useForm, useFormContext } from "react-hook-form";
 import Sidebar from '../sidebar';
 import { generateRandomString } from '../../utils/randomString';
@@ -36,9 +36,16 @@ const AddUser = () => {
   const [projectType, listProjectType] = useState([]);
   const [designation, listDesignation] = useState([]);
   const [categories, listCategories] = useState([]);
-  
+  const [isVisible, setIsVisible] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [users, setUsers] = useState([]);
   let page = useRef(1);
+
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+ // if(queryParams){
+    const paramUserId = queryParams.get('id'); 
+ // }
 
   const brand_id = localStorage.getItem('brand_id');
   let authToken = localStorage.getItem("token");
@@ -47,7 +54,14 @@ const AddUser = () => {
   
   const addUser = async (userArray) => {
     try {
-          let api = `${BASE_URL}/api/user/addUser`;
+      let api ='';
+      if(paramUserId > 0)
+      {
+        api = `${BASE_URL}/api/user/updateUser`;
+      }else{
+        api = `${BASE_URL}/api/user/addUser`;
+      }
+         
           
           const bodyObj = {
             data: userArray,
@@ -58,8 +72,13 @@ const AddUser = () => {
           console.log(result);
          
           if(result.data.status == 'success'){
-            toast.success('Successfully Submitted!');
-            navigate('../staffList');
+            if(paramUserId > 0)
+              {
+                  toast.success('Successfully Updated!');
+              }else{
+                  toast.success('Successfully Submitted!');
+              }
+           // navigate('../staffList');
           }else{
             toast.error(result.data.message);
           }
@@ -71,6 +90,46 @@ const AddUser = () => {
       
     }
   }
+   const fetchUserDetails = async () => {
+                    try {
+                            setLoading(true);
+                            let api = `${BASE_URL}/api/user/getUserDetails?p_user_id=${paramUserId}`;
+                         
+                            const headers = {
+                            }
+                            const result = await axios.get(api, config );
+                            const { data } = result?.data;
+                          //  setUsers(data);
+                          updateUserData({
+                            staff_name: data.full_name,
+                            mobile_no: data.mobile_no,
+                            email_id: data.email,
+                            designation: data.type,
+                            sec_mobile_no: data.sec_mobile_no,
+                            sec_email_id: data.sec_email_id,
+                            user_remarks: data.remarks,
+                            category: data.category_id,
+                          
+                          
+                          });
+                          setCredentials({
+                            userId: data.username,
+                            password: data.encode_password,
+                          })
+                          if(data.type == 'Contractor'){
+                            setIsVisible(true);
+                          }
+                          
+                           
+                           // console.log(data)
+                           
+                          
+                        } catch {
+                                
+                    } finally {
+                        setLoading(false);
+                    }
+                }
   const handleSubmit = (e) => {
     console.log(userForm)
     e.preventDefault();
@@ -78,7 +137,17 @@ const AddUser = () => {
     //console.log("Form submitted with data2:", formClientDataArray);
     //const combinedData = { ...formDataArray, ...formClientDataArray };
   console.log(userForm)
-    
+    if(paramUserId > 0)
+    {
+      userForm.p_user_id = paramUserId;
+      if (!userForm.staff_name?.trim()) {
+        toast.error('Please provide staff name.');
+        return;
+      }else if (!userForm.email_id?.trim()) {
+        toast.error('Please provide email id.');
+        return;
+      }
+    }else{
     if (!userForm.staff_name?.trim()) {
       toast.error('Please provide staff name.');
       return;
@@ -93,8 +162,8 @@ const AddUser = () => {
       toast.error('Please provide password.');
       return;
     }
-   
-    
+  }
+  
     addUser(userForm);
 };
   const fetchDesignation = async () => {
@@ -127,10 +196,19 @@ const AddUser = () => {
         setLoading(false);
     }
   }
-
+  const updateUserData = (updates) => {
+    setUserForm((prevData) => ({
+      ...prevData,
+      ...updates, // Merging multiple new values dynamically
+    }));
+  };
 useEffect(() => {
   fetchDesignation();
   fetchCategories();
+  if(paramUserId > 0){
+    fetchUserDetails();
+  }
+  
   
 }, []);
 
@@ -142,8 +220,22 @@ useEffect(() => {
   const handleShow = () => setShow(true);
 
   const handleChange = (e) => {
+    
+    setUserForm((values) => ({
+      ...userForm,
+      [e.target.name]: e.target.value,
+    }));
+    
+  }
+  const handleDesignationChange = (e) => {
     //console.log(e.target.value);
     //setNewProjectData(event.target.value);
+    if(e.target.value == 'Contractor'){
+      setIsVisible(!isVisible);
+    }else{
+      setIsVisible(false);
+    }
+
     setUserForm((values) => ({
       ...userForm,
       [e.target.name]: e.target.value,
@@ -157,7 +249,8 @@ useEffect(() => {
   const passwordRef = useRef(null);
 // Function to generate user ID and password
 const generateCredentials = () => {
-  const userId = `${userForm.staff_name}${Math.floor(1000 + Math.random() * 9000)}$`; // e.g., user_1234
+  var arr = userForm.staff_name.split(" ");
+  const userId = `${arr[0]}${Math.floor(1000 + Math.random() * 9000)}$`; // e.g., user_1234
   const password = generateRandomString(10) // e.g., Ab3kLmZyX9
   return { userId, password };
 };
@@ -186,6 +279,19 @@ const handleGenerate = () => {
   }
 };
 
+const handleUserTypeChange = (e1) => {
+  
+  const isSelected = e1.target.selected;
+  const value = e1.target.value;
+  console.log(value)
+  if(value == 'custom'){
+    setIsVisible(!isVisible);
+  }else{
+    setIsVisible(false);
+  }
+ 
+};
+
   return (
     <div style={{overflow:"auto",height:"calc(100vh - 72px)"}} >
      
@@ -206,19 +312,33 @@ const handleGenerate = () => {
         <div className="row">
             <div className="col-md-12">
               <div className="float-left" style={{ marginLeft: 15}}>
-                <h3>Add New Staff Details</h3>
+                <h3>{ paramUserId > 0 ? 
+                              <>Edit</>
+                              :
+                              <>Add New</>
+                            }    Staff Details</h3>
                 <p>   <Link
                             to="../staffList"
                             style={{ textDecoration: 'none' }}
-                        >Staff List</Link>/ Add Staff</p>
+                        >Staff List</Link> / { paramUserId > 0 ? 
+                          <>Edit</>
+                          :
+                          <>Add</>
+                        }    Staff</p>
                 </div>
 
           
           
                 <div className="float-right" style={{ width: 320,}}>
-                            <button type="submit" style={{ textDecoration: 'none',float: 'left'}} class="submit_btn" >Save</button>
+                            <button type="submit" style={{ textDecoration: 'none',float: 'left'}} class="submit_btn" >
+                            { paramUserId > 0 ? 
+                              <>Update</>
+                              :
+                              <>Save</>
+                            }   
+                            </button>
                          
-                           <button class="publish_btn_disabled" style={{ textDecoration: 'none',float: 'right'}} type="button">Publish</button>
+                         {/*  <button class="publish_btn_disabled" style={{ textDecoration: 'none',float: 'right'}} type="button">Publish</button> */}
                          
                 </div>
             </div>
@@ -241,12 +361,16 @@ const handleGenerate = () => {
                   id="outlined-basic"
                   placeholder="Staff Name"
                   label="Staff Name" name="staff_name"
+                  value={userForm.staff_name}
                   variant="outlined"  onChange={handleChange}
                   /* styles the input component */
                     inputProps={{
                       style: {
                         padding: '0px 14px',
                       },
+                  }}
+                  InputLabelProps={{
+                    shrink: true, // Ensures label moves up when value exists
                   }}
                 />
               
@@ -263,11 +387,15 @@ const handleGenerate = () => {
               placeholder="Mobile Number"
               label="Mobile Number" name="mobile_no"
               variant="outlined"  onChange={handleChange}
+              value={userForm.mobile_no}
               /* styles the input component */
                 inputProps={{
                   style: {
                     padding: '0px 14px',
                   },
+              }}
+              InputLabelProps={{
+                shrink: true, // Ensures label moves up when value exists
               }}
             />
            
@@ -284,11 +412,15 @@ const handleGenerate = () => {
             placeholder="Email ID"
             label="Email ID" name="email_id"
             variant="outlined"  onChange={handleChange}
+            value={userForm.email_id}
             /* styles the input component */
               inputProps={{
                 style: {
                   padding: '0px 14px',
                 },
+            }}
+            InputLabelProps={{
+              shrink: true, // Ensures label moves up when value exists
             }}
           />
         
@@ -304,7 +436,7 @@ const handleGenerate = () => {
                       value={userForm.designation ?? ''}
                       name="designation"
                       label={userForm.designation}
-                      onChange={handleChange} variant="outlined"
+                      onChange={handleDesignationChange} variant="outlined" 
                         /* styles the input component */
                         inputProps={{
                           style: {
@@ -324,7 +456,7 @@ const handleGenerate = () => {
                
               </div>
 
-
+              {isVisible &&
               <div className="col-md-4 mt-25">
                 <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">Category</InputLabel>
@@ -353,6 +485,7 @@ const handleGenerate = () => {
                   </FormControl>
                
               </div>
+            }
        
       
 
@@ -379,12 +512,16 @@ const handleGenerate = () => {
               id="outlined-basic"
               placeholder="Secondary Mobile No"
               label="Secondary Mobile No" name="sec_mobile_no"
+              value={userForm.sec_mobile_no}
               variant="outlined"  onChange={handleChange}
               /* styles the input component */
                 inputProps={{
                   style: {
                     padding: '0px 14px',
                   },
+              }}
+              InputLabelProps={{
+                shrink: true, // Ensures label moves up when value exists
               }}
             />
           
@@ -402,11 +539,15 @@ const handleGenerate = () => {
               placeholder="Secondary Email ID"
               label="Secondary Email ID" name="sec_email_id"
               variant="outlined"  onChange={handleChange}
+              value={userForm.sec_email_id}
               /* styles the input component */
                 inputProps={{
                   style: {
                     padding: '0px 14px',
                   },
+              }}
+              InputLabelProps={{
+                shrink: true, // Ensures label moves up when value exists
               }}
             />
           
@@ -423,11 +564,15 @@ const handleGenerate = () => {
                     placeholder="Remarks"
                     label="Remarks" name="user_remarks"
                     variant="outlined"  onChange={handleChange}
+                    value={userForm.user_remarks}
                     /* styles the input component */
                 inputProps={{
                   style: {
                     height: '45px',
                   },
+              }}
+              InputLabelProps={{
+                shrink: true, // Ensures label moves up when value exists
               }}
                   />
                 
@@ -468,7 +613,7 @@ const handleGenerate = () => {
               placeholder="Customer ID"
               label="Customer ID" name="username"
               variant="outlined"  onChange={handleChange} value={credentials.userId}
-              
+            
               /* styles the input component */
                 inputProps={{
                   style: {
@@ -477,6 +622,9 @@ const handleGenerate = () => {
                     
                   },
                   readOnly: true,
+              }}
+              InputLabelProps={{
+                shrink: true, // Ensures label moves up when value exists
               }}
             />
            
@@ -501,6 +649,9 @@ const handleGenerate = () => {
                     backgroundColor: '#adb5bd2e',
                   },
                   readOnly: true,
+              }}
+              InputLabelProps={{
+                shrink: true, // Ensures label moves up when value exists
               }}
             />
             

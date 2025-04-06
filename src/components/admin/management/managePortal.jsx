@@ -33,6 +33,7 @@ import { generateRandomString } from '../../utils/randomString';
 import { ManageProjectMaster } from './manageProjectMaster';
 import ProjectMaster from './projectMaster';
 import ManageUsers from './manageUsers';
+import AdminWork from './adminWork';
 
 
 //import "bootstrap-icons/font/bootstrap-icons.css";
@@ -67,6 +68,7 @@ const ManagePortal = () => {
   const [value, setValue] = React.useState(0);
   const [formProjectMgmArray, setFormProjectMgmArray] = useState([]);
   const [formUserMgmArray, setFormUserMgmArray] = useState([]);
+  const [adminWorkMgmArray, setAdminWorkMgmArray] = useState([]);
 
   const handleTabChange = (event, newValue) => {
     setValue(newValue);
@@ -90,6 +92,10 @@ const ManagePortal = () => {
 };
 const handleFormData2 = (data) => {
   setFormUserMgmArray(data);
+};
+
+const handleFormData3 = (data) => {
+  setAdminWorkMgmArray(data);
 };
   
 let authToken = localStorage.getItem("token");
@@ -143,7 +149,7 @@ const addManageMaster = async (manageMasterArray) => {
   const handleSubmit = (e) => {
       e.preventDefault();
       console.log("Form submitted with data:", formUserMgmArray);
-      const combinedData = { ...formProjectMgmArray, ...formUserMgmArray };
+      const combinedData = { ...formProjectMgmArray, ...formUserMgmArray, ...adminWorkMgmArray };
       console.log(combinedData)
       addManageMaster(combinedData);
 };
@@ -264,6 +270,19 @@ const addManageMaster = async (manageMasterArray) => {
                           }}
                       > 
                           <ManageUsers onUserMasterFormSubmit={handleFormData2} />
+                      </Tab> 
+
+                      <Tab eventKey="third" title="Admin Work" 
+                          sx={{
+                            fontSize: '16px',
+                            color: '#555',
+                            '&.Mui-selected': {
+                              color: '#1976d2',
+                              fontWeight: 'bold',
+                            },
+                          }}
+                      > 
+                          <AdminWork onAdminWorkFormSubmit={handleFormData3} />
                       </Tab> 
                       
                       </Tabs> 

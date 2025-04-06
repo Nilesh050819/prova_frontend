@@ -211,7 +211,7 @@ const Sidebar = () => {
             </NavCloseIcon>
             { localStorage.getItem("type") === 'Client' && ( 
               SideNavData.map((item, index) => (
-                  <Submenu item={item} key={index} />
+                  <Submenu item={item} key={index}  sidebar={sidebar} />
               ))
             )}
             { localStorage.getItem("type") === 'Supervisor' && ( 

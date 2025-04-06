@@ -105,6 +105,7 @@
   .todays-work-schedule {
     position: relative;
     line-height: 24px;
+   
   }
   .iconsmalloutlinecarpenter {
     width: 20px;
@@ -141,6 +142,7 @@
   .todays-work-schedule-parent {
     flex-direction: column;
     align-items: center;
+    
   }
   .iconsmalloutlineleft-arrow {
     width: 20px;
@@ -209,7 +211,7 @@
     gap: 8px;
     font-size: 12px;
     color: #b7b7b9;
-    margin-top: 10px;
+    /*margin-top: 10px; */
   }
   .frame-group,
   .group-parent {
@@ -337,7 +339,7 @@
     width: 100%;
     position: relative;
     background-color: #0f0f10;
-    height: 1193px;
+    height: 1800px;
     overflow: hidden;
     text-align: left;
     font-size: 18px;
@@ -484,7 +486,30 @@
       .home .frame-div{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        margin-right: 20px;
       }
       .home .button1, .home .frame-container{
         margin-left: 0;
+      }
+      .group-parent2 {
+        width: 100%;
+        overflow-x: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-start;
+        gap: 24px;
+        font-size: 12px;
+      }
+      .unsplashih7wpsjwomc-parent2 {
+        width: 275px;
+        position: relative;
+        height: 412px;
+        flex-shrink: 0;
+        border: 0.5px solid #ffcc80;
+        border-radius: 15px;
+      }
+      .unsplashih7wpsjwomc-icon2{
+        margin-left: 108px;
+        margin-top: 144px;
       }

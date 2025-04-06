@@ -75,6 +75,7 @@ const location = useLocation();
     const [value, setValue] = useState({});
     const [formDataArray, setFormDataArray] = useState([]);
     const [formClientDataArray, setFormClientDataArray] = useState([]);
+    const [isPublished, setIsPublished] = useState(0);
 
     const handleFormData = (data) => {
       setFormDataArray(data);
@@ -88,6 +89,25 @@ const location = useLocation();
   let authToken = localStorage.getItem("token");
   const config = { headers: { 'content-type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer ' + authToken } };
   
+
+  const fetchEditProjectDetails = async () => {
+                  try {
+                          setLoading(true);
+                          let api = `${BASE_URL}/api/project/getEditProjectDetails?p_id=${projectId}`;
+                       
+                          const headers = {
+                          }
+                          const result = await axios.get(api, config );
+                          const { data } = result?.data;
+                         // console.log(data)
+                         setIsPublished(data.is_publish);
+                        
+                      } catch {
+                              
+                  } finally {
+                      setLoading(false);
+                  }
+              }
 const updateProject = async (projectArray) => {
     try {
       const uniqueCode = localStorage.getItem("tokenId");;
@@ -138,6 +158,7 @@ const updateProject = async (projectArray) => {
       //console.log("Form submitted with data2:", formClientDataArray);
       const combinedData = { ...formDataArray, ...formClientDataArray };
     console.log(combinedData)
+    combinedData.p_id = projectId;
       
       if (!combinedData.project_name?.trim()) {
         toast.error('Please provide project name.');
@@ -170,6 +191,33 @@ const updateProject = async (projectArray) => {
       updateProject(combinedData);
   };
 
+  const triggerPublishSubmit = () => {
+   // setIsPublished(1);
+  //  formRef.current.requestSubmit(); // Programmatically submit the form
+          try {
+            setLoading(true);
+            let api = `${BASE_URL}/api/project/publishProject?p_id=${projectId}`;
+        
+            const headers = {
+            }
+            const result =  axios.post(api, config );
+            const { data } = result?.data;
+          // console.log(data)
+          navigate('../editProject?pId='+projectId);
+          
+        } catch {
+                
+        } finally {
+        setLoading(false);
+        }
+
+   
+  };
+
+  useEffect(() => {
+   
+    fetchEditProjectDetails();
+  }, []);
 
   return (
     <div ref={ref} sstyle={{ width: '100%', height: '100vh'}}>
@@ -197,13 +245,17 @@ const updateProject = async (projectArray) => {
                 </div>
 
           
-          
-                <div className="float-right" style={{ width: 320,}}>
-                            <button type="submit" style={{ textDecoration: 'none',float: 'left', marginLeft: '150px' }} class="publish_btn" >Update</button>
-                         
-                           
-                         
+                { isPublished == 1 ? 
+                 <div className="float-right" style={{ width: 320,}}>
+                    <button type="button" style={{ textDecoration: 'none',float: 'left', marginLeft: '150px' }} class="publish_btn_disabled" >Published</button>
                 </div>
+                  
+                  :
+                  <div className="float-right" style={{ width: 320,}}>
+                      <button type="submit"  style={{ textDecoration: 'none',float: 'left'}} class="publish_btn" >Update</button>
+                      <button class="publish_btn" style={{ textDecoration: 'none',float: 'right'}} type="button" onClick={triggerPublishSubmit} >Publish</button>
+                  </div>
+                  }    
             </div>
               </div>
               <div style={{ marginTop: 30}}>    

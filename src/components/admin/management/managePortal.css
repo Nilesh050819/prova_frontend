@@ -93,3 +93,133 @@
   text-align: left;
   display: inline-block;
   }
+
+  .admin_work .frame {
+    align-items: flex-start;
+    border: 1px solid;
+    border-color: var(--componentsstrokegray-2);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px;
+    position: relative;
+    width: 328px;
+  }
+  
+  .admin_work .frame .div {
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .admin_work .frame .terms-condition {
+    color: var(--textprimarygray-1-disabled);
+    flex: 1;
+    font-family: var(--title-medium-font-family);
+    font-size: var(--title-medium-font-size);
+    font-style: var(--title-medium-font-style);
+    font-weight: var(--title-medium-font-weight);
+    letter-spacing: var(--title-medium-letter-spacing);
+    line-height: var(--title-medium-line-height);
+    margin-top: -1.00px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .admin_work .frame .icon-small-outline {
+    height: 20px !important;
+    position: relative !important;
+    width: 20px !important;
+  }
+  
+  .admin_work .frame .div-2 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 16px;
+    position: relative;
+  }
+  
+  .admin_work .frame .vscode-icons-file {
+    height: 40px;
+    position: relative;
+    width: 40px;
+  }
+  
+  .admin_work  .frame .div-3 {
+    align-items: flex-start;
+    display: inline-flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+  }
+  
+  .admin_work  .frame .terms-condition-pdf {
+    color: var(--textprimaryblack);
+    font-family: var(--body-body-2-bold-font-family);
+    font-size: var(--body-body-2-bold-font-size);
+    font-style: var(--body-body-2-bold-font-style);
+    font-weight: var(--body-body-2-bold-font-weight);
+    letter-spacing: var(--body-body-2-bold-letter-spacing);
+    line-height: var(--body-body-2-bold-line-height);
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .admin_work  .frame .div-4 {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 8px;
+    position: relative;
+  }
+  
+  .admin_work .frame .text-wrapper {
+    color: var(--textprimarygray-2-subtitle);
+    font-family: var(--caption-regular-font-family);
+    font-size: var(--caption-regular-font-size);
+    font-style: var(--caption-regular-font-style);
+    font-weight: var(--caption-regular-font-weight);
+    letter-spacing: var(--caption-regular-letter-spacing);
+    line-height: var(--caption-regular-line-height);
+    margin-top: -1.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .admin_work  .frame .ellipse {
+    background-color: var(--textprimarygray-2-subtitle);
+    border-radius: 2px;
+    height: 4px;
+    position: relative;
+    width: 4px;
+  }
+
+ 
+  
+  .admin_work .icon-small-outline1  {
+    height: 25px;
+    left: 125px;
+    position: absolute;
+    top: -27px;
+    width: 25px;
+  }
+
+
+  .admin_work .dropdown-hover:hover>.dropdown-menu-hover {
+    display: block;
+  }
+  
+  .admin_work .dropdown-hover>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+  }

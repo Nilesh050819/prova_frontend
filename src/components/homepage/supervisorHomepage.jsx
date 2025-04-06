@@ -13,6 +13,10 @@ const SupervisorHomepage = () => {
   const [completedProjectType, setCompletedProjectType] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  const [configSettings, setConfigSettings] = useState({});
+        const [key, setKey] = useState("");
+  const [value, setValue] = useState("");
+
     const navigate = useNavigate();
     const navigateHandler = (url) => {
       navigate(url);
@@ -49,9 +53,38 @@ const SupervisorHomepage = () => {
           setLoading(false);
       }
   }
+
+  const getConfigSettings = async ($configKey) => {
+    try {
+            setLoading(true);
+            let api = `${BASE_URL}/api/supervisor/getConfigSettings?p_config_key=${$configKey}`;
+            const headers = {
+            }
+            const result = await axios.get(api, config );
+            const { data } = result?.data;
+         
+            setConfigSettings(prevSettings => ({
+              ...prevSettings,
+              [data.config_key]: data.config_value, // Dynamically adding key-value pair
+            }));
+             
+                 
+                 console.log(configSettings);
+         
+      } catch {
+        getConfigSettings([]);
+        
+    } finally {
+        setLoading(false);
+    }
+}
     useEffect(() => {
       fetchProjectType(0);
       fetchProjectType(1);
+      getConfigSettings('ongoing_residential_img');
+      getConfigSettings('ongoing_commercial_img');
+     getConfigSettings('completed_residential_img');
+      getConfigSettings('completed_commercial_img');
       
      
     }, []);
@@ -87,7 +120,14 @@ const SupervisorHomepage = () => {
                     <img
                       className="unsplashih7wpsjwomc-icon"
                       alt={`Project type: ${pt.project_type}`}
-                      src="/unsplashih7wpsjwomc@2x.png"
+                      
+                      src={
+                         pt.project_type ==  'Residential' 
+                        
+                         ? `${process.env.PUBLIC_URL}/images/${configSettings.ongoing_residential_img}`
+                          : `${process.env.PUBLIC_URL}/images/${configSettings.ongoing_commercial_img}`                  
+                        }
+
                     />
                     <div className="hall-room-wrapper">
                       <div className="hall-room">{pt.project_type}</div>
@@ -132,7 +172,15 @@ const SupervisorHomepage = () => {
                     <img
                       className="unsplashih7wpsjwomc-icon"
                       alt={`Project type: ${pt.project_type}`}
-                      src="/unsplashih7wpsjwomc@2x.png"
+                      
+                      src={
+                        pt.project_type ==  'Residential' 
+                       
+                        ? `${process.env.PUBLIC_URL}/images/${configSettings.completed_residential_img}`
+                         : `${process.env.PUBLIC_URL}/images/${configSettings.completed_commercial_img}`                  
+                       }
+                      
+
                     />
                     <div className="hall-room-wrapper">
                       <div className="hall-room">{pt.project_type}</div>

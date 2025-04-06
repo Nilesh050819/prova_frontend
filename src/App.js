@@ -45,6 +45,7 @@ import Projects from "./components/pages/projects.jsx";
 import ProjectWork from "./components/pages/projectWork.jsx";
 import ProjectDetails from "./components/pages/projectDetails.jsx";
 import TodayWorkAssigned from "./components/pages/todayWorkAssigned.jsx";
+import WorkAssignedDocuments from "./components/pages/workAssignedDocuments.jsx";
 import Notifications from "./components/pages/notifications.jsx";
 import ForgetPassword from "./components/pages/ForgetPassword.jsx";
 import ResetPassword from "./components/pages/ResetPassword.jsx";
@@ -59,6 +60,7 @@ import UserList from "./components/admin/users/userList.jsx";
 import AddUser from "./components/admin/users/addUser.jsx";
 import ManagePortal from "./components/admin/management/managePortal.jsx";
 import AdminLogin from "./components/admin/adminLogin.jsx";
+import AdminResetPassword from "./components/admin/resetPassword.jsx";
 import Sample from "./components/admin/sample.jsx";
 
 
@@ -108,6 +110,7 @@ function App() {
             <Route path="projectWork" element={<ProjectWork />} />
             <Route path="projectDetails" element={<ProjectDetails />} />
             <Route path="todayWorkAssigned" element={<TodayWorkAssigned />} />
+            <Route path="workAssignedDocuments" element={<WorkAssignedDocuments />} />
             <Route path="notifications" element={<Notifications />} />
             <Route path="sideNav" element={<SideNav />} />
            
@@ -123,6 +126,7 @@ function App() {
 
           <Route path="admin" >
             <Route path="login" element={<AdminLogin />}  />
+            <Route path="resetPassword" element={<AdminResetPassword />}  />
             <Route path="projectList" element={<ProjectList />}  />
             <Route path="addProject" element={<AddProject />}  />
             <Route path="editProject" element={<EditProject />}  />

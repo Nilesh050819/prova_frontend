@@ -133,13 +133,21 @@ const TodayWorkAssigned = () => {
           <div className="project-work-1">
           Today's Work
           </div>
+          { localStorage.getItem("type") === 'Client' && (  
+          <span className="browse-payment-details-by-category-and-click-to-view">
+          Click the areas to view work updates
+          </span>
+          )}
+          { localStorage.getItem("type") === 'Supervisor' && (  
           <span className="browse-payment-details-by-category-and-click-to-view">
           Choose the areas being worked on
           </span>
+          )}
+
         </div>
         <div className="frame-23">
 
-          
+        { localStorage.getItem("type") === 'Supervisor' && (  
           <div className="frame-21 today_work_grid">
       
               {typeOfWork?.length > 0 ? (
@@ -152,9 +160,9 @@ const TodayWorkAssigned = () => {
                         <div className="cbiceiling-fair-semiflush">
                           <img className="vector" src={`assets/vectors/${tow.icon}`} style={{ height: '40px'}}  />
                         </div>
-                        <span className="false-ceiling">
+                        <a href="javascript:void(0)"  onClick={() => navigateHandler(`/workAssignedDocuments?pid=${pid}&workId=${tow.id}&workName=${tow.field_value}`)} className="false-ceiling">
                         {tow.field_value}
-                        </span>
+                        </a>
                       </div>
                     
                        : 
@@ -171,18 +179,32 @@ const TodayWorkAssigned = () => {
             ) : (
               <div>No records found.</div>
             )}
-
-
-                 
-
-
-
-
-             
+    
+          </div>
+        )}
+        
+        { localStorage.getItem("type") === 'Client' && (  
+          <div className="frame-21 today_work_grid">
+      
+              {typeOfWork?.length > 0 ? (
+                    typeOfWork.map((tow) => (
+                      <div className="frame-20 frameParent" style={{ height: '160px'}} onClick={() => selectTypeOfWork(`${projectId}`,`${tow.id}`)}>
+                       <img className="iconsmallfillcheck" src={`assets/vectors/Check.svg`}   />
+                        <div className="cbiceiling-fair-semiflush">
+                          <img className="vector" src={`assets/vectors/${tow.icon}`} style={{ height: '40px'}}  />
+                        </div>
+                        <a href="javascript:void(0)"  onClick={() => navigateHandler(`/workAssignedDocuments?pid=${pid}&workId=${tow.id}&workName=${tow.field_value}`)} className="false-ceiling">
+                        {tow.field_value}
+                        </a>
+                      </div>
+               ))
+            ) : (
+              <div>No records found.</div>
+            )}
+    
           </div>
          
-         
-        
+          )}
         </div>
       </div>
     </div>

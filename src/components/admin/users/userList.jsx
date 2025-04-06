@@ -65,7 +65,7 @@ const UserList = () => {
   const columns = [
     { field: "full_name", headerName: "Staff Name", width: 250,
       renderCell: (params) => (
-          <a href={`https://example.com/${params.id}`} target="_blank" rel="noopener noreferrer" 
+          <a href={`addStaff?id=${params.id}`}  rel="noopener noreferrer" 
           style={{ textDecoration: 'underline', color: '#1C1C1E' }}  // Underline the text
           >
             {params.value}

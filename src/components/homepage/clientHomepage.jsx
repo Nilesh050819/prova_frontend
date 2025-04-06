@@ -28,6 +28,7 @@ const ClientHomepage = () => {
          const [projectDetails, setProjectDetails] = useState();
          const [typeOfWork, setTypeOfWork] = useState([]);
         const [siteCategories, setSiteCategories] = useState([]);
+        const [workUpdates, setWorkUpdates] = useState([]);
         const [projectProgress, setProjectProgress] = useState(0);
       
             let authToken = localStorage.getItem("token");
@@ -76,20 +77,25 @@ const ClientHomepage = () => {
                                       setProjectProgress(avgPercentage);
                                     }
                                  
-                                  
                                   /* Site categories  */
                                                const bodyObj2 = {
                                                       data: siteCategoriesIds,
                                                       projectId: data.id
-                                                                            
                                             };
-                                                                          
                                             let api2 = `${BASE_URL}/api/siteUpdates/getProjectSiteCategories`;
-                                                                       
-                                            const result2 = await axios.post(api2, bodyObj2, { config });
-                                         //   console.log(result2.data);
+                                             const result2 = await axios.post(api2, bodyObj2, { config });
                                           setSiteCategories(result2.data.data)
                                         //  console.log('nilsh',totalWorkPercentage)
+
+                                        /* Work updates  */
+                                        const bodyObj3 = {
+                                             data: typeOfWOrkIds,
+                                            projectId: data.id
+                                          };
+                                          let api3 = `${BASE_URL}/api/siteUpdates/getProjectWorkUpdates`;
+                                          const result3 = await axios.post(api3, bodyObj3, { config });
+                                        setWorkUpdates(result3.data.data)
+                                      //  console.log('nilsh',totalWorkPercentage)    
                                 }
 
                           } catch {
@@ -143,7 +149,7 @@ function formatDate(dateString) {
                </div>
                <div className="frame-container">
                  <div className="todays-work-schedule-parent">
-                   <b className="todays-work-schedule">Today’s Work Schedule</b>
+                   <b className="todays-work-schedule" style={{ marginRight: '45px'}}>Today’s Work Schedule</b>
                    <div className="frame-div">
 
                    {typeOfWork?.length > 0 ? (
@@ -159,10 +165,10 @@ function formatDate(dateString) {
                             <div className="carpenter">{tow.field_value}</div>
                           </div>
                         )  
-              ))
-) : (
-  <div>No records found.</div>
-)}
+                    ))
+                  ) : (
+                    <div>No records found.</div>
+                  )}
                    </div>
                  </div>
                  <div className="button" onClick={() => navigateHandler(`/projectTimelineDetails?pid=${projectId}`)}>
@@ -205,14 +211,57 @@ function formatDate(dateString) {
            </div>
            <div className="group-parent1">
 
-           {siteCategories?.length > 0 ? (
-                    siteCategories.map((row) => ( 
+            {siteCategories?.length > 0 ? (
+                      siteCategories.map((row) => ( 
 
-                <div className="unsplashih7wpsjwomc-parent"  >
+                  <div className="unsplashih7wpsjwomc-parent"      onClick={() => navigateHandler(`/siteUpdatesCategoryImages?pid=${projectId}&siteCategoriesId=${row.id}&siteCategories=${row.field_value}`)}
+                  >
+                    <img
+                      className="unsplashih7wpsjwomc-icon"
+                      alt=""
+                      src={row.file_path}
+                    />
+                    <div className="hall-room-wrapper" >
+                      <div className="hall-room">{row.field_value}</div>
+                    </div>
+                  </div>
+              
+                ))
+              ) : (
+                <div>No records found.</div>
+              )}
+
+           </div>
+         </div>
+
+
+         <div className="frame-parent1" style={{marginTop: '50px'}} >
+           <div className="site-updates-parent">
+             <div className="site-updates">Work Updates</div>
+             <div className="button2">
+               <img
+                 className="iconsmalloutlineleft-arrow"
+                 alt=""
+                 src="/iconsmalloutlineleft-arrow1.svg"
+               />
+               <div onClick={() => navigateHandler(`/todayWorkAssigned?pid=${projectId}`)} className="login" style={{color: "#fff"}} >View all</div>
+               <img
+                 className="iconsmalloutlineleft-arrow"
+                 alt=""
+                 src="/iconsmalloutlineright-arrow1.svg"
+               />
+             </div>
+           </div>
+           <div className="group-parent2">
+
+           {workUpdates?.length > 0 ? (
+                    workUpdates.map((row) => ( 
+
+                <div className="unsplashih7wpsjwomc-parent2"  onClick={() => navigateHandler(`/workAssignedDocuments?pid=${projectId}&workId=${row.id}&workName=${row.field_value}`)} >
                   <img
-                    className="unsplashih7wpsjwomc-icon"
+                    className="unsplashih7wpsjwomc-icon2"
                     alt=""
-                    src={row.file_path}
+                    src={`assets/vectors/${row.icon}`} style={{ width: '40px'}}
                   />
                   <div className="hall-room-wrapper" >
                     <div className="hall-room">{row.field_value}</div>
@@ -226,6 +275,7 @@ function formatDate(dateString) {
 
            </div>
          </div>
+
     </div>
     );
 }

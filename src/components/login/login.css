@@ -46,7 +46,7 @@
 .welcome-to-prova {
   line-height: 42px;
   font-weight: 500;
-  margin-top:55px;
+  margin-top:0px;
 }
 .log-in-with {
   font-size: var(--button-large-size);

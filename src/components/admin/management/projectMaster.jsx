@@ -25,6 +25,10 @@ import Sidebar from '../sidebar';
 import ConfirmDialog from '../confirmDialog';
 import ImageUploadPopup from './imageUploadPopup';
 
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+
+
 const ProjectMaster = ({onPrjMasterFormSubmit}) => {
 
   const [projectMasterData, setProjectMasterData]  = useState([]);
@@ -37,7 +41,15 @@ const ProjectMaster = ({onPrjMasterFormSubmit}) => {
       
     }
 
-
+const ITEM_HEIGHT = 48;
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const openDropdown = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
     {/*const ref = useRef(null);
 
     const resizeCallback = (entry) => {
@@ -321,6 +333,12 @@ const handleButtonClick = (value,idx) => {
   setModalValue(value)
   setIdxValue(idx)
 };
+
+
+const handlePopupClick = (value,idx) => {
+  console.log(idx)
+
+};
     return (
       
       <div  style={{ width: '100%', height: '100vh' }}>
@@ -377,6 +395,8 @@ const handleButtonClick = (value,idx) => {
 
     <div class="card mt-25" >
         <h5 class="card-header">Type of Work</h5>
+
+
         <div class="card-body">
           <div className="row">
             

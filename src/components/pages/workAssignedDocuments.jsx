@@ -54,7 +54,7 @@ const VisuallyHiddenInput = styled('input')`
                       }),
                     };
                  
-const SiteUpdates = () => {
+const WorkAssignedDocuments = () => {
   const [isDialogOpen, setDialogOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
       const [projects, setProjects] = useState([]);
@@ -64,10 +64,12 @@ const SiteUpdates = () => {
       const [documents, setDocuments] = useState([]);
       const [isLoading, setIsLoading] = useState(false);
       const location = useLocation();
+
       const queryParams = new URLSearchParams(location.search);
       const pid = queryParams.get('pid'); // Capture the 'type' query parameter
-      const siteCategoriesId = queryParams.get('siteCategoriesId'); // Capture the 'type' query parameter
-      const siteCategoriesName = queryParams.get('siteCategories'); // Capture the 'type' query parameter
+      const workId = queryParams.get('workId'); // Capture the 'type' query parameter
+      const workName = queryParams.get('workName'); // Capture the 'type' query parameter
+
        const [projectId, setProjectId] = useState(pid);
        const [deleteData, setDeleteData] = useState(false);
        const [videoUrl, setVideoUrl] = useState(false);
@@ -137,7 +139,7 @@ const SiteUpdates = () => {
        
        // console.log(event.target.name)
        // setFileType(event.target.name);
-         let api = `${BASE_URL}/api/supervisor/uploadDocumentFiles?projectId=${pid}&documentId=${siteCategoriesId}&documentType=Site_Categories`;
+         let api = `${BASE_URL}/api/supervisor/uploadDocumentFiles?projectId=${pid}&documentId=${workId}&documentType=Type_of_work`;
          axios.post(api, formData, {
            headers: {
                'Content-Type': 'multipart/form-data',
@@ -187,8 +189,8 @@ const getDocumentUploadFiles = async (fromDate='',toDate='') => {
             
             const bodyObj = {
               projectId: pid,
-              documentId: siteCategoriesId,
-              documentType:'Site_Categories'
+              documentId: workId,
+              documentType:'Type_of_work'
               
             };
             if(fromDate != '')
@@ -408,7 +410,7 @@ const handleDateTypeChange = (event) => {
        <div className="frame-41">
             <div className="frame-40">
               <div className="kitchen">
-              {siteCategoriesName}
+              {workName}
               </div>
               { localStorage.getItem("type") === 'Supervisor' && ( 
               <span className="access-all-images-and-videos">
@@ -704,4 +706,4 @@ const handleDateTypeChange = (event) => {
     </div>
     );
 }
-export default SiteUpdates;
+export default WorkAssignedDocuments;

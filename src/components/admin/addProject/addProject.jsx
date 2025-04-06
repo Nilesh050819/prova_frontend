@@ -41,7 +41,7 @@ const AddProject = () => {
     
   
   });
-
+  const formRef = useRef();
    const navigate = useNavigate();
    const ref = useRef(null);
 
@@ -72,6 +72,8 @@ const AddProject = () => {
     const [value, setValue] = useState({});
     const [formDataArray, setFormDataArray] = useState([]);
     const [formClientDataArray, setFormClientDataArray] = useState([]);
+    const [isPublished, setIsPublished] = useState(0);
+    const [projectId, setProjectId] = useState(0);
 
     const handleFormData = (data) => {
       setFormDataArray(data);
@@ -135,7 +137,8 @@ const addProject = async (projectArray) => {
       //console.log("Form submitted with data2:", formClientDataArray);
       const combinedData = { ...formDataArray, ...formClientDataArray };
     console.log(combinedData)
-      
+    combinedData.publish = isPublished;
+    combinedData.p_id = 0;
       if (!combinedData.project_name?.trim()) {
         toast.error('Please provide project name.');
         return;
@@ -167,7 +170,28 @@ const addProject = async (projectArray) => {
       addProject(combinedData);
   };
 
-
+  const triggerSaveSubmit = () => {
+    setIsPublished(0);
+    formRef.current.requestSubmit(); // Programmatically submit the form
+   
+  };
+  const triggerPublishSubmit = () => {
+    setIsPublished(1);
+    formRef.current.requestSubmit(); // Programmatically submit the form
+   
+  };
+   const [pmShow, setPmShow] = useState(false);
+    const handlePmClose = () => setPmShow(false);
+   // const handlePmShow = () => setPmShow(true);
+   const handlePmShow = (id) => {
+    console.log('hi',id)
+      setPmShow(true);
+      
+      //setClientId(id);
+    
+  
+  }
+  
   return (
     <div ref={ref} sstyle={{ width: '100%', height: '100vh'}}>
      
@@ -182,7 +206,7 @@ const addProject = async (projectArray) => {
 
     <div className="row flex-nowrap ">
         <div className="col-md-12 new_page_main">
-        <form id="myForm" method="post"   onSubmit={handleSubmit}>
+        <form ref={formRef} id="myForm" method="post"   onSubmit={handleSubmit}>
                    
 
          
@@ -196,9 +220,9 @@ const addProject = async (projectArray) => {
           
           
                 <div className="float-right" style={{ width: 320,}}>
-                            <button type="submit" style={{ textDecoration: 'none',float: 'left'}} class="submit_btn" >Save</button>
+                            <button type="button" style={{ textDecoration: 'none',float: 'left'}} class="submit_btn" onClick={triggerSaveSubmit} >Save</button>
                          
-                           <button class="publish_btn_disabled" style={{ textDecoration: 'none',float: 'right'}} type="button">Publish</button>
+                           <button class="publish_btn" style={{ textDecoration: 'none',float: 'right'}} type="button" onClick={triggerPublishSubmit} >Publish</button>
                          
                 </div>
             </div>
@@ -254,7 +278,21 @@ const addProject = async (projectArray) => {
     </div>
 </div>
 </div>
-      
+<Modal show={pmShow} onHide={handlePmClose} size="lg">
+        <Modal.Header >
+          <Modal.Title>Ongoing Projects</Modal.Title>
+          <button type="button" class="close" onClick={handlePmClose} data-dismiss="modal" aria-hidden="true">×</button>
+        </Modal.Header>
+        <Modal.Body>
+       
+
+
+        </Modal.Body>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onClick={handlePmClose} data-dismiss="modal" aria-hidden="true" data-bs-dismiss="modal">Close</button>
+         
+      </div>
+      </Modal>
     </div>
 
 

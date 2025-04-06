@@ -56,7 +56,7 @@ const columns = [
           { field: "name", headerName: "Project Name", width: 250 ,
 
             renderCell: (params) => (
-              <a href={`editProject?pId=${params.id}`} target="_blank" rel="noopener noreferrer" 
+              <a href={`editProject?pId=${params.id}`}  rel="noopener noreferrer" 
               style={{ textDecoration: 'underline', color: '#1C1C1E' }}  // Underline the text
               >
                 {params.value}
