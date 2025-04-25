@@ -193,8 +193,9 @@
   .group-container {
     width: 261px;
     position: relative;
-    height: 458px;
-    top:50px;
+    height: 335px;
+    /*top:50px;*/
+    top:0px;
   }
   .st-june-2024 {
     position: relative;
@@ -271,10 +272,10 @@
   .hall-room-wrapper {
     position: absolute;
     top: 0;
-    left: 195px;
+    left: 179px;
     border-radius: 0 16px 0 8px;
     background-color: #fff;
-    width: 80px;
+    width: 96px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -513,3 +514,14 @@
         margin-left: 108px;
         margin-top: 144px;
       }
+      .sup-cls{
+        width: 100%;
+      }
+      .kKdjFg {
+          height: auto !important;  
+      
+    }
+    .fYvsrB {
+      height: auto !important;  
+     
+  }

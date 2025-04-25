@@ -39,6 +39,9 @@ const AddUser = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
+  const [isUserStatus, setIsUserStatus] = useState(false);
+  const [publishValue, setPublishValue] = useState(0);
+
   let page = useRef(1);
 
   const location = useLocation();
@@ -51,6 +54,8 @@ const AddUser = () => {
   let authToken = localStorage.getItem("token");
   const config = { headers: { 'content-type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer ' + authToken } };
   
+  const formRef = useRef();
+  const ref = useRef(null);
   
   const addUser = async (userArray) => {
     try {
@@ -78,7 +83,7 @@ const AddUser = () => {
               }else{
                   toast.success('Successfully Submitted!');
               }
-           // navigate('../staffList');
+           navigate('../staffList');
           }else{
             toast.error(result.data.message);
           }
@@ -100,6 +105,7 @@ const AddUser = () => {
                             const result = await axios.get(api, config );
                             const { data } = result?.data;
                           //  setUsers(data);
+                          setPublishValue(data.is_publish);
                           updateUserData({
                             staff_name: data.full_name,
                             mobile_no: data.mobile_no,
@@ -130,42 +136,7 @@ const AddUser = () => {
                         setLoading(false);
                     }
                 }
-  const handleSubmit = (e) => {
-    console.log(userForm)
-    e.preventDefault();
-   // console.log("Form submitted with data:", formDataArray);
-    //console.log("Form submitted with data2:", formClientDataArray);
-    //const combinedData = { ...formDataArray, ...formClientDataArray };
-  console.log(userForm)
-    if(paramUserId > 0)
-    {
-      userForm.p_user_id = paramUserId;
-      if (!userForm.staff_name?.trim()) {
-        toast.error('Please provide staff name.');
-        return;
-      }else if (!userForm.email_id?.trim()) {
-        toast.error('Please provide email id.');
-        return;
-      }
-    }else{
-    if (!userForm.staff_name?.trim()) {
-      toast.error('Please provide staff name.');
-      return;
-    }else if (!userForm.email_id?.trim()) {
-      toast.error('Please provide email id.');
-      return;
-    }else if (!userForm.username?.trim()) {
-      toast.error('Please provide username.');
-      return;
-    }
-    else if (!userForm.password?.trim()) {
-      toast.error('Please provide password.');
-      return;
-    }
-  }
-  
-    addUser(userForm);
-};
+
   const fetchDesignation = async () => {
     try {
         setLoading(true);
@@ -218,6 +189,7 @@ useEffect(() => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
 
   const handleChange = (e) => {
     
@@ -291,7 +263,62 @@ const handleUserTypeChange = (e1) => {
   }
  
 };
+const handleSubmit = (e) => {
+  //console.log(userForm)
+  e.preventDefault();
+ // console.log("Form submitted with data:", formDataArray);
+  //console.log("Form submitted with data2:", formClientDataArray);
+  //const combinedData = { ...formDataArray, ...formClientDataArray };
 
+
+  if(paramUserId > 0)
+  {
+    userForm.p_user_id = paramUserId;
+    if (!userForm.staff_name?.trim()) {
+      toast.error('Please provide staff name.');
+      return;
+    }else if (!userForm.email_id?.trim()) {
+      toast.error('Please provide email id.');
+      return;
+    }
+  }else{
+  if (!userForm.staff_name?.trim()) {
+    toast.error('Please provide staff name.');
+    return;
+  }else if (!userForm.email_id?.trim()) {
+    toast.error('Please provide email id.');
+    return;
+  }else if (!userForm.username?.trim()) {
+    toast.error('Please provide username.');
+    return;
+  }
+  else if (!userForm.password?.trim()) {
+    toast.error('Please provide password.');
+    return;
+  }
+}
+
+  addUser(userForm);
+};
+const triggerSaveSubmit = () => {
+  setPublishValue(0);
+  userForm.publish = (publishValue == 1) ? 1 : 0;
+  //userForm.publish =  0;
+  formRef.current.requestSubmit(); // Programmatically submit the form
+ 
+};
+const triggerPublishSubmit = ($value) => {
+ 
+  setPublishValue($value);
+  setTimeout(() => {
+    console.log('nilesh1', $value); // Still might show old value
+    userForm.publish =  1;
+    formRef.current.requestSubmit();     // Submit after 100ms
+   
+    
+  }, 100);
+ 
+};
   return (
     <div style={{overflow:"auto",height:"calc(100vh - 72px)"}} >
      
@@ -307,7 +334,7 @@ const handleUserTypeChange = (e1) => {
     <div className="row flex-nowrap ">
         <div className="col-md-12 new_page_main">
         <div className=" data_table" >
-        <form id="myForm" method="post"   onSubmit={handleSubmit}>
+        <form ref={formRef} id="myForm" method="post"   onSubmit={handleSubmit}>
         <div className="col-md-12 ">
         <div className="row">
             <div className="col-md-12">
@@ -330,15 +357,26 @@ const handleUserTypeChange = (e1) => {
           
           
                 <div className="float-right" style={{ width: 320,}}>
-                            <button type="submit" style={{ textDecoration: 'none',float: 'left'}} class="submit_btn" >
+                            <button type="button" onClick={triggerSaveSubmit} style={{ textDecoration: 'none',float: 'left'}} class="submit_btn" >
                             { paramUserId > 0 ? 
                               <>Update</>
                               :
                               <>Save</>
                             }   
                             </button>
-                         
-                         {/*  <button class="publish_btn_disabled" style={{ textDecoration: 'none',float: 'right'}} type="button">Publish</button> */}
+                      { publishValue == '1' ?    
+                      
+                         <button class="publish_btn_disabled" style={{ textDecoration: 'none',float: 'right'}} type="button">Publish</button> 
+                         :
+                        <>
+                         { paramUserId > 0  ?
+                         <button  onClick={() => triggerPublishSubmit(1)} class="publish_btn" style={{ textDecoration: 'none',float: 'right'}} type="button">Publish</button>
+                          :
+                          <button onClick={triggerPublishSubmit} class="publish_btn" style={{ textDecoration: 'none',float: 'right'}} type="button">Publish</button>
+                          
+                        }   
+                        </>
+                    }
                          
                 </div>
             </div>
@@ -358,7 +396,7 @@ const handleUserTypeChange = (e1) => {
                    width: "99%"
                   }}
                    multiline={false}
-                  id="outlined-basic"
+                  id="staff_name"
                   placeholder="Staff Name"
                   label="Staff Name" name="staff_name"
                   value={userForm.staff_name}
@@ -383,7 +421,7 @@ const handleUserTypeChange = (e1) => {
                 width: "99%"
                }}
                multiline={false}
-              id="outlined-basic"
+              id="mobile_no"
               placeholder="Mobile Number"
               label="Mobile Number" name="mobile_no"
               variant="outlined"  onChange={handleChange}
@@ -408,7 +446,7 @@ const handleUserTypeChange = (e1) => {
               width: "99%"
              }}
              multiline={false}
-            id="outlined-basic"
+            id="email_id"
             placeholder="Email ID"
             label="Email ID" name="email_id"
             variant="outlined"  onChange={handleChange}
@@ -447,9 +485,16 @@ const handleUserTypeChange = (e1) => {
                  <MenuItem key="empty" value={''}></MenuItem> 
                         {designation.length > 0 &&
                           designation.map((pt, index) => {
-                            return (  
-                              <MenuItem value={pt.field_value || ''} key={pt.id + index} >{pt.field_value}</MenuItem>
-                            );
+                            if (pt.field_value !== 'Client') {
+                              return (
+                                <MenuItem value={pt.field_value || ''} key={pt.id + index}>
+                                  {pt.field_value}
+                                </MenuItem>
+                              );
+                            } else {
+                              return null;
+                            }
+
                           })}   
                     </Select>
                   </FormControl>
@@ -509,7 +554,7 @@ const handleUserTypeChange = (e1) => {
                 width: "99%"
                }}
                multiline={false}
-              id="outlined-basic"
+              id="sec_mobile_no"
               placeholder="Secondary Mobile No"
               label="Secondary Mobile No" name="sec_mobile_no"
               value={userForm.sec_mobile_no}
@@ -535,7 +580,7 @@ const handleUserTypeChange = (e1) => {
                 width: "99%"
                }}
                multiline={false}
-              id="outlined-basic"
+              id="sec_email_id"
               placeholder="Secondary Email ID"
               label="Secondary Email ID" name="sec_email_id"
               variant="outlined"  onChange={handleChange}
@@ -560,7 +605,7 @@ const handleUserTypeChange = (e1) => {
                       width: "99%"
                      }}
                      multiline={true}
-                    id="outlined-basic"
+                    id="user_remarks"
                     placeholder="Remarks"
                     label="Remarks" name="user_remarks"
                     variant="outlined"  onChange={handleChange}
@@ -609,7 +654,7 @@ const handleUserTypeChange = (e1) => {
                }}
                
                multiline={false}
-              id="outlined-basic"
+              id="username"
               placeholder="Customer ID"
               label="Customer ID" name="username"
               variant="outlined"  onChange={handleChange} value={credentials.userId}
@@ -638,7 +683,7 @@ const handleUserTypeChange = (e1) => {
                 width: "99%"
                }}
                multiline={false}
-              id="outlined-basic"
+              id="password"
               placeholder="Password"
               label="Password" name="password"
               variant="outlined"  onChange={handleChange}  value={credentials.password}

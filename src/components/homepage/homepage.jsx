@@ -30,16 +30,8 @@ const Homepage = () => {
         */}
       
       <div className="frame-15">
-      <div className="iconlargeoutlinehamburger">
-      <Sidebar />
-           
-          </div>
-          <img style={{ marginTop: 0}} 
-            className="iconlargeoutlinenotificatio"
-            alt=""
-            src="/iconlargeoutlinenotification.svg"
-          />
-        </div>
+          <Header />
+      </div>
         <div className="frame-parent" >
 
         <div className="good-morning-username-parent">

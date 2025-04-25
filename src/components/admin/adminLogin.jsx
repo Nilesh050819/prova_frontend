@@ -59,7 +59,6 @@ const Login = () => {
    const onSubmit =  async (data) => {
        let api = `${BASE_URL}/api/logins/login/`;
       await axios.post(api,data,config)
-        //axios.post("http://localhost:8080/api/tutorials/",[tutorial])
         .then(res => {
             if(res.data.user.id !=  '')
             {
@@ -82,6 +81,7 @@ const Login = () => {
             }else{
              // alert("invalid cred")
              setErrMsg("Invalid credentials");
+             navigate("/admin/Login");
             }
             //navigate("/viewTutorial");
         })

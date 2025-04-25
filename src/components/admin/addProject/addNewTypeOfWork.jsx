@@ -6,6 +6,8 @@ import axios from '../../../api/axios';
 import { v4 as uuidv4 } from 'uuid';
 import FormControl from '@mui/material/FormControl';
 import TextField from "@mui/material/TextField";
+import { createFocusTrap } from 'focus-trap';
+
 
 const VisuallyHiddenInput = styled('input')`
                     clip: rect(0 0 0 0);
@@ -27,12 +29,13 @@ function AddNewTypeOfWork({name}) {
   const [fileList, setFileList] = useState([]);
   const [fileName, setFileName] = useState(false);
   const [filePath, setFilePath] = useState(false);
- 
-  const uniqueCode = localStorage.getItem("tokenId");; // Generates a unique UUID         
+  const inputRef = useRef(null); 
+  const uniqueCode = localStorage.getItem("tokenId");; // Generates a unique UUID   
+  
+  const [value, setValue] = useState('');
+
   const onFileChange = async (event) => {
-    //if (!(event.target.files && event.target.files.length > 0)) {
-     // return appError("File not selected.");
-  //}
+
 
       //setLoadingUploadExcel(true);
       let file = event.target.files[0];
@@ -61,7 +64,7 @@ function AddNewTypeOfWork({name}) {
     .then(response => {
         // Handle the successful response
         console.log('File uploaded successfully:', response.data);
-        getUploadFiles();
+      
         
     })
     .catch(error => {
@@ -73,51 +76,39 @@ function AddNewTypeOfWork({name}) {
         
     
       };
+
+      
+
       let authToken = localStorage.getItem("token");
       const config = { headers: { 'content-type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer ' + authToken } };
   
-      
-      const getUploadFiles = async () => {
-        
-        try {
-            let api = `${BASE_URL}/api/project/getUploadFiles`;
-              
-              const bodyObj = {
-                file_type: fileType,
-                token: uniqueCode,
-                project_id:0
-                
-              };
-              //const headers = {};
-              const result = await axios.post(api, bodyObj, { config });
-              console.log(result);
-              setFileName(result.data.data[0]['file_name']);
-              setFilePath(result.data.data[0]['s3_file_path']);
-              
-             
-        } catch (error) {
-          console.log(error);
-          //toast.error('Unable to update please try again!');
-        } finally {
-    
-          
-        }
-      }
+      const handleChange = (e) => setValue(e.target.value);
+
       useEffect(() => {
-        getUploadFiles(); // Pass data to parent whenever formEntries changes
+         setTimeout(() => {
+            inputRef.current?.focus(); // slight delay can help
+          }, 0);
+        
       }, []);
   return (
     
 <div className="mt-6" >
+
 <div className="row">
-              <div className="col-md-6" style={{ paddingTop: 0 }}>
+<div className="col-md-12">
+              <h3>Create a New Work Item Type</h3>
+              <p>Fill in the fields to add a new type of work item</p>
+              </div>
+              <div className="col-md-12" style={{ marginTop: '50px', marginBottom: '50px' }}>
+                <input ref={inputRef} type="text" autoFocus  />
                 <FormControl fullWidth>
                   <TextField
                     multiline={false}
-                    placeholder="Project Name"
-                    label="Project Name"
-                    name="project_name"
+                    placeholder="Type of Work"
+                    label="Type of Work"
+                    name="type_of_work"
                     variant="outlined"
+                    onChange={handleChange}
                
                     /* styles the input component */
                     inputProps={{
@@ -125,9 +116,7 @@ function AddNewTypeOfWork({name}) {
                         padding: "0px 14px",
                       },
                     }}
-                    InputLabelProps={{
-                      shrink: true, // Ensures label moves up when value exists
-                    }}
+                  
                   />
                 </FormControl>
                 </div>

@@ -33,7 +33,7 @@
 
 .drawing-categries .frame-15 {
   position: relative;
-  
+  margin: 0 4.8px 38.4px 0 !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -108,7 +108,7 @@ function formatDate(dateString) {
     </div>
 
           <div className="frame" >
-          <div className="frame-15" style={{ marginTop: '-30px'}}>
+          <div className="frame-15" >
            {/*} <div className="iconlargeoutlinehamburger"   >
                 <Sidebar 
                   style={{

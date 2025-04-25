@@ -3,9 +3,11 @@ import "./homepage.css"
 import { Link,Outlet,useNavigate} from "react-router-dom";
 import axios from '../../api/axios';
 import { BASE_URL, BLACK, PRIMARY, WHITE } from "../../constants";
+import SemiCircleProgress from './SemiCircleProgress';
 
 //import "bootstrap-icons/font/bootstrap-icons.css";
 import Sidebar from '../sidebar';
+
 
 
 
@@ -30,6 +32,7 @@ const ClientHomepage = () => {
         const [siteCategories, setSiteCategories] = useState([]);
         const [workUpdates, setWorkUpdates] = useState([]);
         const [projectProgress, setProjectProgress] = useState(0);
+        const [progress, setProgress] = useState(10);
       
             let authToken = localStorage.getItem("token");
             let client_id = localStorage.getItem("user_id");
@@ -109,6 +112,8 @@ const ClientHomepage = () => {
   useEffect(() => {
    
       fetchClientProjectDetails();
+
+     
                         
   }, []);
 
@@ -139,14 +144,36 @@ function formatDate(dateString) {
            
            <div className="group-parent">
              <div className="group-container">
+            
                <div className="group-div">
-                 <img className="group-child" alt="" src="/group-2.svg" />
+            {/*    <div className="min-h-screen bg-black flex flex-col items-center justify-center gap-6">
+      <ProgressBar progress={progress} />
+      <p className="text-white font-bold text-lg">Today's Work Schedule</p>
+    </div>*/}
+               {/*    <img className="group-child" alt="" src="/group-2.svg" />
                  <div className="parent">
                    <div className="div">{projectProgress}%</div>
                    <div className="current-progress">Current Progress</div>
                  </div>
                  <img className="group-item" alt="" src="/group-3.svg" />
+                */}
+                 <div
+                style={{
+                 
+                  height: '',
+                  display: '',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <SemiCircleProgress progress={`${projectProgress}`} />
+              </div>
+
+                
+
+
                </div>
+
                <div className="frame-container">
                  <div className="todays-work-schedule-parent">
                    <b className="todays-work-schedule" style={{ marginRight: '45px'}}>Today’s Work Schedule</b>
@@ -232,6 +259,8 @@ function formatDate(dateString) {
               )}
 
            </div>
+
+           
          </div>
 
 
@@ -261,7 +290,7 @@ function formatDate(dateString) {
                   <img
                     className="unsplashih7wpsjwomc-icon2"
                     alt=""
-                    src={`assets/vectors/${row.icon}`} style={{ width: '40px'}}
+                    src={`assets/vectors/${row.icon}`} style={{ width: '80px'}}
                   />
                   <div className="hall-room-wrapper" >
                     <div className="hall-room">{row.field_value}</div>

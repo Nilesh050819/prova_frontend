@@ -32,7 +32,7 @@
 }
 .project-timeline-details .frame-15 {
   position: relative;
-  /*margin: 0 3px 38.4px 0; */
+  margin: 0 4.8px 38.4px 0 !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -644,7 +644,7 @@
   flex-direction: column;
   padding: 15.4px 25px 40px 25px;
   box-sizing: border-box;
-  height: 940px;
+  /*height: 940px;*/
 }
 
 
@@ -749,7 +749,7 @@
   font-weight: 700;
   left: 0;
   letter-spacing: 0;
-  line-height: 24px;
+  line-height: 16px;
  
   top: 0;
   white-space: nowrap;

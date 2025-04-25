@@ -314,6 +314,8 @@ const MaterialUpdates = () => {
                         {formatDate(document.created_date)}
                         </div>
                       </div>
+                      { localStorage.getItem("type") === 'Supervisor' && ( 
+                         <>
                       {key == 0 && isLoading &&  (
 
                        <div><img className="vector-55" src="/images/Loader.svg" style={{marginLeft: '-3px' }} /></div>
@@ -324,6 +326,8 @@ const MaterialUpdates = () => {
                        {key > 0 && (
                         <a href="javascript:void(0)"><img className="vector-55" src="/images/Delete.svg" style={{marginLeft: '-3px',marginTop:'5px' }} onClick={() => deleteBtnClick(`${document.id}`)} /></a>
                     )}
+  </>
+           )}
                     </div>
 
                 ))

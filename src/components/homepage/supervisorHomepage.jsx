@@ -17,6 +17,10 @@ const SupervisorHomepage = () => {
         const [key, setKey] = useState("");
   const [value, setValue] = useState("");
 
+
+   const [siteCategories, setSiteCategories] = useState([]);
+ const [projectId, setProjectId] = useState();
+
     const navigate = useNavigate();
     const navigateHandler = (url) => {
       navigate(url);
@@ -78,6 +82,53 @@ const SupervisorHomepage = () => {
         setLoading(false);
     }
 }
+
+
+
+ const fetchClientProjectDetails = async () => {
+                     
+                        try {
+                                setLoading(true);
+                                let api = `${BASE_URL}/api/client/getClientProjectDetails?p_client_id=2`;
+                             
+                                const headers = {
+                                }
+                                const result = await axios.get(api, config );
+                                const { data } = result?.data;
+                               //  setStartDate(formatDate(data.submitted_date));
+                                console.log(data.id)
+                              if(data.id > 0){
+                               
+                                const siteCategoriesIds = data.site_categories;
+                              
+                                  /* Site categories  */
+                                               const bodyObj2 = {
+                                                      data: siteCategoriesIds,
+                                                      projectId: data.id
+                                            };
+                                            let api2 = `${BASE_URL}/api/siteUpdates/getProjectSiteCategories`;
+                                             const result2 = await axios.post(api2, bodyObj2, { config });
+                                          setSiteCategories(result2.data.data)
+                                        //  console.log('nilsh',totalWorkPercentage)
+
+                                       
+                                }
+
+                          } catch {
+                           
+                        } finally {
+                            setLoading(false);
+                        }
+                    }
+
+
+
+
+
+
+
+
+
     useEffect(() => {
       fetchProjectType(0);
       fetchProjectType(1);
@@ -85,11 +136,13 @@ const SupervisorHomepage = () => {
       getConfigSettings('ongoing_commercial_img');
      getConfigSettings('completed_residential_img');
       getConfigSettings('completed_commercial_img');
+
+      fetchClientProjectDetails();
       
      
     }, []);
     return (
-      <div>
+      <div className="sup-cls">
     
          <div className="frame-parent1">
            <div className="site-updates-parent">
@@ -108,6 +161,7 @@ const SupervisorHomepage = () => {
                />
              </div>
            </div>
+           
            
            <div className="group-parent1">
            {ongoingProjectType?.length > 0 ? (

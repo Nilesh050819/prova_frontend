@@ -25,8 +25,8 @@
 .log-in-default-state .login-frame-parent {
   justify-content: flex-end;
   margin: 0 auto;
-    width: 100%;
-    left: 0;
+   /* width: 100%; 
+    left: 0;*/
 }
 .unsplashry9wbo3qmoc-icon {
   position: absolute;
@@ -47,6 +47,7 @@
   line-height: 42px;
   font-weight: 500;
   margin-top:0px;
+  text-align: left;
 }
 .log-in-with {
   font-size: var(--button-large-size);
@@ -96,11 +97,12 @@
 .iconsmalloutlineerror {
   width: 20px;
   position: relative;
-  height: 20px;
+  height: 37px;
   overflow: hidden;
   flex-shrink: 0;
   margin-left:278px;
-  top: -40px;
+  top: -59px;
+  color:black;
 }
 .this-is-the {
   flex: 1;
@@ -348,12 +350,14 @@ font-size: 16px;
   font-size: 12px;
   margin-top: -34px;
     margin-right: 234px;
-    width:97px;
-    margin-top: -26px;
+   /* width:97px;
+    margin-top: -26px;*/
 }
 .err-msg .text-danger {
   color: #dc3545 !important;
   font-size: 12px;
 }
+
+
 
 

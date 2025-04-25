@@ -2,17 +2,18 @@ import React, {useState} from 'react';
 import Input from '@mui/joy/Input';
 import "./login.css"
 //import axios from "axios"
-import axios from '../../api/axios';
+//import axios from '../../api/axios';
+import axios from 'axios';
 import { BASE_URL, BLACK, PRIMARY, WHITE } from "../../constants";
 import { Link,useNavigate } from "react-router-dom";
 import { Button, Form } from 'react-bootstrap'
 
 import { useForm,useFormContext } from "react-hook-form";
-
+import { Eye, EyeOff } from 'lucide-react'; // or use any icon library
 
 const Login = ({ setLoginUser }) => {
     //const history = useHistory();
-
+    const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm({
       mode: "onChange",
       //tutorial,
@@ -80,7 +81,9 @@ const Login = ({ setLoginUser }) => {
              setErrMsg("Invalid password entered");
         });
      }
-
+     const togglePassword = () => {
+      setShowPassword(prev => !prev);
+    };
  return (
        
     
@@ -109,7 +112,7 @@ const Login = ({ setLoginUser }) => {
           <div className="login-frame-container">
             <div className="input-field-parent">
               <div className="input-field text-wrapper" style={{width:'100%'}}>
-                <input type="text" name="email" className="input " style={{color:'#fff' }} placeholder="Prova ID" {...register('email', { required: {
+                <input type="text" autoComplete="off" name="email" className="input " style={{color:'#fff' }} placeholder="Prova ID" {...register('email', { required: {
                               value: true,
                               message: 'Field is  required',
                             }, })} />
@@ -124,15 +127,17 @@ const Login = ({ setLoginUser }) => {
                  </div>
               </div>
               <div className="input-field text-wrapper">
-              <input type="text" name="password" className="input " style={{ backgroundImage: 'url(' + Image + ')', backgroundSize: 'auto',color:'#fff' }} placeholder="Password"  {...register('password', { required: {
+              <input  type={showPassword ? "text" : "password"} name="password" autoComplete="off" className="input " style={{ backgroundImage: 'url(' + Image + ')', backgroundSize: 'auto',color:'#fff' }} placeholder="Password"  {...register('password', { required: {
                               value: true,
                               message: 'Field is  required',
                             }, })} />
                             
               
-              <img className="iconsmalloutlineerror" alt="" src="/images/iconsmalloutlinehide1.svg" />
-               
-               
+      <div onClick={togglePassword} className="iconsmalloutlineerror" >
+        {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+      </div>
+
+
                 <span className="err-msg text-danger"> {errors.password && errors.password.message} {errMsg && errMsg}</span>
                 
               </div>

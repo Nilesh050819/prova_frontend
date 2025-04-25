@@ -33,6 +33,7 @@
 .live-feed .frame-15 {
   position: relative;
   /*margin-bottom: 40px;*/
+  margin: 0 4.8px 38.4px 0 !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

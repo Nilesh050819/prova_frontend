@@ -33,7 +33,7 @@
 
 .site-categries .frame-15 {
   position: relative;
-  
+  margin: 0 4.8px 38.4px 0 !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -261,4 +261,5 @@
   flex-direction: column;
   padding: 15px 25px 0 25px;
   box-sizing: border-box;
+  min-height: 944px;
 }

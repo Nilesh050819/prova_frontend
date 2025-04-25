@@ -94,18 +94,13 @@ const SiteUpdates = () => {
       const [showPopup, setShowPopup] = useState(false);
     
       const options = [
+        { value: "All", label: "All" },
         { value: "Today", label: "Today" },
         { value: "Yesterday", label: "Yesterday" },
         { value: "Custom", label: "Custom" },
       ];
     
      
-    
-
-
-
-      
-
     const navigate = useNavigate();
     
     useEffect(() => {
@@ -193,14 +188,18 @@ const getDocumentUploadFiles = async (fromDate='',toDate='') => {
             };
             if(fromDate != '')
               {
+               // console.log('nilesh',fromDate)
                 const startDate = format(fromDate, "yyyy-MM-dd");
                 const endDate = format(toDate, "yyyy-MM-dd");
                 bodyObj.p_from_date = startDate;
                 bodyObj.p_to_date = endDate;
                
               }else{
-                const startDate = format(selectedRange[0].startDate, "yyyy-MM-dd");
-                const endDate = format(selectedRange[0].endDate, "yyyy-MM-dd");
+               
+               // const startDate = format(selectedRange[0].startDate, "yyyy-MM-dd");
+                //const endDate = format(selectedRange[0].endDate, "yyyy-MM-dd");
+                  const startDate = '';
+                const endDate = '';
                 bodyObj.p_from_date = startDate;
                 bodyObj.p_to_date = endDate;
               }
@@ -246,6 +245,7 @@ const handlePresetChange = (selectedOption) => {
 
   switch (value) {
     case "Today":
+     
       setSelectedRange([
         {
           startDate: startOfToday(),
@@ -270,11 +270,25 @@ const handlePresetChange = (selectedOption) => {
           getDocumentUploadFiles(startOfYesterday(),startOfYesterday());
     }, 500); // 3-second timeout
       break;
+      case "All":
+         console.log('nilesh',startOfYesterday());
+         setSelectedRange([
+           {
+             startDate: '',
+             endDate: '',
+             key: "selection",
+           },
+         ]);
+         setTimeout(() => {
+             getDocumentUploadFiles('','');
+       }, 500); // 3-second timeout
+         break;
     case "Custom":
       setShowPopup(true);
     //  getDocumentUploadFiles();
       break;
     default:
+      console.log('today')
       break;
   }
   
@@ -296,17 +310,22 @@ const applyCustomDate = () => {
 }
 
 useEffect(() => {
-  getDocumentUploadFiles(startOfToday(),startOfToday()); // Pass data to parent whenever formEntries changes
+  //console.log(startOfToday())
+  //getDocumentUploadFiles(startOfToday(),startOfToday()); // Pass data to parent whenever formEntries changes
+  getDocumentUploadFiles('',''); // Pass data to parent whenever formEntries changes
   
 }, []);
 
    const deleteBtnClick = (id) => {
+   
+    
         console.log(id)
         setDialogOpen(true);
         setDeleteData(id);
        
       };
       const confirmDelete = () => {
+        closePopup();
         console.log(deleteData)
         setDialogOpen(false);
        
@@ -332,6 +351,7 @@ useEffect(() => {
 
     };
     const cancelDelete = () => {
+      closePopup();
       console.log("Action canceled.");
       setDialogOpen(false);
     };
@@ -555,7 +575,7 @@ const handleDateTypeChange = (event) => {
                    
                     { document.file_type == 'video/mp4' ?
                    <div>
-                    <a href="javasacript:void(0)" onClick={() => openPopup(document.s3_file_path)} >  <img className="vector-2" src="assets/vectors/video.png" /></a> 
+                    <a href="javasacript:void(0)" onClick={() => openPopup(document.s3_file_path)} >  <img className="vector-2" src="assets/vectors/video.png" style={{ width: '30px'}} /></a> 
                    </div>
                      :
                      ''

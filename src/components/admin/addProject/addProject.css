@@ -296,6 +296,6 @@
       /*Without this, clicking will make it sticky*/
       pointer-events: none;
     }
-    /*.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+    .css-8je8zh-MuiTouchRipple-root .css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
       left : 1361px !important;
-    }*/
+    }

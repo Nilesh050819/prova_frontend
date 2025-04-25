@@ -40,6 +40,7 @@ import Cookies from 'js-cookie';  // npm install js-cookie
 
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
+import FocusTrap from "focus-trap-react";
 
 //import TextSelectBox from '../textSelectBox';
 
@@ -145,6 +146,8 @@ const ProjectDetails = ({onFormSubmit,projectId=''}) => {
                           total_fee: data.professional_fees,
                         
                         });
+                       
+                        console.log('nilesh',newProjectData)
 
                         let api1 = `${BASE_URL}/api/project/getProjectContractorDetails?p_id=${projectId}`;
                      
@@ -153,15 +156,21 @@ const ProjectDetails = ({onFormSubmit,projectId=''}) => {
                         const contractorDetails = result1.data.data;
 
 
-                       // console.log(contractorDetails)
+                        console.log(contractorDetails)
                         contractorDetails .map(function(item, i){
                           // console.log('nilesh',item.contractor_id)
                           setCheckedContractorType(prev => [...prev, item.contractor_type_id]);
+
+                          setContractorSelections((prevState) => ({
+                            ...prevState,
+                            ['contractor_'+item.contractor_type_id]: item.contractor_id, // Update the specific contractor or remark for each contractor type
+                            ['contractor_remarks_'+item.contractor_type_id]: item.remarks, // Update the specific contractor or remark for each contractor type
+                          }));
                          
                        })
 
 
-
+                     
 
                        setTimeout(() => {
                         console.log('Updated checkedContractorType:', checkedContractorType);
@@ -191,6 +200,7 @@ const ProjectDetails = ({onFormSubmit,projectId=''}) => {
         ...prevData,
         ...updates, // Merging multiple new values dynamically
       }));
+     
     };
  let authToken = localStorage.getItem("token");
     const config = { headers: { 'content-type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer ' + authToken } };
@@ -423,7 +433,7 @@ const handleCheckAccessManagement = (e1) => {
       ['access_management']: updatedData,
     }));
 
-    return updatedData; // Return the updated state for selectTypeOfWork
+    return updatedData; 
   });
 };
 
@@ -553,6 +563,9 @@ const handlePopupClick1 = (value,idx) => {
                     &nbsp;&nbsp;Upload Cover Image
                   </button>
                 </div>
+
+                </div>
+
                 <Modal
                   aria-labelledby="modal-title"
                   aria-describedby="modal-desc"
@@ -598,7 +611,7 @@ const handlePopupClick1 = (value,idx) => {
                         style={{
                           textDecoration: "none",
                           float: "right",
-                          width: 200,
+                          width: '100%',
                         }}
                         type="button"
                         onClick={() => setOpen(false)}
@@ -610,7 +623,7 @@ const handlePopupClick1 = (value,idx) => {
                         style={{
                           textDecoration: "none",
                           float: "left",
-                          width: 200,
+                          width: '100%',
                         }}
                         onClick={() => setOpen(false)}
                         className="cancel_btn"
@@ -621,7 +634,10 @@ const handlePopupClick1 = (value,idx) => {
                     </Box>
                   </Sheet>
                 </Modal>
-              </div>
+
+
+                
+              
               <div className="col-md-12 mt-25" style={{ marginLeft: 0 }}>
                 <div className="textarea-container">
                   {/* <TextAreaInput label="Project Insights(Optional)" name="project_insights" value={newProjectData.project_insights}  handleChange = {handleChange}  />  */}
@@ -898,6 +914,7 @@ const handlePopupClick1 = (value,idx) => {
                     <div className="row">
                       {drawingCategories.length > 0 &&
                         drawingCategories.map((tp) => {
+                          const checkboxValue = `Upload ${tp?.field_value} Drawings`;
                           return (
                             <div className="col-md-3">
                               <div className="form-check">
@@ -907,8 +924,13 @@ const handlePopupClick1 = (value,idx) => {
                                   type="checkbox"
                                   name="access_management"
                                   id={`am_${tp?.id}`}
-                                  value={`Upload ${tp?.field_value} Drawings`}
+                                  value={checkboxValue}
                                   onChange={handleCheckAccessManagement}
+
+                                  checked={
+                                    newProjectData.access_management?.includes(checkboxValue) ??
+                                    false
+                                  }
                                 />
                                 <label
                                   className="form-check-label"
@@ -932,6 +954,10 @@ const handlePopupClick1 = (value,idx) => {
                               id={`${accessType}`}
                               value={`${accessType}`}
                               onChange={handleCheckAccessManagement}
+                              checked={
+                                newProjectData.access_management?.includes(accessType) ??
+                                false
+                              }
                             />
                             <label
                               className="form-check-label"
@@ -944,6 +970,7 @@ const handlePopupClick1 = (value,idx) => {
                         </div>
                       ))}
                     </div>
+
                   </div>
                 </div>
               </div>
@@ -970,7 +997,7 @@ const handlePopupClick1 = (value,idx) => {
                             value={ct?.id}
                             onChange={handleCheckContractorType}
                             checked={checkedContractorType.includes(
-                              ct?.id.toString()
+                              ct?.id
                             )}
                           />
                           <label

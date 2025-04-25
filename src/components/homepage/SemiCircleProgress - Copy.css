@@ -1,0 +1,22 @@
+.progress-container {
+  background-color: #000;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.label {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 6px;
+  line-height: 1.2;
+}
+
+.glow-stroke {
+  filter: drop-shadow(0 0 5px #f5c32c);
+}
+
+.glow-dot {
+  filter: drop-shadow(0 0 8px #ffd700);
+}

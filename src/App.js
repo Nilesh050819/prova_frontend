@@ -65,6 +65,7 @@ import Sample from "./components/admin/sample.jsx";
 
 
 import SideNav from "./components/sidebar.jsx";
+import ProgressBar from './components/homepage/progressBar';
 
 function App() {
 
@@ -77,7 +78,7 @@ function App() {
       {
         window.location = '/admin/login';
       }else{
-        window.location = '/login';
+        //window.location = '/login';
       }
     }
   });
@@ -112,6 +113,7 @@ function App() {
             <Route path="todayWorkAssigned" element={<TodayWorkAssigned />} />
             <Route path="workAssignedDocuments" element={<WorkAssignedDocuments />} />
             <Route path="notifications" element={<Notifications />} />
+            <Route path="progressBar" element={<ProgressBar />} />
             <Route path="sideNav" element={<SideNav />} />
            
           </Route>

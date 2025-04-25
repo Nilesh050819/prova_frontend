@@ -5,10 +5,13 @@
   justify-content: flex-start;
   gap: 6px;
   float: left;
+  margin-top:30px;
 }
 .notification_cls {
-  float: left;
-  /* width: 100%; */
-  margin-left: 300px;
-  margin-top: 25px;
+  /* float: left;
+  width: 100%; */
+  margin-left: 325px;
+  margin-top: 24px;
+ 
+ 
 }
