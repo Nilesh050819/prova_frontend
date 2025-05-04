@@ -146,7 +146,7 @@ const Login = ({ setLoginUser }) => {
             </div>
            
             <div className="login-page-forgot-button">
-             <a href="javascript:void(0)" onClick={() => navigateHandler("/forgetPassword")} className="login" style={{textDecoration:'none',color: "#fff"}}>Forget Password?</a>
+             <a href="javascript:void(0)" onClick={() => navigateHandler("/forgetPassword")} className="forget-btn" style={{textDecoration:'none',color: "#fff"}}>Forget Password?</a>
             </div>
           </div>
           <button type="submit"   className="login-page-button1">

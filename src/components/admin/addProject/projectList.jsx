@@ -199,8 +199,8 @@ let timer;
     
     <div className="col py-3 list_page">
 
-    <div className="row flex-nowrap ">
-        <div className="col-md-12 list_page_main" style={{ width: 1300}}>
+    <div className="row flex-nowrap " style={{ width: '1187px'}}>
+        <div className="col-md-12 list_page_main" >
         <div className=" data_table" >
         <div className="col-md-12 ">
         <div className="row">

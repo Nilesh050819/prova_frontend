@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react';
-
+import { Dialog } from '@headlessui/react';
 import { Link,Outlet,useNavigate} from "react-router-dom";
 
 import { Button, CircularProgress, Input, Modal, Option, selectClasses, styled, SvgIcon, Textarea } from "@mui/joy"
@@ -35,7 +35,7 @@ import TextInput from '../textInput';
 import TextAreaInput from '../textAreaInput';
 import TextSelectbox from '../textSelectbox';
 import ImageUploadPopup from './imageUploadPopup';
-import AddNewTypeOfWork from './addNewTypeOfWork';
+import AddNewOption from './addNewOption';
 import Cookies from 'js-cookie';  // npm install js-cookie
 
 import IconButton from '@mui/material/IconButton';
@@ -46,10 +46,12 @@ import FocusTrap from "focus-trap-react";
 
 const ProjectDetails = ({onFormSubmit,projectId=''}) => {
 
+  const [isModalOpen, setModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [newProjectData, setNewProjectData]  = useState([]);
   const [sessionId, setSessionId] = useState(null);
   const [popupType, setPopupType] = useState(null);
+
     const navigate = useNavigate();
     const navigateHandler = (url) => {
       navigate(url);
@@ -58,12 +60,30 @@ const ProjectDetails = ({onFormSubmit,projectId=''}) => {
 
     const ITEM_HEIGHT = 48;
       const [anchorEl, setAnchorEl] = React.useState(null);
-      const openDropdown = Boolean(anchorEl);
-      const handleClick = (event) => {
+      const [anchorE2, setAnchorE2] = React.useState(null);
+      const [anchorE3, setAnchorE3] = React.useState(null);
+      const [anchorE4, setAnchorE4] = React.useState(null);
+      const openDropdown1 = Boolean(anchorEl);
+      const openDropdown2 = Boolean(anchorE2);
+      const openDropdown3 = Boolean(anchorE3);
+      const openDropdown4 = Boolean(anchorE4);
+      const handleClick1 = (event) => {
         setAnchorEl(event.currentTarget);
+      };
+      const handleClick2 = (event) => {
+        setAnchorE2(event.currentTarget);
+      };
+      const handleClick3 = (event) => {
+        setAnchorE3(event.currentTarget);
+      };
+      const handleClick4 = (event) => {
+        setAnchorE4(event.currentTarget);
       };
       const handleClose = () => {
         setAnchorEl(null);
+        setAnchorE2(null);
+        setAnchorE3(null);
+        setAnchorE4(null);
       };
     const ref = useRef(null);
 
@@ -107,6 +127,10 @@ const ProjectDetails = ({onFormSubmit,projectId=''}) => {
     const [modalValue, setModalValue] = useState(null);
      const [project, setProject] = useState([]);
     
+     const [isOpen, setIsOpen] = useState(false);
+     const [workType, setWorkType] = useState('');
+     const [newSlug, setNewSlug] = useState('');
+
     const[formData, setFormData] = useState({ project_name: "", email: "" });
    
     const accessTypes = ["Upload Site Media", "View Live Feed", "Add Material Updates", "View Client Contact Details", "Add Notification", "View Payment Details"];
@@ -464,7 +488,7 @@ useEffect(() => {
 
 const handleButtonClick = (value) => {
 
-  
+ // setModalOpen(true)
   setOpen(true)
   setModalValue(value)
 };
@@ -483,8 +507,33 @@ const handlePopupClick1 = (value,idx) => {
   setOpen(true)
 
 };
+const setModalOpen1  = ($name,$slug,$key) => {
+  setModalOpen(true)
+  setAnchorEl(null);
+ setModalValue($name)
+ setNewSlug($slug);
+
+};
+const setModalOpen2  = ($name,$slug,$key) => {
+    setModalOpen(true)
+    setAnchorE2(null);
+    setModalValue($name)
+    setNewSlug($slug);
+};
+const setModalOpen3  = ($name,$slug,$key) => {
+  setModalOpen(true)
+  setAnchorE3(null);
+  setModalValue($name)
+  setNewSlug($slug);
+};
+const setModalOpen4  = ($name,$slug,$key) => {
+  setModalOpen(true)
+  setAnchorE4(null);
+  setModalValue($name)
+  setNewSlug($slug);
+};
     return (
-      <div ref={ref} style={{ width: "100%", height: "100vh" }}>
+      <div ref={ref}  className="adminProjectDetails" style={{ width: "100%", height: "100vh" }}>
         <div className="card mt-25">
           <h5 className="card-header">Project Description</h5>
           <div className="card-body">
@@ -566,6 +615,8 @@ const handlePopupClick1 = (value,idx) => {
 
                 </div>
 
+
+               
                 <Modal
                   aria-labelledby="modal-title"
                   aria-describedby="modal-desc"
@@ -588,9 +639,7 @@ const handlePopupClick1 = (value,idx) => {
                   >
                     <Typography id="modal-desc" textColor="text.tertiary">
                      
-                        { modalValue === 'Add_New_Type_of_work' && ( 
-                            <AddNewTypeOfWork name={modalValue} />
-                        )}
+                      
                          { modalValue === 'cover_image' && ( 
                       <ImageUploadPopup name={modalValue} />
                     )}
@@ -661,43 +710,53 @@ const handlePopupClick1 = (value,idx) => {
           </div>
         </div>
 
-        <div className="card mt-25">
+        <div className="card mt-25 ">
           <h5 className="card-header">
             Type of Work
             <IconButton
               style={{ marginLeft: "560px", marginTop: "-px" }}
               aria-label="more"
               id="long-button"
-              aria-controls={openDropdown ? "long-menu" : undefined}
-              aria-expanded={openDropdown ? "true" : undefined}
+              aria-controls={openDropdown1 ? "long-menu" : undefined}
+              aria-expanded={openDropdown1 ? "true" : undefined}
               aria-haspopup="true"
-              onClick={handleClick}
+              onClick={handleClick1}
             >
               <img
                 src={process.env.PUBLIC_URL + "/images/More.svg"}
                 className="icon-small-outline-project"
               />
             </IconButton>
-            <Menu
+            <Menu className="addNewOption1"
               id="long-menu"
               MenuListProps={{
                 "aria-labelledby": "long-button",
               }}
               anchorEl={anchorEl}
-              open={openDropdown}
+              open={openDropdown1}
               onClose={handleClose}
               slotProps={{
                 paper: {
                   style: {
                     maxHeight: ITEM_HEIGHT * 4.5,
                     width: "20ch",
+                    left: "1200px"
                   },
                 },
               }}
             >
               <MenuItem
-                key="2"
-                onClick={() => handleButtonClick("Add_New_Type_of_work", 0)}
+                key="1"
+                onClick={() => setModalOpen1('Work Item Type','Type_of_work',1)}
+                slotProps={{
+                  paper: {
+                    style: {
+                      maxHeight: ITEM_HEIGHT * 4.5,
+                      width: "20ch",
+                      left: "1200px"
+                    },
+                  },
+                }}
               >
                 Add New Item
               </MenuItem>
@@ -738,7 +797,61 @@ const handlePopupClick1 = (value,idx) => {
         </div>
 
         <div className="card mt-25">
-          <h5 className="card-header">Site Categories</h5>
+          <h5 className="card-header">Site Categories
+
+
+          <IconButton
+              style={{ marginLeft: "548px", marginTop: "-px" }}
+              aria-label="more"
+              id="long-button2"
+              aria-controls={openDropdown2 ? "long-menu2" : undefined}
+              aria-expanded={openDropdown2 ? "true" : undefined}
+              aria-haspopup="true"
+              onClick={handleClick2}
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/images/More.svg"}
+                className="icon-small-outline-project"
+              />
+            </IconButton>
+            <Menu className="addNewOption2"
+              id="long-menu2"
+              MenuListProps={{
+                "aria-labelledby": "long-button2",
+              }}
+              anchorE2={anchorE2}
+              open={openDropdown2}
+              onClose={handleClose}
+              slotProps={{
+                paper: {
+                  style: {
+                    maxHeight: ITEM_HEIGHT * 4.5,
+                    width: "20ch",
+                    left: "1200px"
+                  },
+                },
+              }}
+            >
+              <MenuItem
+                key="2"
+                onClick={() => setModalOpen2('Site Category','Site_categories',2)}
+                slotProps={{
+                  paper: {
+                    style: {
+                      maxHeight: ITEM_HEIGHT * 4.5,
+                      width: "20ch",
+                      left: "1200px"
+                    },
+                  },
+                }}
+              >
+                Add New Item
+              </MenuItem>
+            </Menu>
+
+
+
+          </h5>
           <div className="card-body">
             <div className="row">
               {siteCategories.length > 0 &&
@@ -834,7 +947,59 @@ const handlePopupClick1 = (value,idx) => {
         </div>
 
         <div className="card mt-25">
-          <h5 className="card-header">Drawing Categories</h5>
+          <h5 className="card-header">Drawing Categories
+
+
+          <IconButton
+              style={{ marginLeft: "500px", marginTop: "-px" }}
+              aria-label="more"
+              id="long-button3"
+              aria-controls={openDropdown3 ? "long-menu3" : undefined}
+              aria-expanded={openDropdown3 ? "true" : undefined}
+              aria-haspopup="true"
+              onClick={handleClick3}
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/images/More.svg"}
+                className="icon-small-outline-project"
+              />
+            </IconButton>
+            <Menu className="addNewOption3"
+              id="long-menu3"
+              MenuListProps={{
+                "aria-labelledby": "long-button3",
+              }}
+              anchorE3={anchorE3}
+              open={openDropdown3}
+              onClose={handleClose}
+              slotProps={{
+                paper: {
+                  style: {
+                    maxHeight: ITEM_HEIGHT * 4.5,
+                    width: "20ch",
+                    left: "1200px"
+                  },
+                },
+              }}
+            >
+              <MenuItem
+                key="3"
+                onClick={() => setModalOpen3('Drawing Category','Drawing_categories',3)}
+                slotProps={{
+                  paper: {
+                    style: {
+                      maxHeight: ITEM_HEIGHT * 4.5,
+                      width: "20ch",
+                      left: "1200px"
+                    },
+                  },
+                }}
+              >
+                Add New Item
+              </MenuItem>
+            </Menu>
+
+          </h5>
           <div className="card-body">
             <div className="row">
               {drawingCategories.length > 0 &&
@@ -979,7 +1144,60 @@ const handlePopupClick1 = (value,idx) => {
         </div>
 
         <div className="card mt-25">
-          <h5 className="card-header">Contractor Types</h5>
+          <h5 className="card-header">Contractor Types
+
+          <IconButton
+              style={{ marginLeft: "525px", marginTop: "-px" }}
+              aria-label="more"
+              id="long-button4"
+              aria-controls={openDropdown4 ? "long-menu4" : undefined}
+              aria-expanded={openDropdown4 ? "true" : undefined}
+              aria-haspopup="true"
+              onClick={handleClick4}
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/images/More.svg"}
+                className="icon-small-outline-project"
+              />
+            </IconButton>
+            <Menu className="addNewOption4"
+              id="long-menu4"
+              MenuListProps={{
+                "aria-labelledby": "long-button4",
+              }}
+              anchorE4={anchorE4}
+              open={openDropdown4}
+              onClose={handleClose}
+              slotProps={{
+                paper: {
+                  style: {
+                    maxHeight: ITEM_HEIGHT * 4.5,
+                    width: "20ch",
+                    left: "1200px"
+                  },
+                },
+              }}
+            >
+              <MenuItem
+                key="4"
+                onClick={() => setModalOpen4('Contractor Type','Contractor_type',4)}
+                slotProps={{
+                  paper: {
+                    style: {
+                      maxHeight: ITEM_HEIGHT * 4.5,
+                      width: "20ch",
+                      left: "1200px"
+                    },
+                  },
+                }}
+              >
+                Add New Item
+              </MenuItem>
+            </Menu>
+
+
+
+          </h5>
           <div className="card-body">
             <div className="row">
               {contractorType.length > 0 &&
@@ -1130,25 +1348,23 @@ const handlePopupClick1 = (value,idx) => {
             </div>
           </div>
         </div>
+        { newSlug === 'Type_of_work' || newSlug === 'Contractor_type' && ( 
+        <AddNewOption name={modalValue} isOpen={isModalOpen} onClose={() => setModalOpen(false)} slug={newSlug} 
+          fetchNewData ={fetchTypeOfWorkData }  />
+        )}
+         { newSlug === 'Site_categories' || newSlug === 'Drawing_categories'  && ( 
+          <AddNewOption name={modalValue} isOpen={isModalOpen} onClose={() => setModalOpen(false)} slug={newSlug} 
+          fetchNewData ={fetchSiteCategoriesData }  />
 
-        <ModalAddNew show={addNewShow} onHide={handleAddNewClose} size="lg">
-          <ModalAddNew.Header>
-            <ModalAddNew.Title>Ongoing Projects</ModalAddNew.Title>
-
-            <button
-              type="button"
-              class="close"
-              onClick={handleAddNewClose}
-              data-dismiss="modal"
-              aria-hidden="true"
-            >
-              ×
-            </button>
-          </ModalAddNew.Header>
-        
-          
-        </ModalAddNew>
-
+         )}
+          { newSlug === 'Drawing_categories'  && ( 
+        <AddNewOption name={modalValue} isOpen={isModalOpen} onClose={() => setModalOpen(false)} slug={newSlug} 
+          fetchNewData ={fetchDrawingCategoriesData }  />
+        )}
+         { newSlug === 'Contractor_type' && ( 
+        <AddNewOption name={modalValue} isOpen={isModalOpen} onClose={() => setModalOpen(false)} slug={newSlug} 
+          fetchNewData ={fetchContractorTypeData }  />
+        )}
         <div className="card-body">&nbsp;</div>
       </div>
     );

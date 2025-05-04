@@ -1,10 +1,13 @@
+.log-out-pop-up{
+  height: 100vh;
+}
 .log-out-pop-up .pexels-goldcircuits-24252321 {
   opacity: 0.2;
   background: url('../../../assets/images/PexelsGoldcircuits24252321.jpeg') 50% / cover no-repeat;
   position: absolute;
   top: 0px;
   right: -83px;
-  width: 541px;
+ /* width: 541px;*/ 
   height: 812px;
 }
 .log-out-pop-up .line-1 {
@@ -378,11 +381,12 @@
   opacity: 0.9;
   background: var(--background-black, #0F0F10);
   position: absolute;
-  left: 0px;
+  /* left: 0px; */
   top: 0px;
-  right: 0px;
+  /* right: 0px; */
   bottom: 0px;
   height: 100%;
+  width: 100%;
 }
 .log-out-pop-up .rectangle-6 {
   border-radius: 4px;
@@ -485,8 +489,10 @@
   border-radius: 40px 40px 0 0;
   background: linear-gradient(180deg, #232324, #19191A);
   position: absolute;
-  left: 0px;
-  right: 0px;
+  /* left: 0px; */
+  /* right: 0px; */
+  width: 100%;
+  margin: 0 auto;
   bottom: 0px;
   display: flex;
   flex-direction: column;

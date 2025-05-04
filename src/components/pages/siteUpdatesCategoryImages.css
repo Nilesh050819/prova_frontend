@@ -153,7 +153,7 @@
   border-radius: 16px;
   background: url('../../../assets/images/UnsplashoCw5EvbWyI.jpeg') 50% / cover no-repeat;
   position: relative;
-  margin-right: 24px;
+  /*margin-right: 24px;*/
   display: flex;
   flex-direction: column;
   padding: 10.5px 0 12px 10.5px;

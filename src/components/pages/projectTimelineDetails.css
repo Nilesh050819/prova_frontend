@@ -743,7 +743,7 @@
 }
 
 .label .text-wrapper {
-  color: #ffffff;
+  color: #ffffff !important;
   font-family: "Outfit-Bold", Helvetica;
   font-size: 16px;
   font-weight: 700;

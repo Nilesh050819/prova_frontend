@@ -107,8 +107,6 @@ function ImageUploadPopup({name}) {
           console.log(error);
           //toast.error('Unable to update please try again!');
         } finally {
-    
-          
         }
       }
       useEffect(() => {
@@ -116,7 +114,7 @@ function ImageUploadPopup({name}) {
       }, []);
   return (
     
-<div className="mt-6" >
+<div className="mt-6 border-radius"   >
                     <Button onChange={onFileChange}
                         component="label"
                         role={undefined}
