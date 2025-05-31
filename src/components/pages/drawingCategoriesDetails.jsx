@@ -49,9 +49,11 @@ const DrawingCategoriesDetails = () => {
     const drawingName = queryParams.get('drawing'); // Capture the 'type' query parameter
      const [projectId, setProjectId] = useState(pid);
      const [deleteData, setDeleteData] = useState(false);
+     const [supervisorAccess, setSupervisorAccess] = useState([]);
       
     
               let authToken = localStorage.getItem("token");
+              const userId = localStorage.getItem("user_id");
               const config = { headers: { 'content-type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer ' + authToken } };
                  const fetchProjectDetails = async () => {
                     try {
@@ -72,10 +74,21 @@ const DrawingCategoriesDetails = () => {
                             };
                             
                             let api1 = `${BASE_URL}/api/supervisor/getAssignedDataByProjects`;
-                         
-                            const result1 = await axios.post(api1, bodyObj, { config });
-                                     console.log(result1.data);
+                           const result1 = await axios.post(api1, bodyObj, { config });
+                                    // console.log(result1.data);
                                      setDrawingCategories(result1.data.data)
+
+                                     /** supervisor access */
+                                    let api2 = `${BASE_URL}/api/supervisor/getProjectSupervisorAccess?p_project_id=${pid}&p_user_id=${userId}`;
+                                    const result2 = await axios.get(api2, '', { config });
+                                    // console.log(result2.data);
+                                     setSupervisorAccess(
+                                        typeof result2.data.data.supervisor_access_id === "string"
+                                          ? result2.data.data.supervisor_access_id.replace(/[{}"]/g, "").split(",").map(String)
+                                          : []
+                                      );
+                                            
+                                    //console.log(supervisorAccess);
                            
                       } catch {
                         setProject([]);
@@ -150,15 +163,11 @@ const DrawingCategoriesDetails = () => {
                              console.log(result);
                              setDocuments(result.data.data);
                           
-                             
-                            
                        } catch (error) {
                          console.log(error);
                          //toast.error('Unable to update please try again!');
                        } finally {
-                   
-                         
-                       }
+                    }
                 }
 
       useEffect(() => {
@@ -215,6 +224,11 @@ const DrawingCategoriesDetails = () => {
         
           return `${dayWithSuffix} ${month}, ${year}`;
         }
+//console.log('nilesh',supervisorAccess);
+     const hasAccess = supervisorAccess.includes(`Upload ${drawingName} Drawings`);
+     //   const hasAccess = '1'; // true
+         const canShowSupervisorTools = localStorage.getItem("type") === 'Supervisor' && hasAccess;
+
     return (
       <div className="furniture-drawings">
       <div className="frame-15" >
@@ -229,7 +243,7 @@ const DrawingCategoriesDetails = () => {
           Access all {drawingName} schematics.
           </span>
         </div>
-        { localStorage.getItem("type") === 'Supervisor' && ( 
+        { canShowSupervisorTools && ( 
         <div className="frame-21 icon-large-outline" style={{ color : '#fff'}}>
 
         <Button onChange={onFileChange}

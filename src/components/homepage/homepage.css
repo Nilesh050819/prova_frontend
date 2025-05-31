@@ -511,8 +511,9 @@
         border-radius: 15px;
       }
       .unsplashih7wpsjwomc-icon2{
-        margin-left: 108px;
-        margin-top: 144px;
+      /*  margin-left: 108px;
+        margin-top: 144px;*/
+        width:100%
       }
       .sup-cls{
         width: 100%;

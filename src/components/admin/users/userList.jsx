@@ -236,8 +236,8 @@ let timer;
     
     <div className="col py-3 list_page">
 
-    <div className="row flex-nowrap ">
-        <div className="col-md-12 list_page_main" style={{ width: 1300}}>
+    <div className="row flex-nowrap " style={{ width: '1318px'}}>
+        <div className="col-md-12 list_page_main" >
         <div className=" data_table" >
         <div className="col-md-12 ">
         <div className="row">
@@ -262,6 +262,7 @@ let timer;
             <div style={{ marginTop: 30}}>    
           
             <div className="row " >
+            <div className="col-md-12 ">
             <div style={{ position: 'relative', display: 'inline-block' }}>
                       <input
                         type="text"
@@ -285,6 +286,7 @@ let timer;
                         }}
                       />
                     </div>
+          </div>
          <div className="tableContainer" style={{ position: "relative", paddingLeft: 15, marginTop: 32,width: "100%" }} >
              
 <div style={{ height: 400, width: '100%',position: 'relative' }} ref={gridRef}>

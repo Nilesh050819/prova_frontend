@@ -4,6 +4,7 @@ import { BASE_URL, BLACK, PRIMARY, WHITE } from "../../../constants";
 import { Button, CircularProgress, Input, Modal, Option, selectClasses, styled, SvgIcon, Textarea } from "@mui/joy"
 import axios from '../../../api/axios';
 import { v4 as uuidv4 } from 'uuid';
+import toast from "react-hot-toast";
 
 
 const VisuallyHiddenInput = styled('input')`
@@ -17,7 +18,7 @@ const VisuallyHiddenInput = styled('input')`
                     white-space: nowrap;
                     width: 1px;
                     `;
-function ImageUploadPopup({name}) {
+function ImageUploadPopup({name,openModal}) {
 
     
   const [state, setState] = useState(false);
@@ -26,32 +27,23 @@ function ImageUploadPopup({name}) {
   const [fileList, setFileList] = useState([]);
   const [fileName, setFileName] = useState(false);
   const [filePath, setFilePath] = useState(false);
+  const [uploadData, setUploadData] = useState([]);
  
-  const uniqueCode = localStorage.getItem("tokenId");; // Generates a unique UUID         
+  const uniqueCode = localStorage.getItem("tokenId");; // Generates a unique UUID       
+  const token = localStorage.getItem("token");
+      
   const onFileChange = async (event) => {
-    //if (!(event.target.files && event.target.files.length > 0)) {
-     // return appError("File not selected.");
-  //}
-
-      //setLoadingUploadExcel(true);
-      let file = event.target.files[0];
+       let file = event.target.files[0];
       //console.log(file)
-      const token = localStorage.getItem("token");
     
       const formData = new FormData();
       formData.append('file', file);
-     
-     // console.log(event.target.name)
+     console.log(file)
      setFileType(event.target.name);
-      let api = `${BASE_URL}/api/project/uploadFiles?fileType=${event.target.name}&token=${uniqueCode}`;
-     /* const result = axios.post(api, formData, {
-          headers: {
-              'Content-Type': 'multipart/form-data',
-              "Authorization": `Bearer ${token}`
-          }
-      });*/
-    
-      axios.post(api, formData, {
+     setUploadData(formData)
+     setFileName(file.name);
+    /*  let api = `${BASE_URL}/api/project/uploadFiles?fileType=${event.target.name}&token=${uniqueCode}`;
+       axios.post(api, formData, {
         headers: {
             'Content-Type': 'multipart/form-data',
             'Authorization': `Bearer ${token}`
@@ -66,21 +58,32 @@ function ImageUploadPopup({name}) {
     .catch(error => {
         // Handle any errors
         console.error('Error uploading file:', error);
-    });
-      //const { filename, originalname } = res?.data;
-     /* setReadFIle(readFile => ({
-          ...readFile,
-          file_id: res.data.filename,
-          file_name: res.data.originalname,
+    });*/
+  };
+  const saveUploadData = async () => {
+  
+      let api = `${BASE_URL}/api/project/uploadFiles?fileType=${fileType}&token=${uniqueCode}`;
+        axios.post(api, uploadData, {
+          headers: {
+              'Content-Type': 'multipart/form-data',
+              'Authorization': `Bearer ${token}`
+          }
+      })
+      .then(response => {
+          // Handle the successful response
+          console.log('File uploaded successfully:', response.data);
+          getUploadFiles();
+          openModal(false);
+          toast.success('File uploaded successfully');
+
           
-      }));
-        //    toast.success(message);
-        
-        console.log(readFile);
-        */
-        
-    
-      };
+      })
+      .catch(error => {
+          // Handle any errors
+          console.error('Error uploading file:', error);
+      });
+      
+  }
       let authToken = localStorage.getItem("token");
       const config = { headers: { 'content-type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer ' + authToken } };
   
@@ -107,8 +110,6 @@ function ImageUploadPopup({name}) {
           console.log(error);
           //toast.error('Unable to update please try again!');
         } finally {
-    
-          
         }
       }
       useEffect(() => {
@@ -116,7 +117,7 @@ function ImageUploadPopup({name}) {
       }, []);
   return (
     
-<div className="mt-6" >
+<div className="mt-6 border-radius"   >
                     <Button onChange={onFileChange}
                         component="label"
                         role={undefined}
@@ -150,6 +151,9 @@ function ImageUploadPopup({name}) {
                             </p>
                             )}
                         </div>
+                        <button class="publish_btn" style={{ textDecoration: 'none',float: 'right', width:200}} type="button" onClick={() => saveUploadData()} >Save</button>&nbsp;
+          
+                        <button style={{ textDecoration: 'none',float: 'left',width:200}} onClick={() => openModal(false)} class="cancel_btn" type="button" >Cancel</button>
                 </div>
                 
   );

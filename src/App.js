@@ -6,28 +6,23 @@ import './App.css';
 
 import './header.css';
 import Homepage from './components/homepage/homepage';
-import Navbar from './components/appComponents/Navbar';
+
 import Login from './components/login/login';
-import Register from './components/register/register';
 
 
-import Header from './components/appComponents/Header.jsx';
-import Users from './components/Users';
+import React from 'react';
 
-
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from "react-router-dom";
 import axios from './api/axios';
 
 
 
-import { BrowserRouter, Router, Route, Routes, Link, Navigate  } from "react-router-dom";
+import { BrowserRouter, Route, Routes  } from "react-router-dom";
 import { Toaster } from 'react-hot-toast';
 import Onboarding from "./components/onboarding";
 
 import Home from "./components/Home.jsx";
 
-import ThemeConfig from "./components/themeConfig/themeConfig.jsx";
+
 import DrawingCategories from "./components/pages/drawingCategories.jsx";
 import DrawingCategoriesDetails from "./components/pages/drawingCategoriesDetails.jsx";
 import SiteUpdatesCategories from "./components/pages/siteUpdatesCategories.jsx";
@@ -52,7 +47,7 @@ import ResetPassword from "./components/pages/ResetPassword.jsx";
 import EnterOtp from "./components/pages/EnterOtp.jsx";
 
 /*** Admin */
-import dashboard from "./components/admin/dashboard/dashboard.jsx";
+
 import AddProject from "./components/admin/addProject/addProject.jsx";
 import EditProject from "./components/admin/addProject/editProject.jsx";
 import ProjectList from "./components/admin/addProject/projectList.jsx";
@@ -69,7 +64,7 @@ import ProgressBar from './components/homepage/progressBar';
 
 function App() {
 
-  const [user, setLoginUser] = useState({})
+  //const [user, setLoginUser] = useState({})
 
   axios.interceptors.response.use((response) => response, (error) => {
     
@@ -83,9 +78,7 @@ function App() {
     }
   });
 
-  const ProtectedRoute = ({ isAuthenticated, children }) => {
-   
-  };
+ 
   return (
     <div style={{ padding: 0, margin: 0 }} >
      
@@ -94,7 +87,7 @@ function App() {
           <Route path="/" element={<Home />} >
              <Route path="/" element={<Homepage />} />
            
-            <Route path="themeConfig" element={<ThemeConfig />} />
+          
             <Route path="drawingCategories" element={<DrawingCategories />} />
             <Route path="drawingCategoriesDetails" element={<DrawingCategoriesDetails />} />
             <Route path="siteUpdatesCategories" element={<SiteUpdatesCategories />} />

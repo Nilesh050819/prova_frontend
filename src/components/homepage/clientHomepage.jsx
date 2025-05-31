@@ -290,7 +290,7 @@ function formatDate(dateString) {
                   <img
                     className="unsplashih7wpsjwomc-icon2"
                     alt=""
-                    src={`assets/vectors/${row.icon}`} style={{ width: '80px'}}
+                    src={row.file_path} 
                   />
                   <div className="hall-room-wrapper" >
                     <div className="hall-room">{row.field_value}</div>

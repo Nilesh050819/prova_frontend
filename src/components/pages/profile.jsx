@@ -37,9 +37,11 @@ const Profile = () => {
             <div className="abhishek-tiwari">
             {localStorage.getItem('full_name')}
             </div>
+            { localStorage.getItem("mobile_no") != 'null' && ( 
             <span className="container">
             {localStorage.getItem('mobile_no')}
             </span>
+            )}
           </div>
         </div>
         <div className="frame-291">

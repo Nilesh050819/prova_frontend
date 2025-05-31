@@ -33,12 +33,18 @@ const AdminWork = ({onAdminWorkFormSubmit}) => {
 
   const ITEM_HEIGHT = 48;
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
+  const [anchorE2, setAnchorE2] = React.useState(null);
+  const open1 = Boolean(anchorEl);
+  const open2 = Boolean(anchorE2);
+  const handleClick1 = (event) => {
     setAnchorEl(event.currentTarget);
+  };
+  const handleClick2 = (event) => {
+    setAnchorE2(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
+    setAnchorE2(null);
   };
 
   const [adminWorkData, setAdminWorkData]  = useState([]);
@@ -102,16 +108,29 @@ const fetchUserTypeData = async () => {
 //console.log(projectType);
 
 
-const handleImagePopupClick = (value,idx) => {
-  console.log('nilesh')
+const handleImagePopupClick1 = (value,idx) => {
+   
   setImagePopupOpen(true)
   setModalValue(value)
   setIdxValue(idx)
+  setAnchorEl(null);
+    
+};
+const handleImagePopupClick2 = (value,idx) => {
+  
+  setImagePopupOpen(true)
+  setModalValue(value)
+  setIdxValue(idx)
+  setAnchorE2(null);
 };
 
 const viewFile = (filepath) => {
   console.log(filepath)
-  window.location.href = filepath;
+  setAnchorEl(null);
+  setAnchorE2(null);
+  setTimeout(() => {
+    window.location.href = filepath;
+  }, 500); 
   
 };
 
@@ -272,21 +291,21 @@ useEffect(() => {
 
              <IconButton
                             aria-label="more"
-                            id="long-button"
-                            aria-controls={open ? 'long-menu' : undefined}
-                            aria-expanded={open ? 'true' : undefined}
+                            id="long-button1"
+                            aria-controls={open1 ? 'long-menu1' : undefined}
+                            aria-expanded={open1 ? 'true' : undefined}
                             aria-haspopup="true"
-                            onClick={handleClick}
+                            onClick={handleClick1}
                           >
                             <img  src={process.env.PUBLIC_URL + "/images/More.svg"} className="icon-small-outline1" />
                           </IconButton>
                           <Menu
-                            id="long-menu"
+                            id="long-menu1"
                             MenuListProps={{
-                              'aria-labelledby': 'long-button',
+                              'aria-labelledby': 'long-button1',
                             }}
                             anchorEl={anchorEl}
-                            open={open}
+                            open={open1}
                             onClose={handleClose}
                             slotProps={{
                               paper: {
@@ -300,13 +319,102 @@ useEffect(() => {
                              <MenuItem key="1" onClick={() => termConditionDocument?.[0]?.file_path && viewFile(termConditionDocument[0].file_path)} >
                                  View
                             </MenuItem>
-                              <MenuItem key="2" onClick={() => handleImagePopupClick("Term_condition_document",0)} >
+                              <MenuItem key="2" onClick={() => handleImagePopupClick1("Term_condition_document",0)} >
                                 Upload
                             </MenuItem>
                             
                           </Menu>
       
-               
+              </div>
+
+                <div className="div-2">
+                  <img
+                    className="vscode-icons-file"
+                    alt="Vscode icons file"
+                    src={process.env.PUBLIC_URL + "/images/vscode-icons_file-type-pdf2.svg"}
+                  />
+
+                  <div className="div-3">
+                    <div className="terms-condition-pdf">{termConditionDocument[0]?.file_name}</div>
+
+                    <div className="div-4">
+                    { termConditionDocument[0]?.created_date != undefined && ( 
+                      <div className="text-wrapper">{format(new Date(termConditionDocument[0]?.created_date), 'do MMM, yy') }</div>
+                    )}
+                      <div className="ellipse" />
+                      { termConditionDocument[0]?.created_date !=  undefined && ( 
+                      <div className="text-wrapper">{format(new Date(termConditionDocument[0]?.created_date), 'hh:ii a') }</div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+   
+</div>
+
+         <div className="col-md-4" >
+              <div className="frame">
+                <div className="div">
+                  <div className="terms-condition">ADMIN SIGNATURE</div>
+             <IconButton
+                            aria-label="more"
+                            id="long-button2"
+                            aria-controls={open2 ? 'long-menu2' : undefined}
+                            aria-expanded={open2 ? 'true' : undefined}
+                            aria-haspopup="true"
+                            onClick={handleClick2}
+                          >
+                            <img  src={process.env.PUBLIC_URL + "/images/More.svg"} className="icon-small-outline1" />
+                          </IconButton>
+                          <Menu
+                            id="long-menu2"
+                            MenuListProps={{
+                              'aria-labelledby': 'long-button2',
+                            }}
+                            anchorEl={anchorE2}
+                            open={open2}
+                            onClose={handleClose}
+                            slotProps={{
+                              paper: {
+                                style: {
+                                  maxHeight: ITEM_HEIGHT * 4.5,
+                                  width: '20ch',
+                                },
+                              },
+                            }}
+                          >
+                            <MenuItem key="11" onClick={() => adminSignature?.[0]?.file_path && viewFile(adminSignature[0].file_path)}>View</MenuItem>
+                            <MenuItem key="22" onClick={() => handleImagePopupClick2("Admin_signature",0)} >
+                                  Upload</MenuItem>
+                          </Menu>
+                </div>
+                <div className="div-2">
+                  <img
+                    className="vscode-icons-file"
+                    alt="Vscode icons file"
+                    src={process.env.PUBLIC_URL + "/images/flat-color-icons_image-file.svg"}
+                  />
+                <div className="div-3">
+                    <div className="terms-condition-pdf">{adminSignature[0]?.file_name}</div>
+                     <div className="div-4">
+                    { adminSignature[0]?.created_date != undefined && ( 
+                      <div className="text-wrapper">{format(new Date(adminSignature[0]?.created_date), 'do MMM, yy') }</div>
+                    )}
+                      <div className="ellipse" />
+                      { adminSignature[0]?.created_date !=  undefined && ( 
+                      <div className="text-wrapper">{format(new Date(adminSignature[0]?.created_date), 'hh:ii a') }</div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div> 
+
+
+
+
+
               <Modal
                 aria-labelledby="modal-title"
                 aria-describedby="modal-desc"
@@ -338,103 +446,14 @@ useEffect(() => {
 
 
 
-        </div>
-
-                <div className="div-2">
-                  <img
-                    className="vscode-icons-file"
-                    alt="Vscode icons file"
-                    src={process.env.PUBLIC_URL + "/images/vscode-icons_file-type-pdf2.svg"}
-                  />
-
-                  <div className="div-3">
-                    <div className="terms-condition-pdf">{termConditionDocument[0]?.file_name}</div>
-
-                    <div className="div-4">
-                    { termConditionDocument[0]?.created_date != undefined && ( 
-                      <div className="text-wrapper">{format(new Date(termConditionDocument[0]?.created_date), 'do MMM, yy') }</div>
-                    )}
-                      <div className="ellipse" />
-                      { termConditionDocument[0]?.created_date !=  undefined && ( 
-                      <div className="text-wrapper">{format(new Date(termConditionDocument[0]?.created_date), 'hh:ii a') }</div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
 
 
-</div>
 
-              <div className="col-md-4" >
 
-              <div className="frame">
-                <div className="div">
-                  <div className="terms-condition">ADMIN SIGNATURE</div>
 
-             <IconButton
-                            aria-label="more"
-                            id="long-button"
-                            aria-controls={open ? 'long-menu' : undefined}
-                            aria-expanded={open ? 'true' : undefined}
-                            aria-haspopup="true"
-                            onClick={handleClick}
-                          >
-                            <img  src={process.env.PUBLIC_URL + "/images/More.svg"} className="icon-small-outline1" />
-                          </IconButton>
-                          <Menu
-                            id="long-menu"
-                            MenuListProps={{
-                              'aria-labelledby': 'long-button',
-                            }}
-                            anchorEl={anchorEl}
-                            open={open}
-                            onClose={handleClose}
-                            slotProps={{
-                              paper: {
-                                style: {
-                                  maxHeight: ITEM_HEIGHT * 4.5,
-                                  width: '20ch',
-                                },
-                              },
-                            }}
-                          >
-                            <MenuItem key="1" onClick={() => adminSignature?.[0]?.file_path && viewFile(adminSignature[0].file_path)}>
-                            View
-                            </MenuItem>
-                            <MenuItem key="2" onClick={() => handleImagePopupClick("Admin_signature",0)} >
-                                  Upload
-                              </MenuItem>
-                            
-                          </Menu>
-      
-                  </div>
 
-                <div className="div-2">
-                  <img
-                    className="vscode-icons-file"
-                    alt="Vscode icons file"
-                    src={process.env.PUBLIC_URL + "/images/flat-color-icons_image-file.svg"}
-                  />
 
-                  <div className="div-3">
-                    <div className="terms-condition-pdf">{adminSignature[0]?.file_name}</div>
 
-                    <div className="div-4">
-                    { adminSignature[0]?.created_date != undefined && ( 
-                      <div className="text-wrapper">{format(new Date(adminSignature[0]?.created_date), 'do MMM, yy') }</div>
-                    )}
-                      <div className="ellipse" />
-                      { adminSignature[0]?.created_date !=  undefined && ( 
-                      <div className="text-wrapper">{format(new Date(adminSignature[0]?.created_date), 'hh:ii a') }</div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              </div>
               </div>
 
 

@@ -1,9 +1,10 @@
 import React, {useEffect, useState, useRef} from 'react';
-import { Link,Outlet,useNavigate} from "react-router-dom";
-import { BASE_URL, BLACK, PRIMARY, WHITE } from "../../../constants";
+//import { Link,Outlet,useNavigate} from "react-router-dom";
+import { BASE_URL, BLACK, PRIMARY } from "../../../constants";
 import { Button, CircularProgress, Input, Modal, Option, selectClasses, styled, SvgIcon, Textarea } from "@mui/joy"
 import axios from '../../../api/axios';
 import { v4 as uuidv4 } from 'uuid';
+import toast from "react-hot-toast";
 
 
 const VisuallyHiddenInput = styled('input')`
@@ -17,43 +18,35 @@ const VisuallyHiddenInput = styled('input')`
                     white-space: nowrap;
                     width: 1px;
                     `;
-function ImageUploadPopup({name, idx}) {
+function ImageUploadPopup({name, idx, openModal}) {
 
     
   const [state, setState] = useState(false);
-  const [readFile, setReadFIle] = useState(false);
+  //const [readFile, setReadFIle] = useState(false);
   const [fileType, setFileType] = useState(name);
-  const [fileList, setFileList] = useState([]);
+  //const [fileList, setFileList] = useState([]);
   const [fileName, setFileName] = useState(false);
   const [filePath, setFilePath] = useState(false);
   const [idxValue, setIdxValue] = useState(idx);
+  const [uploadData, setUploadData] = useState([]);
  
-  const uniqueCode = localStorage.getItem("tokenId");; // Generates a unique UUID         
+  const uniqueCode = localStorage.getItem("tokenId");; // Generates a unique UUID       
+  const token = localStorage.getItem("token");  
   const onFileChange = async (event) => {
-    //if (!(event.target.files && event.target.files.length > 0)) {
-     // return appError("File not selected.");
-  //}
-
-      //setLoadingUploadExcel(true);
+  
       let file = event.target.files[0];
       //console.log(file)
-      const token = localStorage.getItem("token");
-    
+     
       const formData = new FormData();
       formData.append('file', file);
-     
-     // console.log(event.target.name)
+      // console.log(event.target.name)
      setFileType(event.target.name);
      setIdxValue(event.target.id);
-      let api = `${BASE_URL}/api/dropdownMaster/addUploadFiles?fileType=${event.target.name}&idx=${event.target.id}`;
-     /* const result = axios.post(api, formData, {
-          headers: {
-              'Content-Type': 'multipart/form-data',
-              "Authorization": `Bearer ${token}`
-          }
-      });*/
-    
-      axios.post(api, formData, {
+     setUploadData(formData)
+     setFileName(file.name);
+     
+      /*let api = `${BASE_URL}/api/dropdownMaster/addUploadFiles1?fileType=${event.target.name}&idx=${event.target.id}`;
+     axios.post(api, formData, {
         headers: {
             'Content-Type': 'multipart/form-data',
             'Authorization': `Bearer ${token}`
@@ -68,21 +61,34 @@ function ImageUploadPopup({name, idx}) {
     .catch(error => {
         // Handle any errors
         console.error('Error uploading file:', error);
-    });
-      //const { filename, originalname } = res?.data;
-     /* setReadFIle(readFile => ({
-          ...readFile,
-          file_id: res.data.filename,
-          file_name: res.data.originalname,
-          
-      }));
-        //    toast.success(message);
-        
-        console.log(readFile);
-        */
-        
+    });*/
     
-      };
+    
+};
+const saveUploadData = async () => {
+
+    let api = `${BASE_URL}/api/dropdownMaster/addUploadFiles?fileType=${fileType}&idx=${idxValue}`;
+      axios.post(api, uploadData, {
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+    .then(response => {
+        // Handle the successful response
+        console.log('File uploaded successfully:', response.data);
+        getUploadFiles();
+        openModal(false);
+        toast.success('File uploaded successfully');
+        
+    })
+    .catch(error => {
+        // Handle any errors
+        console.error('Error uploading file:', error);
+    });
+    
+}
+
       let authToken = localStorage.getItem("token");
       const config = { headers: { 'content-type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer ' + authToken } };
   
@@ -149,6 +155,9 @@ function ImageUploadPopup({name, idx}) {
                           </p>
                     )}
                         </div>
+                        <button class="publish_btn" style={{ textDecoration: 'none',float: 'right', width:200}} type="button" onClick={() => saveUploadData()} >Save</button>&nbsp;
+          
+                        <button style={{ textDecoration: 'none',float: 'left',width:200}} onClick={() => openModal(false)} class="cancel_btn" type="button" >Cancel</button>
                 </div>
                 
   );

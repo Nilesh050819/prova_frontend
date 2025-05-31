@@ -18,7 +18,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Calendar } from "@/components/ui/calendar"; */
 //import { TextField, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
 
-
+import ImageViewer from 'react-simple-image-viewer';
 
 //import "bootstrap-icons/font/bootstrap-icons.css";
 import Select from "react-select";
@@ -79,10 +79,7 @@ const SiteUpdates = () => {
        
        const [value, setValue] = useState([null, null]);
        
-
-
-
-       const [selectedRange, setSelectedRange] = useState([
+      const [selectedRange, setSelectedRange] = useState([
         {
           startDate: new Date(),
           endDate: new Date(),
@@ -92,7 +89,23 @@ const SiteUpdates = () => {
     
       const [preset, setPreset] = useState("Today");
       const [showPopup, setShowPopup] = useState(false);
+      const [isViewerOpen, setIsViewerOpen] = useState(false);
+      const [selectedImage, setSelectedImage] = useState([]);
+      const [supervisorAccess, setSupervisorAccess] = useState([]);
+     
+      const closeViewer = () => setIsViewerOpen(false);
+      /*const images = [
+        'https://prova-application-bucket.s3.ap-south-1.amazonaws.com/uploads/1743328798053_1736967480610_UnsplashoCw5EvbWyI.b344f6c8a154574bdbc7.jpeg',
+      ];*/
     
+      const openViewer = ($image) => {
+       // setSelectedImage(imgUrl);
+       setSelectedImage(prevImages => [ $image]);
+        setIsViewerOpen(true);
+
+        console.log(selectedImage)
+        
+      };
       const options = [
         { value: "All", label: "All" },
         { value: "Today", label: "Today" },
@@ -108,7 +121,7 @@ const SiteUpdates = () => {
             navigate('/login');
         }
     },[])
-
+    const userId = localStorage.getItem("user_id");
     let authToken = localStorage.getItem("token");
     const config = { headers: { 'content-type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer ' + authToken } };
 
@@ -176,10 +189,10 @@ const getVideoThumbnail = (videoUrl, callback) => {
 const getDocumentUploadFiles = async (fromDate='',toDate='') => {
       
       try {
+
+        setLoading(true);
           let api = `${BASE_URL}/api/supervisor/getProjectDocumentFiles`;
 
-         
-            
             const bodyObj = {
               projectId: pid,
               documentId: siteCategoriesId,
@@ -206,8 +219,6 @@ const getDocumentUploadFiles = async (fromDate='',toDate='') => {
               
             //const headers = {};
             const result = await axios.post(api, bodyObj, { config });
-           // console.log(result);
-
             const res = result.data.data;
 
             res.map(function(item, i){
@@ -217,23 +228,26 @@ const getDocumentUploadFiles = async (fromDate='',toDate='') => {
                         console.log("Generated Thumbnail URL:", thumbnail);
                         res[i].preview_img = thumbnail;
                     });
-                   
-                }
+               }
                 
             })
-            
-            setDocuments(res);
-         
-            console.log(documents)
+            /** supervisor access */
+              let api2 = `${BASE_URL}/api/supervisor/getProjectSupervisorAccess?p_project_id=${pid}&p_user_id=${userId}`;
+              const result2 = await axios.get(api2, '', { config });
+                                                  // console.log(result2.data);
+                setSupervisorAccess(
+                    typeof result2.data.data.supervisor_access_id === "string"
+                    ? result2.data.data.supervisor_access_id.replace(/[{}"]/g, "").split(",").map(String)
+                : []                                                                      
+              );                                    
 
-            
-           
+            setDocuments(res);
+          console.log(documents)
       } catch (error) {
         console.log(error);
         //toast.error('Unable to update please try again!');
       } finally {
-  
-        
+       // setLoading(false);
       }
 }
 console.log(options.value);
@@ -404,14 +418,12 @@ const closePopup = () => {
   setIsOpen(false);
 };
 
-
-
-
-
 const handleDateTypeChange = (event) => {
   setDateType(event.target.value);
 };
 
+  const hasAccess = supervisorAccess.includes('Upload Site Media');
+  const canShowSupervisorTools = localStorage.getItem("type") === 'Supervisor' && hasAccess;
 
     return (
       <div className="site-updates-category-images">
@@ -441,14 +453,9 @@ const handleDateTypeChange = (event) => {
                   </span>
               )}
 
-
-
-
-
-
     </div>
        </div>
-       { localStorage.getItem("type") === 'Supervisor' && ( 
+       { canShowSupervisorTools && ( 
         <div className="frame-21 icon-large-outline" style={{ color : '#fff',marginBottom: '20px'}}>
 
 <Button onChange={onFileChange}
@@ -560,14 +567,15 @@ const handleDateTypeChange = (event) => {
             <div className="grid_div">
             {documents?.length > 0 ? (
                 documents.map((document,key) => (   
-                  <div className="group-8"
+                  <div className="group-8"  
                   
                   style={ document.file_type === 'video/mp4' 
-                    ? { background: `url("${video_icon}") 50% / cover no-repeat` } 
+                    ? { background: `url("${video_icon}") 60% / cover no-repeat`,    
+                    backgroundSize: 'contain',margin: '0 auto' } 
                     : { background: `url("${document.s3_file_path}") 50% / cover no-repeat` } 
                 }
                   
-                onClick={document.file_type === 'video/mp4' ? () => openPopup(document.s3_file_path) : undefined}
+                onClick={document.file_type === 'video/mp4' ? () => openPopup(document.s3_file_path) : () => openViewer(document.s3_file_path)}
                   >
                  <div className="rectangle-1">
                     </div>
@@ -575,7 +583,7 @@ const handleDateTypeChange = (event) => {
                    
                     { document.file_type == 'video/mp4' ?
                    <div>
-                    <a href="javasacript:void(0)" onClick={() => openPopup(document.s3_file_path)} >  <img className="vector-2" src="assets/vectors/video.png" style={{ width: '30px'}} /></a> 
+                  {/*  <a href="javasacript:void(0)" onClick={() => openPopup(document.s3_file_path)} >  <img className="vector-2" src="assets/vectors/video.png" style={{ width: '30px'}} /></a>  */}
                    </div>
                      :
                      ''
@@ -720,6 +728,16 @@ const handleDateTypeChange = (event) => {
     }
 
 
+{isViewerOpen && (
+        <ImageViewer
+          src={selectedImage}
+          currentIndex={0}
+          onClose={closeViewer}
+          backgroundStyle={{
+            backgroundColor: "rgba(0,0,0,0.9)"
+          }}
+        />
+      )}
 
     </div>
     );

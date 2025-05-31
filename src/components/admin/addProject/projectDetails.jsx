@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react';
-
+import { Dialog } from '@headlessui/react';
 import { Link,Outlet,useNavigate} from "react-router-dom";
 
 import { Button, CircularProgress, Input, Modal, Option, selectClasses, styled, SvgIcon, Textarea } from "@mui/joy"
@@ -35,7 +35,8 @@ import TextInput from '../textInput';
 import TextAreaInput from '../textAreaInput';
 import TextSelectbox from '../textSelectbox';
 import ImageUploadPopup from './imageUploadPopup';
-import AddNewTypeOfWork from './addNewTypeOfWork';
+import AddNewOption from './addNewOption';
+import Test from './test';
 import Cookies from 'js-cookie';  // npm install js-cookie
 
 import IconButton from '@mui/material/IconButton';
@@ -46,10 +47,12 @@ import FocusTrap from "focus-trap-react";
 
 const ProjectDetails = ({onFormSubmit,projectId=''}) => {
 
+  const [isModalOpen, setModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
-  const [newProjectData, setNewProjectData]  = useState([]);
+  const [newProjectData, setNewProjectData]  = useState({ type_of_work: [] });
   const [sessionId, setSessionId] = useState(null);
   const [popupType, setPopupType] = useState(null);
+
     const navigate = useNavigate();
     const navigateHandler = (url) => {
       navigate(url);
@@ -58,17 +61,35 @@ const ProjectDetails = ({onFormSubmit,projectId=''}) => {
 
     const ITEM_HEIGHT = 48;
       const [anchorEl, setAnchorEl] = React.useState(null);
-      const openDropdown = Boolean(anchorEl);
-      const handleClick = (event) => {
+      const [anchorE2, setAnchorE2] = React.useState(null);
+      const [anchorE3, setAnchorE3] = React.useState(null);
+      const [anchorE4, setAnchorE4] = React.useState(null);
+      const openDropdown1 = Boolean(anchorEl);
+      const openDropdown2 = Boolean(anchorE2);
+      const openDropdown3 = Boolean(anchorE3);
+      const openDropdown4 = Boolean(anchorE4);
+      const handleClick1 = (event) => {
         setAnchorEl(event.currentTarget);
+      };
+      const handleClick2 = (event) => {
+        setAnchorE2(event.currentTarget);
+      };
+      const handleClick3 = (event) => {
+        setAnchorE3(event.currentTarget);
+      };
+      const handleClick4 = (event) => {
+        setAnchorE4(event.currentTarget);
       };
       const handleClose = () => {
         setAnchorEl(null);
+        setAnchorE2(null);
+        setAnchorE3(null);
+        setAnchorE4(null);
       };
     const ref = useRef(null);
 
     const resizeCallback = (entry) => {
-      console.log('Resized:', entry);
+    //  console.log('Resized:', entry);
       // Handle your resize logic here
     };
     const inputRef = useRef(null);
@@ -107,6 +128,10 @@ const ProjectDetails = ({onFormSubmit,projectId=''}) => {
     const [modalValue, setModalValue] = useState(null);
      const [project, setProject] = useState([]);
     
+     const [isOpen, setIsOpen] = useState(false);
+     const [workType, setWorkType] = useState('');
+     const [newSlug, setNewSlug] = useState('');
+
     const[formData, setFormData] = useState({ project_name: "", email: "" });
    
     const accessTypes = ["Upload Site Media", "View Live Feed", "Add Material Updates", "View Client Contact Details", "Add Notification", "View Payment Details"];
@@ -129,8 +154,9 @@ const ProjectDetails = ({onFormSubmit,projectId=''}) => {
                         const { data } = result?.data;
                        // console.log(data)
                         setProject(data);
-                        setSelectTypeOfWork(project.type_of_work);
                        
+                        // setSelectTypeOfWork(data.type_of_work);
+                        
                        
                         updateProjectData({
                           project_name: data.name,
@@ -139,25 +165,24 @@ const ProjectDetails = ({onFormSubmit,projectId=''}) => {
                           type_of_work: data.type_of_work,
                           site_categories: data.site_categories,
                           camera_id: data.camera_id,
-                          password: data.live_feed_password,
+                          live_feed_password: data.live_feed_password,
                           drawing_categories: data.drawing_categories,
                           supervisor: data.supervisor_id,
                           access_management: data.supervisor_access_id,
-                          total_fee: data.professional_fees,
+                          professional_fees: data.professional_fees,
                         
                         });
                        
-                        console.log('nilesh',newProjectData)
-
                         let api1 = `${BASE_URL}/api/project/getProjectContractorDetails?p_id=${projectId}`;
                      
-                       
-                        const result1 = await axios.get(api1, config );
+                       const result1 = await axios.get(api1, config );
                         const contractorDetails = result1.data.data;
-
-
-                        console.log(contractorDetails)
                         contractorDetails .map(function(item, i){
+
+                          setNewProjectData((prev) => ({
+                            ...prev,
+                            contractor_type: [...(prev.contractor_type || []), item.contractor_type_id],
+                          }));
                           // console.log('nilesh',item.contractor_id)
                           setCheckedContractorType(prev => [...prev, item.contractor_type_id]);
 
@@ -166,16 +191,44 @@ const ProjectDetails = ({onFormSubmit,projectId=''}) => {
                             ['contractor_'+item.contractor_type_id]: item.contractor_id, // Update the specific contractor or remark for each contractor type
                             ['contractor_remarks_'+item.contractor_type_id]: item.remarks, // Update the specific contractor or remark for each contractor type
                           }));
+
+                           setNewProjectData((prev) => ({
+                            ...prev,
+                            ['contractor_'+item.contractor_type_id]: item.contractor_id,
+                          }));
+
+                           setNewProjectData((prev) => ({
+                            ...prev,
+                            ['contractor_remarks_'+item.contractor_type_id]: item.remarks,
+                          }));
                          
                        })
 
-
-                     
-
-                       setTimeout(() => {
-                        console.log('Updated checkedContractorType:', checkedContractorType);
-                    }, 1000); 
-                       
+                        //   setSelectTypeOfWork( data.type_of_work);
+                          setSelectTypeOfWork(
+                            typeof data.type_of_work === "string"
+                              ? data.type_of_work.replace(/[{}"]/g, "").split(",").map(Number)
+                              : []
+                          );
+                          
+                          setCheckedSiteCategories(
+                            typeof data.site_categories === "string"
+                              ? data.site_categories.replace(/[{}"]/g, "").split(",").map(Number)
+                              : []
+                          );
+                           setCheckedDrawingCategories(
+                            typeof data.drawing_categories === "string"
+                              ? data.drawing_categories.replace(/[{}"]/g, "").split(",").map(Number)
+                              : []
+                          );
+                          
+                           setCheckedAccessManagement(
+                            typeof data.supervisor_access_id === "string"
+                              ? data.supervisor_access_id.replace(/[{}"]/g, "").split(",").map(String)
+                              : []
+                          );
+                          console.log('nilesh1',checkedAccessManagement);
+                         
                   } catch {
                     setProject([]);
                     
@@ -359,81 +412,183 @@ const handleChange = (e) => {
     [e.target.name]: e.target.value, // Update the specific contractor or remark for each contractor type
   }));
 }
-// type of work start 
-const handleCheckTypeOfWork = (e1) => {
-  const isSelected = e1.target.checked;
-  const value = parseInt(e1.target.value);
 
-  setSelectTypeOfWork((prevData) => {
-    const updatedData = isSelected 
-      ? [...prevData, value] 
-      : prevData.filter((id) => id !== value);
+const triggerSelectChange = (contractorTypeId) => {
+  const contractorKey = `contractor_${contractorTypeId}`;
+  const selectedValue = newProjectData[contractorKey];
 
-    // Update newProjectData with the latest selected types
-    setNewProjectData((newProjectData) => ({
-      ...newProjectData,
-      ['type_of_work']: updatedData,
-    }));
-
-    return updatedData; // Return the updated state for selectTypeOfWork
-  });
+  if (selectedValue) {
+    handleContractorChange({
+      target: {
+        name: contractorKey,
+        value: selectedValue,
+      },
+    });
+  }
 };
-const handleCheckSiteCategories = (e1) => {
-  const isSelected = e1.target.checked;
-  const value = parseInt(e1.target.value);
+const triggerRemarkChange = (contractorTypeId) => {
+  const contractorKey = `contractor-remarks_${contractorTypeId}`;
+  const selectedValue = newProjectData[contractorKey];
 
-  setCheckedSiteCategories((prevData) => {
-    const updatedData = isSelected 
-      ? [...prevData, value] 
-      : prevData.filter((id) => id !== value);
-
-    // Update newProjectData with the latest selected types
-    setNewProjectData((newProjectData) => ({
-      ...newProjectData,
-      ['site_categories']: updatedData,
-    }));
-
-    return updatedData; // Return the updated state for selectTypeOfWork
-  });
+  if (selectedValue) {
+    handleContractorRemarksChange({
+      target: {
+        name: contractorKey,
+        value: selectedValue,
+      },
+    });
+  }
 };
 
-const handleCheckDrawingCategories = (e1) => {
-  const isSelected = e1.target.checked;
-  const value = parseInt(e1.target.value);
+const handleContractorChange = (e) => {
+  const { name, value } = e.target;
+  const contractorTypeId = parseInt(name.split("_")[1]);
 
-  setCheckedDrawingCategories((prevData) => {
-    const updatedData = isSelected 
-      ? [...prevData, value] 
-      : prevData.filter((id) => id !== value);
+  // Update field-specific values
+  setNewProjectData((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
 
-    // Update newProjectData with the latest selected types
-    setNewProjectData((newProjectData) => ({
-      ...newProjectData,
-      ['drawing_categories']: updatedData,
+  setContractorSelections((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+
+    // Safely update the contractor type list and sync it
+      setCheckedContractorType((prev) => {
+      const updated = value
+        ? prev.includes(contractorTypeId) ? prev : [...prev, contractorTypeId]
+        : prev.filter((id) => id !== contractorTypeId);
+
+      // Update project data with unique contractor types
+      setNewProjectData((prevData) => ({
+        ...prevData,
+        contractor_type: [...new Set(updated)],
+      }));
+
+      return updated;
+    });
+     triggerRemarkChange(contractorTypeId);
+};
+
+const handleContractorRemarksChange = (e) => {
+    const { name, value } = e.target;
+  const contractorTypeId = parseInt(name.split("_")[1]);
+
+  // Update field-specific values
+  setNewProjectData((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+
+  setContractorSelections((prev) => ({
+    ...prev,
+    [name]: value,
+  }));
+
+  // Safely update the contractor type list and sync it
+    setCheckedContractorType((prev) => {
+    const updated = value
+      ? prev.includes(contractorTypeId) ? prev : [...prev, contractorTypeId]
+      : prev.filter((id) => id !== contractorTypeId);
+
+    // Update project data with unique contractor types
+    setNewProjectData((prevData) => ({
+      ...prevData,
+      contractor_type: [...new Set(updated)],
     }));
 
-    return updatedData; // Return the updated state for selectTypeOfWork
+    return updated;
+  });
+
+    triggerSelectChange(contractorTypeId);
+ 
+};
+
+const handleCheckTypeOfWork = (e) => {
+  const value = Number(e.target.value); // DOM gives string — convert to number
+  const isChecked = e.target.checked;
+
+  setSelectTypeOfWork((prev) => {
+    const safePrev = Array.isArray(prev) ? prev : [];
+
+    let updated = isChecked
+      ? safePrev.includes(value)
+        ? safePrev
+        : [...safePrev, value]
+      : safePrev.filter((id) => id !== value); // remove unchecked
+
+    // Update newProjectData
+    setNewProjectData((prevData) => ({
+      ...prevData,
+      ['type_of_work']: updated,
+    }));
+
+    return updated; // update selectTypeOfWork state
   });
 };
 
 
-const handleCheckAccessManagement = (e1) => {
-  const isSelected = e1.target.checked;
- // const value = parseInt(e1.target.value);
-  const value = e1.target.value;
 
-  setCheckedAccessManagement((prevData) => {
-    const updatedData = isSelected 
-      ? [...prevData, value] 
-      : prevData.filter((id) => id !== value);
+const handleCheckSiteCategories = (e) => {
+  const value = Number(e.target.value); // DOM gives string — convert to number
+  const isChecked = e.target.checked;
 
-    // Update newProjectData with the latest selected types
-    setNewProjectData((newProjectData) => ({
-      ...newProjectData,
-      ['access_management']: updatedData,
+  setCheckedSiteCategories((prev) => {
+    const safePrev = Array.isArray(prev) ? prev : [];
+
+    let updated = isChecked
+      ? safePrev.includes(value)
+        ? safePrev
+        : [...safePrev, value]
+      : safePrev.filter((id) => id !== value); // remove unchecked
+    // Update newProjectData
+    setNewProjectData((prevData) => ({
+      ...prevData,
+      ['site_categories']: updated,
     }));
+  return updated; // update selectTypeOfWork state
+  });
+};
 
-    return updatedData; 
+const handleCheckDrawingCategories = (e) => {
+  const value = Number(e.target.value); // DOM gives string — convert to number
+  const isChecked = e.target.checked;
+  setCheckedDrawingCategories((prev) => {
+    const safePrev = Array.isArray(prev) ? prev : [];
+    let updated = isChecked
+      ? safePrev.includes(value)
+        ? safePrev
+        : [...safePrev, value]
+      : safePrev.filter((id) => id !== value); // remove unchecked
+    // Update newProjectData
+    setNewProjectData((prevData) => ({
+      ...prevData,
+      ['drawing_categories']: updated,
+    }));
+    return updated; // update selectTypeOfWork state
+  });
+};
+
+
+const handleCheckAccessManagement = (e) => {
+  const value = e.target.value; // DOM gives string — convert to number
+  const isChecked = e.target.checked;
+  setCheckedAccessManagement((prev) => {
+    const safePrev = Array.isArray(prev) ? prev : [];
+
+    let updated = isChecked
+      ? safePrev.includes(value)
+        ? safePrev
+        : [...safePrev, value]
+      : safePrev.filter((id) => id !== value); // remove unchecked
+  // Update newProjectData
+    setNewProjectData((prevData) => ({
+      ...prevData,
+      ['access_management']: updated,
+    }));
+  return updated; // update selectTypeOfWork state
   });
 };
 
@@ -454,7 +609,7 @@ const handleCheckContractorType = (e1) => {
 
     return updatedData; // Return the updated state for selectTypeOfWork
   });
-  
+  console.log('nilesh',newProjectData)
 };
 
 useEffect(() => {
@@ -464,7 +619,7 @@ useEffect(() => {
 
 const handleButtonClick = (value) => {
 
-  
+ // setModalOpen(true)
   setOpen(true)
   setModalValue(value)
 };
@@ -474,17 +629,43 @@ const handleButtonClick = (value) => {
     
    // const handlePmShow = () => setPmShow(true);
    const handleAddNewShow = (id) => {
-    console.log('hi',id)
+   // console.log('hi',id)
       setAddNewShow(true);
   }
 const handlePopupClick1 = (value,idx) => {
-  console.log(idx)
+  //console.log(idx)
   setPopupType('value');
   setOpen(true)
 
 };
+const setModalOpen1  = ($name,$slug,$key) => {
+  setModalOpen(true)
+  setAnchorEl(null);
+ setModalValue($name)
+ setNewSlug($slug);
+
+};
+const setModalOpen2  = ($name,$slug,$key) => {
+    setModalOpen(true)
+    setAnchorE2(null);
+    setModalValue($name)
+    setNewSlug($slug);
+};
+const setModalOpen3  = ($name,$slug,$key) => {
+  setModalOpen(true)
+  setAnchorE3(null);
+  setModalValue($name)
+  setNewSlug($slug);
+};
+const setModalOpen4  = ($name,$slug,$key) => {
+  setModalOpen(true)
+  setAnchorE4(null);
+  setModalValue($name)
+  setNewSlug($slug);
+};
+
     return (
-      <div ref={ref} style={{ width: "100%", height: "100vh" }}>
+      <div ref={ref}  className="adminProjectDetails" style={{ width: "100%", height: "100vh" }}>
         <div className="card mt-25">
           <h5 className="card-header">Project Description</h5>
           <div className="card-body">
@@ -566,6 +747,8 @@ const handlePopupClick1 = (value,idx) => {
 
                 </div>
 
+
+               
                 <Modal
                   aria-labelledby="modal-title"
                   aria-describedby="modal-desc"
@@ -588,14 +771,12 @@ const handlePopupClick1 = (value,idx) => {
                   >
                     <Typography id="modal-desc" textColor="text.tertiary">
                      
-                        { modalValue === 'Add_New_Type_of_work' && ( 
-                            <AddNewTypeOfWork name={modalValue} />
-                        )}
+                      
                          { modalValue === 'cover_image' && ( 
-                      <ImageUploadPopup name={modalValue} />
+                      <ImageUploadPopup name={modalValue} openModal ={setOpen} />
                     )}
                       { modalValue === 'fixed_quote' && ( 
-                      <ImageUploadPopup name={modalValue} />
+                      <ImageUploadPopup name={modalValue} openModal ={setOpen} />
                     )}
                     </Typography>
                     <Box
@@ -606,7 +787,7 @@ const handlePopupClick1 = (value,idx) => {
                         flexDirection: { xs: "column", sm: "row-reverse" },
                       }}
                     >
-                      <button
+                    {/* <button
                         className="publish_btn"
                         style={{
                           textDecoration: "none",
@@ -630,7 +811,7 @@ const handlePopupClick1 = (value,idx) => {
                         type="button"
                       >
                         Cancel
-                      </button>
+                      </button> */}
                     </Box>
                   </Sheet>
                 </Modal>
@@ -661,110 +842,166 @@ const handlePopupClick1 = (value,idx) => {
           </div>
         </div>
 
-        <div className="card mt-25">
+        <div className="card mt-25 ">
           <h5 className="card-header">
             Type of Work
             <IconButton
-              style={{ marginLeft: "560px", marginTop: "-px" }}
+              style={{float:'right', marginTop: "-px" }}
               aria-label="more"
               id="long-button"
-              aria-controls={openDropdown ? "long-menu" : undefined}
-              aria-expanded={openDropdown ? "true" : undefined}
+              aria-controls={openDropdown1 ? "long-menu" : undefined}
+              aria-expanded={openDropdown1 ? "true" : undefined}
               aria-haspopup="true"
-              onClick={handleClick}
+              onClick={handleClick1}
             >
               <img
                 src={process.env.PUBLIC_URL + "/images/More.svg"}
                 className="icon-small-outline-project"
               />
             </IconButton>
-            <Menu
+            <Menu className="addNewOption1"
               id="long-menu"
               MenuListProps={{
                 "aria-labelledby": "long-button",
               }}
               anchorEl={anchorEl}
-              open={openDropdown}
+              open={openDropdown1}
               onClose={handleClose}
               slotProps={{
                 paper: {
                   style: {
                     maxHeight: ITEM_HEIGHT * 4.5,
                     width: "20ch",
+                    left: "1200px"
                   },
                 },
               }}
             >
               <MenuItem
-                key="2"
-                onClick={() => handleButtonClick("Add_New_Type_of_work", 0)}
+                key="1"
+                onClick={() => setModalOpen1('Work Item Type','Type_of_work',1)}
+                slotProps={{
+                  paper: {
+                    style: {
+                      maxHeight: ITEM_HEIGHT * 4.5,
+                      width: "20ch",
+                      left: "1200px"
+                    },
+                  },
+                }}
               >
                 Add New Item
               </MenuItem>
             </Menu>
           </h5>
           <div className="card-body">
+         
             <div className="row">
-              {typeOfWork.length > 0 &&
-                typeOfWork.map((tp) => {
-                  return (
-                    <div className="col-md-3">
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          style={{ width: 16 }}
-                          type="checkbox"
-                          checked={
-                            newProjectData.type_of_work?.includes(tp.id) ??
-                            false
-                          }
-                          id={tp?.id}
-                          value={tp?.id}
-                          onChange={handleCheckTypeOfWork}
-                        />
-                        <label
+             {Array.isArray(typeOfWork) && typeOfWork.length > 0 &&
+                typeOfWork.map((tp) => (
+                  <div className="col-md-3" key={tp.id}>
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        style={{ width: 16 }}
+                        type="checkbox"
+                      checked={selectTypeOfWork.includes(tp.id)}
+                         id={`work-${tp.id}`} // use unique string ID
+                        value={tp.id}
+                        onChange={handleCheckTypeOfWork}
+                      />
+                     <label
                           className="form-check-label"
-                          for={tp.id}
+                          htmlFor={`work-${tp.id}`}
                           style={{ marginTop: 16 }}
                         >
-                          {tp?.field_value}
-                        </label>
-                      </div>
+                        {tp.field_value}
+                      </label>
                     </div>
-                  );
-                })}
+                  </div>
+                ))
+              }
             </div>
           </div>
         </div>
 
         <div className="card mt-25">
-          <h5 className="card-header">Site Categories</h5>
+          <h5 className="card-header">Site Categories
+
+
+          <IconButton
+              style={{ float:'right', marginTop: "-px" }}
+              aria-label="more"
+              id="long-button2"
+              aria-controls={openDropdown2 ? "long-menu2" : undefined}
+              aria-expanded={openDropdown2 ? "true" : undefined}
+              aria-haspopup="true"
+              onClick={handleClick2}
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/images/More.svg"}
+                className="icon-small-outline-project"
+              />
+            </IconButton>
+            <Menu className="addNewOption2"
+              id="long-menu2"
+              MenuListProps={{
+                "aria-labelledby": "long-button2",
+              }}
+              anchorE2={anchorE2}
+              open={openDropdown2}
+              onClose={handleClose}
+              slotProps={{
+                paper: {
+                  style: {
+                    maxHeight: ITEM_HEIGHT * 4.5,
+                    width: "20ch",
+                    left: "1200px"
+                  },
+                },
+              }}
+            >
+              <MenuItem
+                key="2"
+                onClick={() => setModalOpen2('Site Category','Site_categories',2)}
+                slotProps={{
+                  paper: {
+                    style: {
+                      maxHeight: ITEM_HEIGHT * 4.5,
+                      width: "20ch",
+                      left: "1200px"
+                    },
+                  },
+                }}
+              >
+                Add New Item
+              </MenuItem>
+            </Menu>
+       </h5>
           <div className="card-body">
+          
             <div className="row">
               {siteCategories.length > 0 &&
-                siteCategories.map((tp) => {
+                siteCategories.map((ct) => {
                   return (
-                    <div className="col-md-3">
+                    <div key={ct.id} className="col-md-3">
                       <div className="form-check">
                         <input
                           className="form-check-input"
                           style={{ width: 16 }}
                           type="checkbox"
                           name="site_categories"
-                          id={tp?.id}
-                          value={tp?.id}
+                          id={`work-${ct.id}`}
+                          value={ct?.id}
                           onChange={handleCheckSiteCategories}
-                          checked={
-                            newProjectData.site_categories?.includes(tp.id) ??
-                            false
-                          }
+                         checked={checkedSiteCategories.includes(ct.id)}
                         />
                         <label
                           className="form-check-label"
-                          for={tp.id}
+                          for={`work-${ct.id}`}
                           style={{ marginTop: 16 }}
                         >
-                          {tp?.field_value}
+                          {ct?.field_value}
                         </label>
                       </div>
                     </div>
@@ -806,10 +1043,10 @@ const handlePopupClick1 = (value,idx) => {
                       multiline={false}
                       placeholder="Password"
                       label="Password"
-                      name="password"
+                      name="live_feed_password"
                       variant="outlined"
                       onChange={handleChange}
-                      value={newProjectData.password}
+                      value={newProjectData.live_feed_password}
                       inputProps={{
                         style: {
                           padding: "0px 14px",
@@ -834,13 +1071,65 @@ const handlePopupClick1 = (value,idx) => {
         </div>
 
         <div className="card mt-25">
-          <h5 className="card-header">Drawing Categories</h5>
+          <h5 className="card-header">Drawing Categories
+
+
+          <IconButton
+              style={{ float:'right', marginTop: "-px" }}
+              aria-label="more"
+              id="long-button3"
+              aria-controls={openDropdown3 ? "long-menu3" : undefined}
+              aria-expanded={openDropdown3 ? "true" : undefined}
+              aria-haspopup="true"
+              onClick={handleClick3}
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/images/More.svg"}
+                className="icon-small-outline-project"
+              />
+            </IconButton>
+            <Menu className="addNewOption3"
+              id="long-menu3"
+              MenuListProps={{
+                "aria-labelledby": "long-button3",
+              }}
+              anchorE3={anchorE3}
+              open={openDropdown3}
+              onClose={handleClose}
+              slotProps={{
+                paper: {
+                  style: {
+                    maxHeight: ITEM_HEIGHT * 4.5,
+                    width: "20ch",
+                    left: "1200px"
+                  },
+                },
+              }}
+            >
+              <MenuItem
+                key="3"
+                onClick={() => setModalOpen3('Drawing Category','Drawing_categories',3)}
+                slotProps={{
+                  paper: {
+                    style: {
+                      maxHeight: ITEM_HEIGHT * 4.5,
+                      width: "20ch",
+                      left: "1200px"
+                    },
+                  },
+                }}
+              >
+                Add New Item
+              </MenuItem>
+            </Menu>
+
+          </h5>
           <div className="card-body">
             <div className="row">
               {drawingCategories.length > 0 &&
                 drawingCategories.map((tp) => {
                   return (
-                    <div className="col-md-3">
+                    <div key={tp.id} className="col-md-3">
                       <div className="form-check">
                         <input
                           className="form-check-input"
@@ -850,11 +1139,7 @@ const handlePopupClick1 = (value,idx) => {
                           id={tp?.id}
                           value={tp?.id}
                           onChange={handleCheckDrawingCategories}
-                          checked={
-                            newProjectData.drawing_categories?.includes(
-                              tp.id
-                            ) ?? false
-                          }
+                          checked={checkedDrawingCategories.includes(tp.id)}
                         />
                         <label
                           className="form-check-label"
@@ -916,7 +1201,7 @@ const handlePopupClick1 = (value,idx) => {
                         drawingCategories.map((tp) => {
                           const checkboxValue = `Upload ${tp?.field_value} Drawings`;
                           return (
-                            <div className="col-md-3">
+                            <div key={tp.id} className="col-md-3">
                               <div className="form-check">
                                 <input
                                   className="form-check-input"
@@ -927,10 +1212,7 @@ const handlePopupClick1 = (value,idx) => {
                                   value={checkboxValue}
                                   onChange={handleCheckAccessManagement}
 
-                                  checked={
-                                    newProjectData.access_management?.includes(checkboxValue) ??
-                                    false
-                                  }
+                                  checked={checkedAccessManagement.includes(checkboxValue)}
                                 />
                                 <label
                                   className="form-check-label"
@@ -954,10 +1236,7 @@ const handlePopupClick1 = (value,idx) => {
                               id={`${accessType}`}
                               value={`${accessType}`}
                               onChange={handleCheckAccessManagement}
-                              checked={
-                                newProjectData.access_management?.includes(accessType) ??
-                                false
-                              }
+                              checked={checkedAccessManagement.includes(accessType)}
                             />
                             <label
                               className="form-check-label"
@@ -979,14 +1258,67 @@ const handlePopupClick1 = (value,idx) => {
         </div>
 
         <div className="card mt-25">
-          <h5 className="card-header">Contractor Types</h5>
+          <h5 className="card-header">Contractor Types
+
+          <IconButton
+              style={{float:'right'}}
+              aria-label="more"
+              id="long-button4"
+              aria-controls={openDropdown4 ? "long-menu4" : undefined}
+              aria-expanded={openDropdown4 ? "true" : undefined}
+              aria-haspopup="true"
+              onClick={handleClick4}
+            >
+              <img
+                src={process.env.PUBLIC_URL + "/images/More.svg"}
+                className="icon-small-outline-project"
+              />
+            </IconButton>
+            <Menu className="addNewOption4"
+              id="long-menu4"
+              MenuListProps={{
+                "aria-labelledby": "long-button4",
+              }}
+              anchorE4={anchorE4}
+              open={openDropdown4}
+              onClose={handleClose}
+              slotProps={{
+                paper: {
+                  style: {
+                    maxHeight: ITEM_HEIGHT * 4.5,
+                    width: "20ch",
+                    left: "1200px"
+                  },
+                },
+              }}
+            >
+              <MenuItem
+                key="4"
+                onClick={() => setModalOpen4('Contractor Type','Contractor_type',4)}
+                slotProps={{
+                  paper: {
+                    style: {
+                      maxHeight: ITEM_HEIGHT * 4.5,
+                      width: "20ch",
+                      left: "1200px"
+                    },
+                  },
+                }}
+              >
+                Add New Item
+              </MenuItem>
+            </Menu>
+
+
+
+          </h5>
           <div className="card-body">
             <div className="row">
               {contractorType.length > 0 &&
                 contractorType.map((ct) => {
                   return (
                     <>
-                      <div className="col-md-12">
+                      <div key={ct.id} className="col-md-12">
                         <div className="form-check">
                           <input
                             className="form-check-input"
@@ -1026,8 +1358,9 @@ const handlePopupClick1 = (value,idx) => {
                                   ""
                                 } // Retrieve from state
                                 name={`contractor_${ct.id}`}
-                                onChange={handleChange}
+                                onChange={handleContractorChange}
                                 variant="outlined"
+                                
                                 /* styles the input component */
                                 inputProps={{
                                   style: {
@@ -1064,7 +1397,7 @@ const handlePopupClick1 = (value,idx) => {
                                       `contractor_remarks_${ct.id}`
                                     ] || ""
                                   } // Retrieve from state
-                                  onChange={handleChange}
+                                  onChange={handleContractorRemarksChange}
                                   variant="outlined"
                                   inputProps={{
                                     style: {
@@ -1094,8 +1427,8 @@ const handlePopupClick1 = (value,idx) => {
                     multiline={false}
                     placeholder="Total Fee"
                     label="Total Fee"
-                    name="total_fee"
-                    value={newProjectData.total_fee}
+                    name="professional_fees"
+                    value={newProjectData.professional_fees}
                     variant="outlined"
                     onChange={handleChange}
                     /* styles the input component */
@@ -1125,30 +1458,30 @@ const handlePopupClick1 = (value,idx) => {
                     />
                     &nbsp;&nbsp;Upload Fixed Quote
                   </button>
+                 
                 </div>
               </div>
             </div>
           </div>
         </div>
+        { newSlug === 'Type_of_work' && ( 
+        <AddNewOption name={modalValue} isOpen={isModalOpen} onClose={() => setModalOpen(false)} slug={newSlug} 
+          fetchNewData ={fetchTypeOfWorkData }  />
+        )}
+         { newSlug === 'Site_categories'   && ( 
+          <AddNewOption name={modalValue} isOpen={isModalOpen} onClose={() => setModalOpen(false)} slug={newSlug} 
+          fetchNewData ={fetchSiteCategoriesData }  />
 
-        <ModalAddNew show={addNewShow} onHide={handleAddNewClose} size="lg">
-          <ModalAddNew.Header>
-            <ModalAddNew.Title>Ongoing Projects</ModalAddNew.Title>
-
-            <button
-              type="button"
-              class="close"
-              onClick={handleAddNewClose}
-              data-dismiss="modal"
-              aria-hidden="true"
-            >
-              ×
-            </button>
-          </ModalAddNew.Header>
+         )}
+          { newSlug === 'Drawing_categories'  && ( 
+        <AddNewOption name={modalValue} isOpen={isModalOpen} onClose={() => setModalOpen(false)} slug={newSlug} 
+          fetchNewData ={fetchDrawingCategoriesData }  />
+        )}
+         { newSlug === 'Contractor_type' && ( 
+        <AddNewOption name={modalValue} isOpen={isModalOpen} onClose={() => setModalOpen(false)} slug={newSlug} 
+          fetchNewData ={fetchContractorTypeData }  />
+        )}
         
-          
-        </ModalAddNew>
-
         <div className="card-body">&nbsp;</div>
       </div>
     );

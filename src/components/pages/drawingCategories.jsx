@@ -92,7 +92,7 @@ const DrawingCategories = () => {
           <div className="grid_div">
           {drawingCategories?.length > 0 ? (
                     drawingCategories.map((dc) => ( 
-                      <div className="group-8 col-md-6" 
+                      <div className="group-8 col-md-6" key={dc.id}
                   
                         style={{
                             background: `url("${dc.file_path}") 50% / cover no-repeat`,

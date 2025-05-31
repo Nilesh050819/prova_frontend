@@ -52,9 +52,10 @@ const MaterialUpdates = () => {
     const [search, setSearch] = useState("");
     const [searchFocus, setSearchFocus] = useState(false);
     const [selected, setSelected] = useState(false);
+    const [supervisorAccess, setSupervisorAccess] = useState([]);
    // const [searchType, setSearchType] = useState("");
       
-    
+    const userId = localStorage.getItem("user_id");
               let authToken = localStorage.getItem("token");
               const config = { headers: { 'content-type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer ' + authToken } };
                  const fetchProjectDetails = async () => {
@@ -80,6 +81,16 @@ const MaterialUpdates = () => {
                             const result1 = await axios.post(api1, bodyObj, { config });
                                      console.log(result1.data);
                                      setDrawingCategories(result1.data.data)
+
+                                      /** supervisor access */
+                                      let api2 = `${BASE_URL}/api/supervisor/getProjectSupervisorAccess?p_project_id=${pid}&p_user_id=${userId}`;
+                                      const result2 = await axios.get(api2, '', { config });
+                                      // console.log(result2.data);
+                                      setSupervisorAccess(
+                                          typeof result2.data.data.supervisor_access_id === "string"
+                                          ? result2.data.data.supervisor_access_id.replace(/[{}"]/g, "").split(",").map(String)
+                                          : []
+                                      );
                            
                       } catch {
                         setProject([]);
@@ -221,19 +232,18 @@ const MaterialUpdates = () => {
   
       function formatDate(dateString) {
           const date = new Date(dateString);
-        
-          // Get day with ordinal suffix
+        // Get day with ordinal suffix
           const day = date.getDate();
           const dayWithSuffix =
-            day + (day % 10 === 1 && day !== 11 ? "st" : day % 10 === 2 && day !== 12 ? "nd" : day % 10 === 3 && day !== 13 ? "rd" : "th");
-        
+          day + (day % 10 === 1 && day !== 11 ? "st" : day % 10 === 2 && day !== 12 ? "nd" : day % 10 === 3 && day !== 13 ? "rd" : "th");
           // Get month and year
           const options = { month: "short" };
           const month = new Intl.DateTimeFormat("en-US", options).format(date);
           const year = date.getFullYear();
-        
-          return `${dayWithSuffix} ${month}, ${year}`;
-        }
+        return `${dayWithSuffix} ${month}, ${year}`;
+      }
+    const hasAccess = supervisorAccess.includes('Add Material Updates');
+    const canShowSupervisorTools = localStorage.getItem("type") === 'Supervisor' && hasAccess;
     return (
       <div className="furniture-drawings">
       
@@ -249,7 +259,7 @@ const MaterialUpdates = () => {
           Keep track of all materials bought for your projects
           </span>
         </div>
-        { localStorage.getItem("type") === 'Supervisor' && (   
+        { canShowSupervisorTools && (   
         <div className="frame-21 icon-large-outline" style={{ color : '#fff'}}>
 
         <Button onChange={onFileChange}

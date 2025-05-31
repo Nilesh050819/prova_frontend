@@ -1,0 +1,31 @@
+.custom-tabs {
+  border-bottom: 1px solid #e0e0e0;
+  min-height: unset;
+}
+
+.custom-tab {
+  text-transform: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: #999;
+  min-width: 120px;
+  padding-bottom: 8px;
+}
+
+.custom-tab.Mui-selected {
+  color: #000;
+  font-weight: 600;
+}
+
+.MuiTabs-indicator {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  height: 2px;
+}
+
+.MuiTabs-indicatorSpan {
+  max-width: 100%;
+  width: 100%;
+  background-color: #000;
+}

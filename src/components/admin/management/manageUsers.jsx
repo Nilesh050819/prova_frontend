@@ -1227,7 +1227,7 @@ const handleCheckMaterialUpdatesAccess = (e1) => {
                       }}
                     />
                     &nbsp;&nbsp;
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" style={{ float: 'right',marginTop: '-50px'  }}>
                       <img
                         style={{ marginTop: 10 }}
                         className="vector-55"
@@ -1358,7 +1358,7 @@ const handleCheckMaterialUpdatesAccess = (e1) => {
                       }}
                     />
                     &nbsp;&nbsp;
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" style={{ float: 'right',marginTop: '-50px'  }}>
                       <img
                         style={{ marginTop: 10 }}
                         className="vector-55"

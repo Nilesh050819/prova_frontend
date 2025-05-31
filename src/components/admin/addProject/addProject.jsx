@@ -1,4 +1,6 @@
 import "./addProject.css";
+import './CustomTabs.css';
+
 import React, { useEffect, useState, useRef } from 'react';
 import Input from '@mui/joy/Input';
 import axios from '../../../api/axios';
@@ -25,6 +27,7 @@ import useResizeObserver from './useResizeObserver';
 import { generateRandomString } from '../../utils/randomString';
 
 import Tabs from 'react-bootstrap/Tabs'; 
+
 import Tab from 'react-bootstrap/Tab'; 
 const randomNo = generateRandomString(32)
 localStorage.setItem("tokenId",randomNo);
@@ -193,7 +196,7 @@ const addProject = async (projectArray) => {
   }
   
   return (
-    <div ref={ref} sstyle={{ width: '100%', height: '100vh'}}>
+    <div ref={ref} sstyle={{ width: '100%'}}>
      
      <div className ="container-fluid ">
         <div className="row flex-nowrap">
@@ -238,6 +241,7 @@ const addProject = async (projectArray) => {
                             padding: '10px',
                             borderRadius: '8px',
                           }}
+                          className="custom-tabs"
                       > 
                       <Tab eventKey="first" title="Project Details" 
                            sx={{

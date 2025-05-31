@@ -15,7 +15,7 @@ import frame4 from "./frame-4.svg";
 import frame from "./frame.svg";
 import iconParkOutlineFloorTile from "./icon-park-outline-floor-tile.svg";
 import image from "./image.svg";
-import pexelsGoldcircuits24252321 from "./pexels-goldcircuits-2425232-1.png";
+//import pexelsGoldcircuits24252321 from "./pexels-goldcircuits-2425232-1.png";
 import "./projectDetails.css";
 import unsplashLjbfqj2Lnwi from "./unsplash-ljbfqj2lnwi.png";
 //import Sidebar from '../sidebar';
@@ -36,7 +36,9 @@ const ProjectDetails = () => {
       const [startDate, setStartDate] = useState('');
       const [projectId, setProjectId] = useState(pid);
       const [mobileNo, setmobileNo] = useState(localStorage.getItem("mobile_no"));
+       const [supervisorAccess, setSupervisorAccess] = useState([]);
 
+      const userId = localStorage.getItem("user_id");  
       let authToken = localStorage.getItem("token");
       const config = { headers: { 'content-type': 'application/x-www-form-urlencoded', 'Authorization': 'Bearer ' + authToken } };
          const fetchProjectDetails = async () => {
@@ -52,6 +54,17 @@ const ProjectDetails = () => {
                     setProject(data);
                     setStartDate(formatDate(data.submitted_date));
                     console.log(startDate)
+
+                     /** supervisor access */
+                      let api2 = `${BASE_URL}/api/supervisor/getProjectSupervisorAccess?p_project_id=${pid}&p_user_id=${userId}`;
+                      const result2 = await axios.get(api2, '', { config });
+                                                          // console.log(result2.data);
+                       setSupervisorAccess(
+                          typeof result2.data.data.supervisor_access_id === "string"
+                          ? result2.data.data.supervisor_access_id.replace(/[{}"]/g, "").split(",").map(String)
+                          : []
+                      );
+
               } catch {
                 setProject([]);
                 
@@ -94,6 +107,9 @@ function formatDate(dateString) {
      window.open(url, "_blank");
    };
 
+   const hasAccess = supervisorAccess.includes('View Client Contact Details');
+    const canShowSupervisorTools = localStorage.getItem("type") === 'Supervisor' && hasAccess;
+
   return (
     <div className="project-details">
       
@@ -129,6 +145,7 @@ function formatDate(dateString) {
           </div>
 
           <div className="div">
+ { canShowSupervisorTools && (   
             <div className="frame-2">
              
 
@@ -156,7 +173,7 @@ function formatDate(dateString) {
                 </div>
               </div>
             </div>
-
+          )}
             <div className="frame-6">
               <div className="categories">CATEGORIES</div>
 
@@ -209,7 +226,7 @@ function formatDate(dateString) {
                       <div className="text-wrapper-3">MATERIALS</div>
                     </div>
                   </div>
-
+{ supervisorAccess.includes('View Live Feed') && (
                   <div className="frame-wrapper" onClick={() => navigateHandler(`/liveFeed?pid=${project.id}`)}>
                     <div className="frame-8">
                       <img className="img" alt="Frame" src={frame4} />
@@ -217,6 +234,8 @@ function formatDate(dateString) {
                       <div className="text-wrapper-3">LIVE FEED</div>
                     </div>
                   </div>
+)}
+                  
                 </div>
               </div>
             </div>

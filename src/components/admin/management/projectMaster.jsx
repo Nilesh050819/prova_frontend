@@ -366,7 +366,7 @@ const handlePopupClick = (value,idx) => {
                       },
                   }}
                 />
-                &nbsp;&nbsp;<a href="javascript:void(0)"><img style={{ marginTop:10  }} className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Project_type",`${pt.id}`,`${index}`)} /></a>
+                &nbsp;&nbsp;<a href="javascript:void(0)" style={{ float: 'right',marginTop: '-50px'  }} ><img style={{ marginTop:10  }} className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Project_type",`${pt.id}`,`${index}`)}  /></a>
               
               <ConfirmDialog
                 open={isDialogOpen}
@@ -402,9 +402,11 @@ const handlePopupClick = (value,idx) => {
             
           {Array.isArray(typeOfWork) && typeOfWork.map((row, index) => (
               <div key={row['id']} className="col-md-6" style={{ paddingTop:0,marginTop: 20  }}>
+
+      <div className="col-md-8" style={{ float:'left'  }}>
               <TextField
                    sx={{
-                   width: "94%"
+                   width: "99%"
                   }}
                    multiline={false}
                  
@@ -419,8 +421,12 @@ const handlePopupClick = (value,idx) => {
                       },
                   }}
                 />
-                &nbsp;&nbsp;<a href="javascript:void(0)"><img style={{ marginTop:10  }} className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Type_of_work",`${row.id}`,`${index}`)} /></a>
-              
+                </div>
+                <div className="col-md-4" style={{ marginTop: 0,float:'left' }} >
+                  
+                  <button class="submit_btn" style={{ marginTop: 0,lineHeight:2,width:130 }} type="button" onClick={() => handleButtonClick("Type_of_work",`${row.id}`)}><img className="vector-55" src={process.env.PUBLIC_URL + '/images/Upload.svg'} />&nbsp;&nbsp;Upload</button>
+                  &nbsp;&nbsp;<a href="javascript:void(0)"><img style={{ marginTop:-125,marginLeft:130  }} className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Type_of_work",`${row.id}`,`${index}`)} /></a>
+              </div>
               <ConfirmDialog
                 open={isDialogOpen}
                 title="Confirm Delete"
@@ -428,6 +434,7 @@ const handlePopupClick = (value,idx) => {
                 onConfirm={confirmDelete}
                 onCancel={cancelDelete}
               />
+
 
             </div>
       
@@ -474,10 +481,10 @@ const handlePopupClick = (value,idx) => {
                     />
                 </div>
                 <div className="col-md-4" style={{ marginTop: 0 }} >
-                  
+                 
                    <button class="submit_btn" style={{ marginTop: 0,lineHeight:2,width:130 }} type="button" onClick={() => handleButtonClick("Site_categories",`${row.id}`)}><img className="vector-55" src={process.env.PUBLIC_URL + '/images/Upload.svg'} />&nbsp;&nbsp;Upload</button>
 
-                   &nbsp;&nbsp;<a href="javascript:void(0)"><img style={{ marginTop:-75,marginLeft:130  }} className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Site_categories",`${row.id}`,`${index}`)} /></a>
+                   &nbsp;&nbsp;<a href="javascript:void(0)"><img style={{ marginTop:-125,marginLeft:130  }} className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Site_categories",`${row.id}`,`${index}`)} /></a>
                 </div>
                 
               
@@ -506,7 +513,7 @@ const handlePopupClick = (value,idx) => {
                   sx={{ maxWidth: 500, borderRadius: 'md', p: 3, boxShadow: 'lg' }}
                 >
                  <Typography id="modal-desc" textColor="text.tertiary">
-                      <ImageUploadPopup name={modalValue} idx={idxValue} />
+                      <ImageUploadPopup name={modalValue} idx={idxValue} openModal ={setOpen}/>
                   </Typography>
                   <Box
                   sx={{
@@ -516,9 +523,7 @@ const handlePopupClick = (value,idx) => {
                     flexDirection: { xs: 'column', sm: 'row-reverse' },
                   }}
                 >
-                <button class="publish_btn" style={{ textDecoration: 'none',float: 'right', width:200}} type="button" onClick={() => setOpen(false)} >Save</button>
-          
-                <button style={{ textDecoration: 'none',float: 'left',width:200}} onClick={() => setOpen(false)} class="cancel_btn" type="button" >Cancel</button>
+               
                  </Box>
                 </Sheet>
           </Modal>
@@ -561,7 +566,7 @@ const handlePopupClick = (value,idx) => {
            <div className="col-md-4" style={{ marginTop: 0 }} >       
            <button class="submit_btn" style={{ marginTop: 0,lineHeight:2,width:130 }} type="button" onClick={() => handleButtonClick("Drawing_categories",`${row.id}`)}><img className="vector-55" src={process.env.PUBLIC_URL + '/images/Upload.svg'} />&nbsp;&nbsp;Upload</button>
 
-                &nbsp;&nbsp;<a href="javascript:void(0)"><img style={{ marginTop:-75,marginLeft:130  }} className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Drawing_categories",`${row.id}`,`${index}`)} /></a>
+                &nbsp;&nbsp;<a href="javascript:void(0)"><img style={{ marginTop:-125,marginLeft:130  }} className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Drawing_categories",`${row.id}`,`${index}`)} /></a>
            </div>   
               <ConfirmDialog
                 open={isDialogOpen}
