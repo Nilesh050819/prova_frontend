@@ -663,7 +663,6 @@ const setModalOpen4  = ($name,$slug,$key) => {
   setModalValue($name)
   setNewSlug($slug);
 };
-
     return (
       <div ref={ref}  className="adminProjectDetails" style={{ width: "100%", height: "100vh" }}>
         <div className="card mt-25">
