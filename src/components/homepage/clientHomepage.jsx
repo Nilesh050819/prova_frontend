@@ -183,7 +183,7 @@ function formatDate(dateString) {
                     typeOfWork.map((tow) => (
                       
                        tow.work_percentage < 100 && ( 
-                            <div className="iconsmalloutlinecarpenter-parent" id="{tow.id}">
+                            <div key={tow.id}  className="iconsmalloutlinecarpenter-parent" id="{tow.id}">
                             <img
                               className="iconsmalloutlinecarpenter"
                               alt=""
@@ -241,7 +241,7 @@ function formatDate(dateString) {
             {siteCategories?.length > 0 ? (
                       siteCategories.map((row) => ( 
 
-                  <div className="unsplashih7wpsjwomc-parent"      onClick={() => navigateHandler(`/siteUpdatesCategoryImages?pid=${projectId}&siteCategoriesId=${row.id}&siteCategories=${row.field_value}`)}
+                  <div key={row.id}  className="unsplashih7wpsjwomc-parent"      onClick={() => navigateHandler(`/siteUpdatesCategoryImages?pid=${projectId}&siteCategoriesId=${row.id}&siteCategories=${row.field_value}`)}
                   >
                     <img
                       className="unsplashih7wpsjwomc-icon"
@@ -286,7 +286,7 @@ function formatDate(dateString) {
            {workUpdates?.length > 0 ? (
                     workUpdates.map((row) => ( 
 
-                <div className="unsplashih7wpsjwomc-parent2"  onClick={() => navigateHandler(`/workAssignedDocuments?pid=${projectId}&workId=${row.id}&workName=${row.field_value}`)} >
+                <div key={row.id} className="unsplashih7wpsjwomc-parent2"  onClick={() => navigateHandler(`/workAssignedDocuments?pid=${projectId}&workId=${row.id}&workName=${row.field_value}`)} >
                   <img
                     className="unsplashih7wpsjwomc-icon2"
                     alt=""

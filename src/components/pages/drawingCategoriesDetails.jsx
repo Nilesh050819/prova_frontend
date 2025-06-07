@@ -225,9 +225,8 @@ const DrawingCategoriesDetails = () => {
           return `${dayWithSuffix} ${month}, ${year}`;
         }
 //console.log('nilesh',supervisorAccess);
-     const hasAccess = supervisorAccess.includes(`Upload ${drawingName} Drawings`);
-     //   const hasAccess = '1'; // true
-         const canShowSupervisorTools = localStorage.getItem("type") === 'Supervisor' && hasAccess;
+    const hasAccess = supervisorAccess.includes(`Upload ${drawingName} Drawings`);
+    const canShowSupervisorTools = localStorage.getItem("type") === 'Supervisor' && hasAccess;
 
     return (
       <div className="furniture-drawings">

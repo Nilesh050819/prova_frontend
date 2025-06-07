@@ -45,6 +45,7 @@ import Notifications from "./components/pages/notifications.jsx";
 import ForgetPassword from "./components/pages/ForgetPassword.jsx";
 import ResetPassword from "./components/pages/ResetPassword.jsx";
 import EnterOtp from "./components/pages/EnterOtp.jsx";
+import ChagePassword from "./components/pages/changePassword.jsx";
 
 /*** Admin */
 
@@ -106,6 +107,7 @@ function App() {
             <Route path="todayWorkAssigned" element={<TodayWorkAssigned />} />
             <Route path="workAssignedDocuments" element={<WorkAssignedDocuments />} />
             <Route path="notifications" element={<Notifications />} />
+            <Route path="changePassword" element={<ChagePassword />} />
             <Route path="progressBar" element={<ProgressBar />} />
             <Route path="sideNav" element={<SideNav />} />
            

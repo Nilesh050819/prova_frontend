@@ -1,5 +1,5 @@
 //exports.BASE_URL = "http://localhost:8000";
-exports.BASE_URL = "http://localhost:8000";
+exports.BASE_URL = "http://localhost:8080";
 
 //COLOR
 exports.PRIMARY = {

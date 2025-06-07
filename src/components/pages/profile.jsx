@@ -45,7 +45,8 @@ const Profile = () => {
           </div>
         </div>
         <div className="frame-291">
-          <div className="frame-32">
+          <div className="frame-32"   onClick={() => navigateHandler(`/changePassword`)}
+                   >
             <div className="frame-37">
               <div className="frame-36">
                 <div className="change-password">
