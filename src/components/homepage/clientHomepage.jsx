@@ -4,6 +4,8 @@ import { Link,Outlet,useNavigate} from "react-router-dom";
 import axios from '../../api/axios';
 import { BASE_URL, BLACK, PRIMARY, WHITE } from "../../constants";
 import SemiCircleProgress from './SemiCircleProgress';
+import OuterSemiCircleProgress from './OuterSemiCircleProgress';
+//import CircularProgressBar from './CircularProgressBar';
 
 //import "bootstrap-icons/font/bootstrap-icons.css";
 import Sidebar from '../sidebar';
@@ -73,9 +75,10 @@ const ClientHomepage = () => {
                                 //const totalWorkPercentage = 0;
                                 const totalWorkPercentage = resTypeOfWork.reduce((acc, item) => acc + item.work_percentage, 0);
 
-                                 
+                               const typeOfWOrkIdsArr = typeOfWOrkIds.replace(/[{}"]/g, '').split(',').map(Number);
+                                 //console.log('nilesh',typeOfWOrkIdsArr)
                                   if(totalWorkPercentage > 0){
-                                      const avgPercentage = (totalWorkPercentage / resTypeOfWork.length).toFixed(0);
+                                      const avgPercentage = (totalWorkPercentage / typeOfWOrkIdsArr.length).toFixed(0);
                                  
                                       setProjectProgress(avgPercentage);
                                     }
@@ -161,22 +164,23 @@ function formatDate(dateString) {
                 style={{
                  
                   height: '',
-                  display: '',
+                  display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}
               >
-                <SemiCircleProgress progress={`${projectProgress}`} />
+               {/*     <CircularProgressBar progress={`${projectProgress}`} /> */}
+    
+            {/*   <OuterSemiCircleProgress progress={`${projectProgress}`} />  */}
+             <OuterSemiCircleProgress progress={`${projectProgress}`} /> 
+              <SemiCircleProgress progress={`${projectProgress}`} /> 
               </div>
-
-                
-
 
                </div>
 
                <div className="frame-container">
                  <div className="todays-work-schedule-parent">
-                   <b className="todays-work-schedule" style={{ marginRight: '45px'}}>Today’s Work Schedule</b>
+                   <b className="todays-work-schedule" style={{/* marginRight: '45px' */}}>Today’s Work Schedule</b>
                    <div className="frame-div">
 
                    {typeOfWork?.length > 0 ? (

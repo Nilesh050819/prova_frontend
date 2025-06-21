@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "http://localhost:3000/static/css/main.ccfcf2ac.css",
-    "main.js": "http://localhost:3000/static/js/main.e9395de1.js",
+    "main.css": "http://localhost:3000/static/css/main.cd612d2e.css",
+    "main.js": "http://localhost:3000/static/js/main.e00ad710.js",
     "static/media/PexelsEnginakyurt14878091.jpeg": "http://localhost:3000/static/media/PexelsEnginakyurt14878091.5e636f3f700c250ef2e0.jpeg",
     "static/media/Uhd2160384024Fps1.png": "http://localhost:3000/static/media/Uhd2160384024Fps1.c8f658aa3e849b2d2c90.png",
     "static/media/Unsplashyqo3ByB6NxQ.jpeg": "http://localhost:3000/static/media/Unsplashyqo3ByB6NxQ.03592dde2f375b730f5a.jpeg",
@@ -19,7 +19,6 @@
     "static/media/fa-solid-900.ttf": "http://localhost:3000/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
     "static/media/PexelsGoldcircuits24252321.jpeg": "http://localhost:3000/static/media/PexelsGoldcircuits24252321.174e1249059da81e5003.jpeg",
     "static/media/fa-brands-400.ttf": "http://localhost:3000/static/media/fa-brands-400.1815e00441357e01619e.ttf",
-    "static/media/pexels-goldcircuits-2425232-1.png": "http://localhost:3000/static/media/pexels-goldcircuits-2425232-1.1716e31a8d3082a3e650.png",
     "static/media/fa-solid-900.woff2": "http://localhost:3000/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
     "static/media/unsplash-ljbfqj2lnwi.png": "http://localhost:3000/static/media/unsplash-ljbfqj2lnwi.12bbfbf5a57f0f809719.png",
     "static/media/fa-brands-400.woff2": "http://localhost:3000/static/media/fa-brands-400.c210719e60948b211a12.woff2",
@@ -69,11 +68,11 @@
     "static/media/path-2366.svg": "http://localhost:3000/static/media/path-2366.189e7e878e42c7c1571cd57a9de1ac67.svg",
     "static/media/path-2372.svg": "http://localhost:3000/static/media/path-2372.ceb87f24eed2c2129a7c8271fa6a896c.svg",
     "static/media/path-2374.svg": "http://localhost:3000/static/media/path-2374.04b1c4b888b93f11c23fccd555a6e31a.svg",
-    "main.ccfcf2ac.css.map": "http://localhost:3000/static/css/main.ccfcf2ac.css.map",
-    "main.e9395de1.js.map": "http://localhost:3000/static/js/main.e9395de1.js.map"
+    "main.cd612d2e.css.map": "http://localhost:3000/static/css/main.cd612d2e.css.map",
+    "main.e00ad710.js.map": "http://localhost:3000/static/js/main.e00ad710.js.map"
   },
   "entrypoints": [
-    "static/css/main.ccfcf2ac.css",
-    "static/js/main.e9395de1.js"
+    "static/css/main.cd612d2e.css",
+    "static/js/main.e00ad710.js"
   ]
 }

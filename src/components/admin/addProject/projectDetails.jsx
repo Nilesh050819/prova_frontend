@@ -772,10 +772,10 @@ const setModalOpen4  = ($name,$slug,$key) => {
                      
                       
                          { modalValue === 'cover_image' && ( 
-                      <ImageUploadPopup name={modalValue} openModal ={setOpen} />
+                      <ImageUploadPopup name={modalValue} openModal ={setOpen} projectId={projectId} />
                     )}
                       { modalValue === 'fixed_quote' && ( 
-                      <ImageUploadPopup name={modalValue} openModal ={setOpen} />
+                      <ImageUploadPopup name={modalValue} openModal ={setOpen} projectId={projectId} />
                     )}
                     </Typography>
                     <Box

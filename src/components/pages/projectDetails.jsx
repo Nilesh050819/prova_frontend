@@ -60,8 +60,8 @@ const ProjectDetails = () => {
                       const result2 = await axios.get(api2, '', { config });
                                                           // console.log(result2.data);
                        setSupervisorAccess(
-                          typeof result2.data.data.supervisor_access_id === "string"
-                          ? result2.data.data.supervisor_access_id.replace(/[{}"]/g, "").split(",").map(String)
+                          typeof result2.data.data[0].supervisor_access_id === "string"
+                          ? result2.data.data[0].supervisor_access_id.replace(/[{}"]/g, "").split(",").map(String)
                           : []
                       );
 
@@ -110,6 +110,7 @@ function formatDate(dateString) {
    const hasAccess = supervisorAccess.includes('View Client Contact Details');
     const canShowSupervisorTools = localStorage.getItem("type") === 'Supervisor' && hasAccess;
 
+    console.log('nilesh2',supervisorAccess)
   return (
     <div className="project-details">
       

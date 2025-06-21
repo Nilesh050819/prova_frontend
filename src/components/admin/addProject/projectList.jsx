@@ -73,10 +73,15 @@ const columns = [
            },
           { field: "mobile_no", headerName: "Mobile", width: 150 },
           { field: "email", headerName: "Email", width: 200 },
-          { field: "status", headerName: "Status", headerAlign: 'center',  width: 180,
+          { field: "ref_status_id", headerName: "Status", headerAlign: 'center',  width: 200,
             renderCell: (params) => (
+              params.value == 0 ?
               <div className="ongoing ongoing-chip"  >
                 ONGOING
+              </div>
+              :
+               <div className="completed completed-chip"  >
+                COMPLETED
               </div>
               ),
            },

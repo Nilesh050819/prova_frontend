@@ -74,6 +74,7 @@ const SiteUpdates = () => {
        const videoRef = useRef(null);
        const [dateValue, onChange] = useState(new Date());
 
+
        const [dateType, setDateType] = useState('');
   const [selectedDateRange, setSelectedDateRange] = useState([null, null]);
        
@@ -92,6 +93,7 @@ const SiteUpdates = () => {
       const [isViewerOpen, setIsViewerOpen] = useState(false);
       const [selectedImage, setSelectedImage] = useState([]);
       const [supervisorAccess, setSupervisorAccess] = useState([]);
+      const [supportContactNo, setSupportContactNo] = useState(false);
      
       const closeViewer = () => setIsViewerOpen(false);
       /*const images = [
@@ -323,10 +325,35 @@ const applyCustomDate = () => {
   
 }
 
+  const getSupportContactNo = async () => {
+                    try {
+                            setLoading(true);
+                            let api = `${BASE_URL}/api/masters/getConfigSettingsValue?p_config_key=admin_contact_number`;
+                         
+                            const headers = {
+                            }
+                            const result = await axios.get(api, config );
+                            const { data } = result?.data;
+                         
+                           setSupportContactNo(data.config_value);
+                           console.log('nilesh',supportContactNo)
+                      } catch {
+                        setSupportContactNo([]);
+                        
+                    } finally {
+                        setLoading(false);
+                    }
+  }
+  const handleWpRedirect = () => {
+      const url = `https://wa.me/${supportContactNo}text=`;
+      window.open(url, "_blank");
+  };
+
 useEffect(() => {
   //console.log(startOfToday())
   //getDocumentUploadFiles(startOfToday(),startOfToday()); // Pass data to parent whenever formEntries changes
   getDocumentUploadFiles('',''); // Pass data to parent whenever formEntries changes
+  getSupportContactNo();
   
 }, []);
 
@@ -540,12 +567,7 @@ const handleDateTypeChange = (event) => {
       </p> */}
     </div>
 
-
-
-
-
-
-         {/* <div className="frame-41">
+ {/* <div className="frame-41">
            
           <div className="kitchen" style={{ marginTop: 25,color: '#6f6f71'}} >
              MEDIA
@@ -711,7 +733,7 @@ const handleDateTypeChange = (event) => {
 
       { localStorage.getItem("type") == 'Client' ?
       <div className="frame-72 d-flex flex-column">
-        <div className="icon-large-outline-whatsapp">
+        <div className="icon-large-outline-whatsapp" onClick={handleWpRedirect}>
           <img className="fill" src="assets/vectors/Fill1_x2.svg" />
         </div>
         <div className="frame-73">

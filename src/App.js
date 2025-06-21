@@ -46,6 +46,7 @@ import ForgetPassword from "./components/pages/ForgetPassword.jsx";
 import ResetPassword from "./components/pages/ResetPassword.jsx";
 import EnterOtp from "./components/pages/EnterOtp.jsx";
 import ChagePassword from "./components/pages/changePassword.jsx";
+import TermCondition from "./components/pages/termCondition.jsx";
 
 /*** Admin */
 
@@ -108,6 +109,7 @@ function App() {
             <Route path="workAssignedDocuments" element={<WorkAssignedDocuments />} />
             <Route path="notifications" element={<Notifications />} />
             <Route path="changePassword" element={<ChagePassword />} />
+            <Route path="termCondition" element={<TermCondition />} />
             <Route path="progressBar" element={<ProgressBar />} />
             <Route path="sideNav" element={<SideNav />} />
            

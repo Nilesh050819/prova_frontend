@@ -86,7 +86,7 @@ const Profile = () => {
           </div>
           <div className="line-4">
           </div>
-          <div className="frame-372">
+          <div className="frame-372"  onClick={() => navigateHandler(`/termCondition`)}>
             <div className="frame-373">
               <div className="frame-36">
                 <div className="terms-condition">

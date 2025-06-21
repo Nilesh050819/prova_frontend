@@ -441,7 +441,7 @@
   
   position: fixed;
   top: 3px;
-  width: 375px;
+  width: 437px;
 }
 .iconlargeoutlinehamburger .VfWAy{
   background: none;
@@ -449,4 +449,10 @@
 }
 .project-details .icon-large-outline-new-notification{
   margin-top:23px;
+}
+.creHLa{
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }

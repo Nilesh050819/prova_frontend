@@ -18,7 +18,7 @@ const VisuallyHiddenInput = styled('input')`
                     white-space: nowrap;
                     width: 1px;
                     `;
-function ImageUploadPopup({name,openModal}) {
+function ImageUploadPopup({name,openModal,projectId,allowExt}) {
 
     
   const [state, setState] = useState(false);
@@ -34,31 +34,24 @@ function ImageUploadPopup({name,openModal}) {
       
   const onFileChange = async (event) => {
        let file = event.target.files[0];
-      //console.log(file)
-    
-      const formData = new FormData();
-      formData.append('file', file);
-     console.log(file)
-     setFileType(event.target.name);
-     setUploadData(formData)
-     setFileName(file.name);
-    /*  let api = `${BASE_URL}/api/project/uploadFiles?fileType=${event.target.name}&token=${uniqueCode}`;
-       axios.post(api, formData, {
-        headers: {
-            'Content-Type': 'multipart/form-data',
-            'Authorization': `Bearer ${token}`
+       console.log(file)
+        if(file.type != 'image/jpeg' && file.type != 'image/png'  && name == 'cover_image')
+        {
+            toast.error('Only jpg, png,  format supported');
+        }else if(file.type != 'image/jpeg' && file.type != 'image/png' && file.type != 'application/pdf' && name == 'fixed_quote')
+        {
+            toast.error('Only jpg, png, pdf, docs format supported');
+        }else{
+            //console.log(file)
+            
+            const formData = new FormData();
+            formData.append('file', file);
+            console.log(file)
+            setFileType(event.target.name);
+            setUploadData(formData)
+            setFileName(file.name);
         }
-    })
-    .then(response => {
-        // Handle the successful response
-        console.log('File uploaded successfully:', response.data);
-        getUploadFiles();
-        
-    })
-    .catch(error => {
-        // Handle any errors
-        console.error('Error uploading file:', error);
-    });*/
+
   };
   const saveUploadData = async () => {
   
@@ -96,7 +89,7 @@ function ImageUploadPopup({name,openModal}) {
               const bodyObj = {
                 file_type: fileType,
                 token: uniqueCode,
-                project_id:0
+                project_id:projectId
                 
               };
               //const headers = {};
@@ -117,7 +110,7 @@ function ImageUploadPopup({name,openModal}) {
       }, []);
   return (
     
-<div className="mt-6 border-radius"   >
+<div className="mt-6 "   >
                     <Button onChange={onFileChange}
                         component="label"
                         role={undefined}
@@ -127,7 +120,8 @@ function ImageUploadPopup({name,openModal}) {
                         style={{
                             height: 160,
                             width: 400,
-                            border: `1px dashed ${BLACK.B_10}`
+                            border: `1px dashed ${BLACK.B_10}`,
+                            borderColor: '#FFCC80'
                         }}
                     >
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>

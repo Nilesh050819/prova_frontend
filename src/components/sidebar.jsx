@@ -21,7 +21,7 @@ const projectId1= localStorage.getItem("project_id");
 
 
 const Nav = styled.div`
-    background: #15171c;
+    
     height:80px;
     display: flex;
     justify-content: flex-start;

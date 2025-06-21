@@ -105,7 +105,7 @@ const DrawingCategoriesDetails = () => {
 
         const onFileChange = async (event) => {
                        let file = event.target.files[0];
-                      console.log(file)
+                     
                       if(file.type != 'application/pdf')
                       {
                         toast.error('Only pdf format supported');

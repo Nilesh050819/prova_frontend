@@ -15,6 +15,7 @@ const SemiCircleProgress = ({ progress = 67 }) => {
 
   return (
     <div className="progress-container">
+      
       <svg width="200" height="120">
         {/* 1️⃣ Background Arc */}
         <path
@@ -36,7 +37,7 @@ const SemiCircleProgress = ({ progress = 67 }) => {
         />
 
         {/* 3️⃣ Glowing Knob */}
-        <circle
+       {/* <circle
           cx={knobX}
           cy={knobY}
           r="6"
@@ -44,13 +45,13 @@ const SemiCircleProgress = ({ progress = 67 }) => {
           stroke="#FFC266"
           strokeWidth="3"
           className="glow-knob"
-        />
+        /> */}
 
         {/* 4️⃣ Center Text */}
-        <text x="100" y="90" textAnchor="middle" fill="#fff" fontSize="16" fontWeight="bold">
+        <text x="100" y="70" textAnchor="middle" fill="#fff" fontSize="16" fontWeight="bold">
           {progress}%
         </text>
-        <text x="100" y="110" textAnchor="middle" fill="#bbb" fontSize="12">
+        <text x="100" y="100" textAnchor="middle" fill="#bbb" fontSize="12">
           Current Progress
         </text>
       </svg>

@@ -1,9 +1,12 @@
 .progress-container {
-  background-color: #0f0f10;
-  padding: 20px;
-  width: 250px;
+  /* background-color: #0f0f10; */
+  /*padding: 20px;*/
+  width: 200px;
   text-align: center;
   border-radius: 10px;
+  position: absolute;
+  top: 40px;
+      border: 1px solid red;
 }
 
 .label {
@@ -18,4 +21,10 @@
 
 .glow-dot {
   filter: drop-shadow(0 0 8px #ffd700);
+}
+.progress-container svg{
+      margin: 0 auto;
+    position: absolute;
+    left: 0px;
+    top: 0;
 }

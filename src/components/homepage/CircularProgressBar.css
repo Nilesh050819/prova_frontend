@@ -1,0 +1,59 @@
+.semi-circular-progress-bar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1a1a1a; /* Dark background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  overflow: hidden; /* To ensure the top half is cut off cleanly */
+}
+
+.semi-circular-progress-bar-container {
+  /* No specific styles here, just a wrapper for the SVG */
+}
+
+.semi-circular-progress-bar-svg {
+  /* The SVG itself will be a full circle, but we'll only display the bottom half */
+  /* This is achieved by setting height to radius and moving the viewBox */
+  transform: rotate(180deg); /* Rotate the entire SVG to show the bottom half as a semi-circle */
+  transform-origin: center center; /* Ensure rotation is around the center */
+  overflow: visible; /* Allows the indicator dot to be fully visible */
+  margin-top: -50px; /* Adjust this to pull the semi-circle up and cut off the top half */
+}
+
+/* For the actual progress arc */
+.progress-arc-semi {
+  transition: stroke-dashoffset 0.5s ease-in-out;
+}
+
+/* Text styles */
+.progress-percentage-text-semi {
+  font-family: 'Arial', sans-serif;
+  /* Adjust for the 180deg rotation of the parent SVG */
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
+
+.progress-subtext-semi {
+  font-family: 'Arial', sans-serif;
+  /* Adjust for the 180deg rotation of the parent SVG */
+  transform: rotate(180deg);
+  transform-origin: center center;
+}
+
+.progress-indicator-circle-semi {
+    /* Adjust for the 180deg rotation of the parent SVG */
+    transform: rotate(180deg);
+    transform-origin: center center;
+}
+
+
+.bottom-text-semi {
+  color: #ccc;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.1em;
+  margin-top: -30px; /* Adjust to position correctly below the semi-circle */
+  padding-bottom: 10px; /* Space from the bottom of the card */
+}

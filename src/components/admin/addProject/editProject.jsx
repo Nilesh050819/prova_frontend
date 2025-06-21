@@ -131,7 +131,7 @@ const updateProject = async (projectArray) => {
             } */
         if(result.data.status == 'success'){
           toast.success('Successfully Submitted!');
-          //navigate('../projectList');
+          navigate('../projectList');
         }else{
           toast.error('Unable to save!');
         }

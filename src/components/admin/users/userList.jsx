@@ -91,7 +91,7 @@ const UserList = () => {
       ),
     },
     { field: "mobile_no", headerName: "Mobile", width: 200 },
-    { field: "email", headerName: "Email", width: 280 },
+    { field: "email", headerName: "Email", width: 300 },
   /*  {
       field: 'toggle', headerName: 'Toggle', width: 150, renderCell: (params) => (
         <Switch
