@@ -15,10 +15,10 @@ const OuterSemiCircleProgress = ({ progress = 35 }) => {
 
   return (
     <div className="semi-progress-container">
-      <svg width="260" height="100">
+      <svg width="260" height="120">
         {/* 1️⃣ Background Arc */}
         <path
-          d="M10,100 A90,90 0 0,1 190,100"
+          d="M10,70 A90,90 2 1,1 230,180"
           stroke="#2c2c2c"
           strokeWidth={stroke}
           fill="none"
@@ -26,7 +26,7 @@ const OuterSemiCircleProgress = ({ progress = 35 }) => {
 
         {/* 2️⃣ Progress Arc with Glow */}
         <path
-          d="M10,100 A90,90 0 0,1 190,100"
+          d="M2,120 A90,90 0 0,1 190,100"
           stroke="#FFC266"
           strokeWidth={stroke}
           fill="none"

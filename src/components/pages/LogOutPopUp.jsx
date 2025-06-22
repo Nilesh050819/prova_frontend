@@ -149,8 +149,7 @@ export default function LogOutPopUp() {
                 Log out
                 </span>
               </a>
-              <a href="javascript:void(0)" className="button-1"  onClick={() => navigateHandler("/profile")} style={{height: '42px',
-    marginTop: '30px' }}>
+              <a href="javascript:void(0)" className="button-1"  onClick={() => navigateHandler("/profile")} style={{height: '42px'}}>
               
                 <span className="login-1">
                 Cancel

@@ -213,7 +213,7 @@
     gap: 8px;
     font-size: 12px;
     color: #b7b7b9;
-    /*margin-top: 10px; */
+    margin-top: 55px;
   }
   .frame-group,
   .group-parent {
@@ -493,6 +493,9 @@
       .home .button1, .home .frame-container{
         margin-left: 0;
       }
+    .home .frame-container{
+      margin-top: 40px;
+    }
       .group-parent2 {
         width: 100%;
         overflow-x: auto;
