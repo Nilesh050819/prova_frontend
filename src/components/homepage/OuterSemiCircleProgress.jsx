@@ -2,9 +2,9 @@ import React from 'react';
 import './OuterSemiCircleProgress.css';
 
 const OuterSemiCircleProgress = ({ progress = 35 }) => {
-  const radius = 90;
+  const radius = 110;
   const stroke = 2;
-  const center = 100;
+  const center = 120;
   const circumference = Math.PI * radius;
   const offset = circumference - (progress / 100) * circumference;
 
@@ -18,15 +18,15 @@ const OuterSemiCircleProgress = ({ progress = 35 }) => {
       <svg width="260" height="120">
         {/* 1️⃣ Background Arc */}
         <path
-          d="M10,70 A90,90 2 1,1 230,180"
-          stroke="#2c2c2c"
+          d="M19,75 A90,96 2 1,1 224,183"
+          stroke="#FFC266"
           strokeWidth={stroke}
           fill="none"
         />
 
         {/* 2️⃣ Progress Arc with Glow */}
         <path
-          d="M2,120 A90,90 0 0,1 190,100"
+          d="M14,129 A86,93 0 0,1 197,95"
           stroke="#FFC266"
           strokeWidth={stroke}
           fill="none"
