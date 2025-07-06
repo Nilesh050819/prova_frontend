@@ -8,25 +8,29 @@ const OuterSemiCircleProgress = ({ progress = 35 }) => {
   const circumference = Math.PI * radius;
   const offset = circumference - (progress / 100) * circumference;
 
-  // Knob coordinates
+  const startX = center - radius;
+  const startY = center;
+  const endX = center + radius;
+  const endY = center;
+
   const angle = (Math.PI * progress) / 100;
   const knobX = center + radius * Math.cos(angle - Math.PI);
   const knobY = center + radius * Math.sin(angle - Math.PI);
 
   return (
     <div className="semi-progress-container">
-      <svg width="260" height="120">
+      <svg width="260" height="130">
         {/* 1️⃣ Background Arc */}
         <path
-          d="M19,75 A90,96 2 1,1 224,183"
+          d={`M${startX},${startY} A${radius},${radius} 0 0,1 ${endX},${endY}`}
           stroke="#FFC266"
-          strokeWidth={stroke}
+          strokeWidth={stroke + 1}
           fill="none"
         />
 
-        {/* 2️⃣ Progress Arc with Glow */}
+        {/* 2️⃣ Progress Arc */}
         <path
-          d="M14,129 A86,93 0 0,1 197,95"
+          d={`M${startX},${startY} A${radius},${radius} 0 0,1 ${endX},${endY}`}
           stroke="#FFC266"
           strokeWidth={stroke}
           fill="none"
@@ -45,13 +49,16 @@ const OuterSemiCircleProgress = ({ progress = 35 }) => {
           strokeWidth="3"
           className="glow-knob"
         />
-
-        {/* 4️⃣ Center Text */}
-       
       </svg>
+
+      {/* 4️⃣ Center Label */}
+      <div className="center-label" style={{ marginTop: "-20px", textAlign: "center" }}>
+        
+      </div>
     </div>
   );
 };
+
 
 export default OuterSemiCircleProgress;
 

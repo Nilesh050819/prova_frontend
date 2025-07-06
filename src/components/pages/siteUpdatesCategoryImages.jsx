@@ -233,15 +233,7 @@ const getDocumentUploadFiles = async (fromDate='',toDate='') => {
                }
                 
             })
-            /** supervisor access */
-              let api2 = `${BASE_URL}/api/supervisor/getProjectSupervisorAccess?p_project_id=${pid}&p_user_id=${userId}`;
-              const result2 = await axios.get(api2, '', { config });
-                                                  // console.log(result2.data);
-                setSupervisorAccess(
-                    typeof result2.data.data.supervisor_access_id === "string"
-                    ? result2.data.data.supervisor_access_id.replace(/[{}"]/g, "").split(",").map(String)
-                : []                                                                      
-              );                                    
+                                             
 
             setDocuments(res);
           console.log(documents)
@@ -251,6 +243,20 @@ const getDocumentUploadFiles = async (fromDate='',toDate='') => {
       } finally {
        // setLoading(false);
       }
+}
+const getSupervisorAccess = async () => {
+      /** supervisor access */
+              let api2 = `${BASE_URL}/api/supervisor/getProjectSupervisorAccess?p_project_id=${pid}&p_user_id=${userId}`;
+              const result2 = await axios.get(api2, '', { config });
+              if(result2.data.data != ''){
+                                                  // console.log(result2.data);
+               // console.log('nilesh66',result2.data.data[0].supervisor_access_id)
+                setSupervisorAccess(
+                    typeof result2.data?.data[0].supervisor_access_id === "string"
+                    ? result2.data?.data[0].supervisor_access_id.replace(/[{}"]/g, "").split(",").map(String)
+                : []                                                                      
+              ); 
+            }
 }
 console.log(options.value);
 const handlePresetChange = (selectedOption) => {
@@ -352,8 +358,10 @@ const applyCustomDate = () => {
 useEffect(() => {
   //console.log(startOfToday())
   //getDocumentUploadFiles(startOfToday(),startOfToday()); // Pass data to parent whenever formEntries changes
+  getSupervisorAccess();
   getDocumentUploadFiles('',''); // Pass data to parent whenever formEntries changes
   getSupportContactNo();
+  
   
 }, []);
 
@@ -451,7 +459,7 @@ const handleDateTypeChange = (event) => {
 
   const hasAccess = supervisorAccess.includes('Upload Site Media');
   const canShowSupervisorTools = localStorage.getItem("type") === 'Supervisor' && hasAccess;
-
+//console.log('nilesh',supervisorAccess)
     return (
       <div className="site-updates-category-images">
      
@@ -467,7 +475,7 @@ const handleDateTypeChange = (event) => {
        <div className="frame-41">
             <div className="frame-40">
               <div className="kitchen">
-              {siteCategoriesName}
+              {siteCategoriesName} 
               </div>
               { localStorage.getItem("type") === 'Supervisor' && ( 
               <span className="access-all-images-and-videos">

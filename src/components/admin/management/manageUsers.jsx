@@ -1227,9 +1227,9 @@ const handleCheckMaterialUpdatesAccess = (e1) => {
                       }}
                     />
                     &nbsp;&nbsp;
-                    <a href="javascript:void(0)" style={{ float: 'right',marginTop: '-50px'  }}>
+                    <a href="javascript:void(0)" style={{ float: 'right', marginTop : '10px'  }}>
                       <img
-                        style={{ marginTop: 10 }}
+                       
                         className="vector-55"
                         src={process.env.PUBLIC_URL + "/images/Delete.svg"}
                         onClick={() =>
@@ -1358,9 +1358,9 @@ const handleCheckMaterialUpdatesAccess = (e1) => {
                       }}
                     />
                     &nbsp;&nbsp;
-                    <a href="javascript:void(0)" style={{ float: 'right',marginTop: '-50px'  }}>
+                    <a href="javascript:void(0)" style={{ float: 'right',marginTop: '10px'  }}>
                       <img
-                        style={{ marginTop: 10 }}
+                       
                         className="vector-55"
                         src={process.env.PUBLIC_URL + "/images/Delete.svg"}
                         onClick={() =>

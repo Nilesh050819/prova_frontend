@@ -33,7 +33,7 @@ const Login = () => {
     //tutorial,
   });
 
- const [showPassword, setShowPassword] = useState(false);
+
   const navigate = useNavigate();
       const navigateHandler = (url) => {
         navigate(url);
@@ -93,78 +93,88 @@ const Login = () => {
 
 
   return (
-      <div className="login-page">
-      <div className="login-left"
-         style={{
-    backgroundImage: `url(${process.env.PUBLIC_URL}/images/BG_Img.png)`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center'
-  }}
+     <div className="login-container">
+      <form
+        id="email-form"
+        onSubmit={handleSubmit(onSubmit)}
+        name="email-form"
+        method="post"
+        className="login-form"
       >
-         <div className="logo-top-left">
-    <img
-      src={process.env.PUBLIC_URL + '/images/prova-logo.svg'}
-      alt="Prova Logo"
-    />
-  </div>
-        <div className="overlay-content">
-         
-          <blockquote className="login-quote">
-            A home is not a mere transient shelter; its essence lies in the personalities of the people who live in it.
-            <footer>- H.L. Mencken</footer>
-          </blockquote>
+        <div className="login-left">
+          <img
+            className="login-bg"
+            src={process.env.PUBLIC_URL + '/images/BG_Img.png'}
+            alt="Background"
+          />
+          <div className="overlay">
+            <img
+              className="logo"
+              src={process.env.PUBLIC_URL + '/images/prova-logo.svg'}
+              alt="Prova"
+            />
+            <blockquote className="quote">
+              A home is not a mere transient shelter; its essence lies in the
+              personalities of the people who live in it.
+              <footer>- H.L. Mencken</footer>
+            </blockquote>
+          </div>
         </div>
-      </div>
 
-      <div className="login-right">
-        <form onSubmit={handleSubmit(onSubmit)} className="login-form">
+        <div className="login-right">
           <h2>Sign In to Your Account</h2>
-          <p className="login-subtext">Enter your email and password to access your account</p>
+          <p>Enter your email and password to access your account</p>
 
           <div className="form-group">
             <input
+              className="input"
+              name="email"
               type="email"
               placeholder="Email ID"
-              {...register('email', { required: 'Field is required' })}
-              className="form-input"
+              {...register('email', {
+                required: { value: true, message: 'Field is required' }
+              })}
             />
-            {errors.email && <p className="error-text">{errors.email.message}</p>}
+            {errors.email && (
+              <span className="error-msg">{errors.email.message}</span>
+            )}
           </div>
 
-          <div className="form-group password-group">
+          <div className="form-group">
             <input
-              type={showPassword ? 'text' : 'password'}
+              className="input"
+              name="password"
+              type="password"
               placeholder="Password"
-              {...register('password', { required: 'Field is required' })}
-              className="form-input"
+              {...register('password', {
+                required: { value: true, message: 'Field is required' }
+              })}
             />
-            <span
-              className="toggle-password"
-              onClick={() => setShowPassword(!showPassword)}
-            >
-            
-            </span>
-            {errors.password && <p className="error-text">{errors.password.message}</p>}
+            {errors.password && (
+              <span className="error-msg">{errors.password.message}</span>
+            )}
           </div>
 
-          <div className="password-reset">
+          <div className="reset-section">
             <span>Don’t remember the password?</span>
             <button
               type="button"
               className="reset-link"
-              onClick={() => navigate('/admin/resetPassword')}
+              onClick={() => navigateHandler('/admin/resetPassword')}
             >
               Reset Password
             </button>
           </div>
 
-          <button type="submit" className="submit-button"  style={{ color: 'black'}} >
+          <button type="submit" className="submit-btn">
             Sign In
           </button>
-
-          {errMsg && <p className="error-text">{errMsg}</p>}
-        </form>
-      </div>
+          <span className="error-msg bottom">
+            {errors.password && errors.password.message}
+            {errMsg && ` ${errMsg}`}
+          </span>
+        </div>
+      </form>
     </div>
 
   );

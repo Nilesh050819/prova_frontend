@@ -87,10 +87,11 @@ const MaterialUpdates = () => {
                                       const result2 = await axios.get(api2, '', { config });
                                       // console.log(result2.data);
                                       setSupervisorAccess(
-                                          typeof result2.data.data.supervisor_access_id === "string"
-                                          ? result2.data.data.supervisor_access_id.replace(/[{}"]/g, "").split(",").map(String)
+                                          typeof result2.data.data[0].supervisor_access_id === "string"
+                                          ? result2.data.data[0].supervisor_access_id.replace(/[{}"]/g, "").split(",").map(String)
                                           : []
                                       );
+                                      console.log('nnn',supervisorAccess)
                            
                       } catch {
                         setProject([]);
@@ -100,9 +101,7 @@ const MaterialUpdates = () => {
                     }
                 }
         
-                 useEffect(() => {
-                  fetchProjectDetails();
-                }, []);
+              
 
 
         const onFileChange = async (event) => {
@@ -191,7 +190,9 @@ const MaterialUpdates = () => {
                   setSearch(e.target.value);
        }
       useEffect(() => {
+         fetchProjectDetails();
         getDocumentUploadFiles(search); // Pass data to parent whenever formEntries changes
+        
       }, [search]);
 
       const deleteBtnClick = (id) => {

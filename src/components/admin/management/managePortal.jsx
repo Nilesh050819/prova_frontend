@@ -246,6 +246,7 @@ const addManageMaster = async (manageMasterArray) => {
                             padding: '10px',
                             borderRadius: '8px',
                           }}
+                           className="custom-tabs"
                       > 
                       <Tab eventKey="first" title="Project Management" 
                            sx={{
@@ -288,23 +289,6 @@ const addManageMaster = async (manageMasterArray) => {
                       </Tabs> 
 
                       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                         </div>

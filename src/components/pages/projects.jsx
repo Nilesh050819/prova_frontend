@@ -143,49 +143,47 @@ const Projects = () => {
             </div>
 
 
-          <div className="frame-29 " style={{ marginTop: '25px'}}>
-            <div className="grid_div">
-
-            {projects?.length > 0 ? (
-                projects.map((project) => (  
-              <div className="group-8" 
-                  
-                style={{
-                    background: `url("${project.s3_file_path}") 50% / cover no-repeat`,
-                }}
-                onClick={() => navigateHandler(`/projectDetails?pid=${project.id}`)}
-              >
-            {project.supervisor_id > 0 && (
+         <div className="frame-29" style={{ marginTop: '25px' }}>
+  <div className="grid_div">
+    {loading ? (
+      <div className="loader">
+        <div className="spinner"></div>
+      </div>
+    ) : (
+      <>
+        {projects?.length > 0 ? (
+          projects.map((project) => (
+            <div
+              className="group-8"
+              style={{
+                background: `url("${project.s3_file_path}") 50% / cover no-repeat`,
+              }}
+              onClick={() => navigateHandler(`/projectDetails?pid=${project.id}`)}
+            >
+              {project.supervisor_id > 0 && (
                 <div className="frame-13">
                   <span className="hall-room">Assgined</span>
                 </div>
-                  )}
-
-                <div className="rectangle-1">
-                </div>
-                <div className="icon-large-filled-play">
-                {/*  <img className="vector-2" src="assets/vectors/Vector10_x2.svg" /> */}
-                </div>
-                <div className="frame-14">
-                  <span className="th-june-2024">
-                  {project.name}
-                  </span>
-                  <span className="pm">
-                  <span className="pm">{formatDate(project.submitted_date)}</span>
-                  </span>
-                </div>
+              )}
+              <div className="rectangle-1"></div>
+              <div className="icon-large-filled-play"></div>
+              <div className="frame-14">
+                <span className="th-june-2024">{project.name}</span>
+                <span className="pm">{formatDate(project.submitted_date)}</span>
               </div>
-              ))
-            ) : (
-              <div>No projects found.</div>
-            )}
-
-
-            
             </div>
-           
-            
-          </div>
+          ))
+        ) : (
+          <div>No projects found.</div>
+        )}
+      </>
+    )}
+  </div>
+</div>
+
+
+
+
         </div>
       </div>
    

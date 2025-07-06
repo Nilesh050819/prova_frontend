@@ -132,6 +132,9 @@ const updateProject = async (projectArray) => {
         if(result.data.status == 'success'){
           toast.success('Successfully Submitted!');
           navigate('../projectList');
+        }else if(result.status == 'success'){
+          toast.success('Successfully Updated!');
+          navigate('../projectList');
         }else{
           toast.error('Unable to save!');
         }
@@ -195,15 +198,20 @@ const updateProject = async (projectArray) => {
    // setIsPublished(1);
   //  formRef.current.requestSubmit(); // Programmatically submit the form
           try {
+            console.log('222wwwww')
             setLoading(true);
             let api = `${BASE_URL}/api/project/publishProject?p_id=${projectId}`;
         
             const headers = {
             }
             const result =  axios.post(api, config );
-            const { data } = result?.data;
+            toast.success('Successfully Published!');
+             navigate(`../editProject?pId=${projectId}`);
+             setIsPublished(1)
+
+          //  const { data } = result;
           // console.log(data)
-          navigate('../editProject?pId='+projectId);
+         
           
         } catch {
                 
@@ -247,15 +255,21 @@ const updateProject = async (projectArray) => {
           
                 { isPublished == 1 ? 
                  <div className="float-right" style={{ width: 320,}}>
-                    <button type="button" style={{ textDecoration: 'none',float: 'left', marginLeft: '150px' }} class="publish_btn_disabled" >Published</button>
+                 
+                      <button type="submit"  style={{ textDecoration: 'none',float: 'left'}} class="publish_btn" >Update</button>
+                      
+                    <button type="button" style={{ textDecoration: 'none',float: 'left', marginLeft: '10px' }} class="publish_btn_disabled" >Published</button>
                 </div>
                   
                   :
                   <div className="float-right" style={{ width: 320,}}>
+                   
                       <button type="submit"  style={{ textDecoration: 'none',float: 'left'}} class="publish_btn" >Update</button>
+                    
                       <button class="publish_btn" style={{ textDecoration: 'none',float: 'right'}} type="button" onClick={triggerPublishSubmit} >Publish</button>
                   </div>
-                  }    
+                  }  
+                     
             </div>
               </div>
               <div style={{ marginTop: 30}}>    
@@ -269,6 +283,7 @@ const updateProject = async (projectArray) => {
                             padding: '10px',
                             borderRadius: '8px',
                           }}
+                           className="custom-tabs"
                       > 
                       <Tab eventKey="first" title="Project Details" 
                            sx={{

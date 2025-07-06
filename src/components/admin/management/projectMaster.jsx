@@ -1,6 +1,6 @@
 import "./managePortal.css";
-import React, {useEffect, useState, useRef} from 'react';
-import { Button, CircularProgress, Input, Modal, Option, selectClasses, styled, SvgIcon, Textarea } from "@mui/joy"
+import React, {useEffect, useState} from 'react';
+import { Button, Input, Modal, Option, selectClasses, styled, SvgIcon, Textarea } from "@mui/joy"
 
 import { Link,Outlet,useNavigate} from "react-router-dom";
 import Box from "@mui/material/Box";
@@ -342,7 +342,7 @@ const handlePopupClick = (value,idx) => {
     return (
       
       <div  style={{ width: '100%', height: '100vh' }}>
-      <div class="card " >
+      <div class="card mt-25" >
         <h5 class="card-header">Type of Project</h5>
         <div class="card-body">
           <div className="row">
@@ -366,7 +366,7 @@ const handlePopupClick = (value,idx) => {
                       },
                   }}
                 />
-                &nbsp;&nbsp;<a href="javascript:void(0)" style={{ float: 'right',marginTop: '-50px'  }} ><img style={{ marginTop:10  }} className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Project_type",`${pt.id}`,`${index}`)}  /></a>
+                &nbsp;&nbsp;<a href="javascript:void(0)" style={{ float: 'right', marginTop: '10px'  }} ><img className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Project_type",`${pt.id}`,`${index}`)}  /></a>
               
               <ConfirmDialog
                 open={isDialogOpen}
@@ -424,8 +424,8 @@ const handlePopupClick = (value,idx) => {
                 </div>
                 <div className="col-md-4" style={{ marginTop: 0,float:'left' }} >
                   
-                  <button class="submit_btn" style={{ marginTop: 0,lineHeight:2,width:130 }} type="button" onClick={() => handleButtonClick("Type_of_work",`${row.id}`)}><img className="vector-55" src={process.env.PUBLIC_URL + '/images/Upload.svg'} />&nbsp;&nbsp;Upload</button>
-                  &nbsp;&nbsp;<a href="javascript:void(0)"><img style={{ marginTop:-125,marginLeft:130  }} className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Type_of_work",`${row.id}`,`${index}`)} /></a>
+                  <button class="submit_btn" style={{ marginTop: 0,lineHeight:2,width:110 }} type="button" onClick={() => handleButtonClick("Type_of_work",`${row.id}`)}><img className="vector-55" src={process.env.PUBLIC_URL + '/images/Upload.svg'} />&nbsp;&nbsp;Upload</button>
+                  &nbsp;&nbsp;<a href="javascript:void(0)" style={{ float:'right' }} ><img className="vector-55" style={{marginTop:'-80px'}} src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Type_of_work",`${row.id}`,`${index}`)} /></a>
               </div>
               <ConfirmDialog
                 open={isDialogOpen}
@@ -482,9 +482,9 @@ const handlePopupClick = (value,idx) => {
                 </div>
                 <div className="col-md-4" style={{ marginTop: 0 }} >
                  
-                   <button class="submit_btn" style={{ marginTop: 0,lineHeight:2,width:130 }} type="button" onClick={() => handleButtonClick("Site_categories",`${row.id}`)}><img className="vector-55" src={process.env.PUBLIC_URL + '/images/Upload.svg'} />&nbsp;&nbsp;Upload</button>
+                   <button class="submit_btn" style={{ marginTop: 0,lineHeight:2,width:110 }} type="button" onClick={() => handleButtonClick("Site_categories",`${row.id}`)}><img className="vector-55" src={process.env.PUBLIC_URL + '/images/Upload.svg'} />&nbsp;&nbsp;Upload</button>
 
-                   &nbsp;&nbsp;<a href="javascript:void(0)"><img style={{ marginTop:-125,marginLeft:130  }} className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Site_categories",`${row.id}`,`${index}`)} /></a>
+                   &nbsp;&nbsp;<a href="javascript:void(0)" style={{ float:'right' }}><img className="vector-55" style={{marginTop:'-80px'}} src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Site_categories",`${row.id}`,`${index}`)} /></a>
                 </div>
                 
               
@@ -564,9 +564,9 @@ const handlePopupClick = (value,idx) => {
                 />
            </div>
            <div className="col-md-4" style={{ marginTop: 0 }} >       
-           <button class="submit_btn" style={{ marginTop: 0,lineHeight:2,width:130 }} type="button" onClick={() => handleButtonClick("Drawing_categories",`${row.id}`)}><img className="vector-55" src={process.env.PUBLIC_URL + '/images/Upload.svg'} />&nbsp;&nbsp;Upload</button>
+           <button class="submit_btn" style={{ marginTop: 0,lineHeight:2,width:110 }} type="button" onClick={() => handleButtonClick("Drawing_categories",`${row.id}`)}><img className="vector-55" src={process.env.PUBLIC_URL + '/images/Upload.svg'} />&nbsp;&nbsp;Upload</button>
 
-                &nbsp;&nbsp;<a href="javascript:void(0)"><img style={{ marginTop:-125,marginLeft:130  }} className="vector-55" src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Drawing_categories",`${row.id}`,`${index}`)} /></a>
+                &nbsp;&nbsp;<a href="javascript:void(0)" style={{ float:'right' }}><img  className="vector-55" style={{marginTop:'-80px'}} src={process.env.PUBLIC_URL + '/images/Delete.svg'}  onClick={() => deleteBtnClick("Drawing_categories",`${row.id}`,`${index}`)} /></a>
            </div>   
               <ConfirmDialog
                 open={isDialogOpen}

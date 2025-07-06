@@ -1,4 +1,4 @@
-import "./adminLogin.css";
+import "./resetPassword.css";
 import React, { useEffect, useState, useRef } from 'react';
 import Input from '@mui/joy/Input';
 import axios from '../../api/axios';
@@ -100,100 +100,66 @@ const ResetPassword = () => {
 
 
   return (
-    <div className="log-in">
-      <form id="email-form" onSubmit={handleSubmit(onSubmit)} name="email-form"  method="post" >
-      <div className="div">
-        <div className="overlap-group">
-          <img className="BG-img" alt="Bg img" src={process.env.PUBLIC_URL + '/images/BG_Img.png'} />
-
-          <div className="rectangle" />
-
-          <img className="prova" alt="Prova" src={process.env.PUBLIC_URL + '/images/prova-logo.svg'} />
-
-          <div className="frame">
-            <p className="admin-text-wrapper" style={{ color: '#fff'}}>
-              A home is not a mere transient shelter; its essence lies in the
-              personalities of the people who live in it.
-            </p>
-
-            <div className="text-wrapper-2">- H.L. Mencken</div>
-          </div>
+    <div className="reset-page">
+      <div className="reset-left"
+       style={{
+    backgroundImage: `url(${process.env.PUBLIC_URL}/images/BG_Img.png)`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  }}
+      >
+        <div className="logo-top-left">
+          <img src={process.env.PUBLIC_URL + '/images/prova-logo.svg'} alt="Prova" />
         </div>
 
-        <div className="frame-2">
-          <div className="frame-3">
-            <p className="p">Reset Your Password</p>
-
-            <p className="text-wrapper-3">
-              Enter and confirm your password here
-            </p>
-          </div>
-
-          
-          <div className="frame-4">
-            <div className="frame-3">
-              <div className="frame-5">
-                
-                <div className="admin-input-field">
-                  <div className="input-wrapper">
-                    <div className="input">
-                      <input name="email"
-                        className="icon-content"
-                        id="input-1"
-                        placeholder="Email ID"
-                        type="email" {...register('email', { required: {
-                          value: true,
-                          message: 'Field is  required',
-                        }, })}
-                      />
-                    </div>
-                    <span className="admin-err-msg text-danger"> {errors.email && errors.email.message} </span>
-                  </div>
-                </div>
-
-                <div className="admin-input-field">
-                  <div className="input-wrapper">
-                    <div className="input">
-                    <input className="icon-content" name="new_password" placeholder="Password" type="password"  {...register('new_password', { required: {
-                              value: true,
-                              message: 'Field is  required',
-                            }, })} />
-
-                     
-                    </div>
-                    <span className="admin-err-msg text-danger"> {errors.new_password && errors.new_password.message} </span>
-                  </div>
-                </div>
-                <div className="admin-input-field">
-                  <div className="input-wrapper">
-                    <div className="input">
-                    <input className="icon-content" name="confirm_password" placeholder="Confirm Password" type="password"  {...register('confirm_password', { required: {
-                              value: true,
-                              message: 'Field is  required',
-                            }, })} />
-
-                     
-                    </div>
-                    <span className="admin-err-msg text-danger"> {errors.confirm_password && errors.confirm_password.message} </span>
-                  </div>
-                </div>            
-
-              </div>
-
-            
-            </div>
-
-            <button className="login-wrapper">
-              <div className="login">Submit</div>
-            </button>
-            <span className="admin-err-msg text-danger"> {errors.password && errors.password.message} {errMsg && errMsg}</span>
-          </div>
-          
-
-
+        <div className="overlay-content">
+          <blockquote className="login-quote">
+            A home is not a mere transient shelter; its essence lies in the personalities of the people who live in it.
+            <footer>- H.L. Mencken</footer>
+          </blockquote>
         </div>
       </div>
-      </form>
+
+      <div className="reset-right">
+        <form onSubmit={handleSubmit(onSubmit)} className="reset-form">
+          <h2>Reset Your Password</h2>
+          <p className="login-subtext">Enter and confirm your password here</p>
+
+          <div className="form-group">
+            <input
+              type="email"
+              placeholder="Email ID"
+              {...register('email', { required: 'Field is required' })}
+              className="form-input"
+            />
+            {errors.email && <p className="error-text">{errors.email.message}</p>}
+          </div>
+
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="New Password"
+              {...register('new_password', { required: 'Field is required' })}
+              className="form-input"
+            />
+            {errors.new_password && <p className="error-text">{errors.new_password.message}</p>}
+          </div>
+
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              {...register('confirm_password', { required: 'Field is required' })}
+              className="form-input"
+            />
+            {errors.confirm_password && <p className="error-text">{errors.confirm_password.message}</p>}
+          </div>
+
+          <button type="submit" className="submit-button" style={{ color: 'black'}}>Submit</button>
+
+          {errMsg && <p className="error-text">{errMsg}</p>}
+        </form>
+      </div>
     </div>
 
 

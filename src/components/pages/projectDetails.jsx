@@ -50,7 +50,7 @@ const ProjectDetails = () => {
                     }
                     const result = await axios.get(api, config );
                     const { data } = result?.data;
-                    console.log(data)
+                    console.log('nilesh11',data)
                     setProject(data);
                     setStartDate(formatDate(data.submitted_date));
                     console.log(startDate)
@@ -180,7 +180,7 @@ function formatDate(dateString) {
 
               <div className="frame-3">
                 <div className="frame-7">
-                  <div className="frame-wrapper"  onClick={() => navigateHandler(`/todayWorkAssigned?pid=${project.id}`)}>
+                  <div className="frame-wrapper"  onClick={() => navigateHandler(`/todayWorkAssigned?pid=${projectId}`)}>
                     <div className="frame-8">
                       <img className="img" alt="Frame" src={frame2} />
 
@@ -188,7 +188,7 @@ function formatDate(dateString) {
                     </div>
                   </div>
 
-                  <div className="frame-wrapper" onClick={() => navigateHandler(`/projectTimelineDetails?pid=${project.id}`)}>
+                  <div className="frame-wrapper" onClick={() => navigateHandler(`/projectTimelineDetails?pid=${projectId}`)}>
                     <div className="frame-8">
                       <img className="img" alt="Frame" src={frame3} />
 
@@ -198,7 +198,7 @@ function formatDate(dateString) {
                 </div>
 
                 <div className="frame-7">
-                  <div className="frame-wrapper" onClick={() => navigateHandler(`/siteUpdatesCategories?pid=${project.id}`)}>
+                  <div className="frame-wrapper" onClick={() => navigateHandler(`/siteUpdatesCategories?pid=${projectId}`)}>
                     <div className="frame-8">
                       <img className="img" alt="Frame" src={frame} />
 
@@ -206,7 +206,7 @@ function formatDate(dateString) {
                     </div>
                   </div>
 
-                  <div className="frame-wrapper" onClick={() => navigateHandler(`/drawingCategories?pid=${project.id}`)}>
+                  <div className="frame-wrapper" onClick={() => navigateHandler(`/drawingCategories?pid=${projectId}`)}>
                     <div className="frame-8">
                       <img className="img" alt="Frame" src={image} />
 
@@ -216,7 +216,7 @@ function formatDate(dateString) {
                 </div>
 
                 <div className="frame-7">
-                  <div className="frame-wrapper" onClick={() => navigateHandler(`/materialUpdates?pid=${project.id}`)}>
+                  <div className="frame-wrapper" onClick={() => navigateHandler(`/materialUpdates?pid=${projectId}`)}>
                     <div className="frame-8">
                       <img
                         className="img"
@@ -228,7 +228,7 @@ function formatDate(dateString) {
                     </div>
                   </div>
 { supervisorAccess.includes('View Live Feed') && (
-                  <div className="frame-wrapper" onClick={() => navigateHandler(`/liveFeed?pid=${project.id}`)}>
+                  <div className="frame-wrapper" onClick={() => navigateHandler(`/liveFeed?pid=${projectId}`)}>
                     <div className="frame-8">
                       <img className="img" alt="Frame" src={frame4} />
 

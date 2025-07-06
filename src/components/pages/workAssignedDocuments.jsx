@@ -77,12 +77,11 @@ const WorkAssignedDocuments = () => {
        const [dateValue, onChange] = useState(new Date());
 
        const [dateType, setDateType] = useState('');
-  const [selectedDateRange, setSelectedDateRange] = useState([null, null]);
-       
-       const [value, setValue] = useState([null, null]);
-       
+      const [selectedDateRange, setSelectedDateRange] = useState([null, null]);
+      const [value, setValue] = useState([null, null]);
+      const [supervisorAccess, setSupervisorAccess] = useState([]);
 
-
+      const userId = localStorage.getItem("user_id");
 
        const [selectedRange, setSelectedRange] = useState([
         {
@@ -327,9 +326,7 @@ useEffect(() => {
         console.log(error);
         //toast.error('Unable to update please try again!');
       } finally {
-  
-        
-      }
+  }
        
 
     };
@@ -393,7 +390,20 @@ const closePopup = () => {
 const handleDateTypeChange = (event) => {
   setDateType(event.target.value);
 };
-
+const getSupervisorAccess = async () => {
+      /** supervisor access */
+              let api2 = `${BASE_URL}/api/supervisor/getProjectSupervisorAccess?p_project_id=${pid}&p_user_id=${userId}`;
+              const result2 = await axios.get(api2, '', { config });
+              if(result2.data.data != ''){
+                                                  // console.log(result2.data);
+               // console.log('nilesh66',result2.data.data[0].supervisor_access_id)
+                setSupervisorAccess(
+                    typeof result2.data?.data[0].supervisor_access_id === "string"
+                    ? result2.data?.data[0].supervisor_access_id.replace(/[{}"]/g, "").split(",").map(String)
+                : []                                                                      
+              ); 
+            }
+}
 
     return (
       <div className="site-updates-category-images">

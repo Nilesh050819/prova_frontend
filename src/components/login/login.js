@@ -45,7 +45,7 @@ const Login = ({ setLoginUser }) => {
      let api = `${BASE_URL}/api/logins/login/`;
         await axios.post(api,data,config)
           .then(res => {
-              if(res.data.user.id !=  '')
+              if(res.data.user.id !==  '')
               {
                   localStorage.setItem("user_id",res.data.user.id);
                   localStorage.setItem("token",res.data.accessToken);
@@ -53,7 +53,7 @@ const Login = ({ setLoginUser }) => {
                   localStorage.setItem("user_name",res.data.user.username);
                   localStorage.setItem("full_name",res.data.user.full_name);
                   localStorage.setItem("mobile_no",res.data.user.mobile_no);
-                  console.log(localStorage.getItem("token"))
+               //   console.log(localStorage.getItem("token"))
                   //setLoginUser(res.data.user)
                   // history.push("/")
                   //alert("hi")

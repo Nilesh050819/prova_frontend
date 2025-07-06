@@ -72,7 +72,7 @@ const fetchClientDetails = async () => {
                           client_sec_email_id: data.sec_email_id,
                           client_remarks: data.remarks,
                           username: data.username,
-                          client_password: data.password,
+                          client_password: data.encode_password,
                         
                         
                         });
@@ -409,7 +409,7 @@ const handleGenerate = () => {
                multiline={false}
            //   id="outlined-basic"
               placeholder="Password"
-              type="password"
+              type="text"
               label="Password" name="client_password"
               variant="outlined"  onChange={handleChange} 
               value={newProjectData2.client_password}
